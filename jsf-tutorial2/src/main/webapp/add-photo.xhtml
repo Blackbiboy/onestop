@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+	
+		<ui:define name="title">Add | Shout</ui:define>
+		
+		<ui:define name="content">
+			
+			<div class="card">
+				<div class="card-content MarTop20">
+					<div class="card-title">
+						<i class="material-icons fs24">backup</i> Add New Shout
+					</div>
+					
+					<h:form enctype="multipart/form-data">
+						<div>
+							<h:inputFile styleClass="hide uploadFile" value="#{addPhotoBean.file}">
+								<f:ajax execute="@this" render="@form" 
+									listener="#{addPhotoBean.uploadFile()}" ></f:ajax>
+							</h:inputFile>
+							<h:graphicImage id="image" styleClass="responsive-img uploadImage" 
+								value="/image/#{empty addPhotoBean.imageUrl ? 'camera.jpg' : addPhotoBean.imageUrl}" />
+						</div>
+
+						<div class="input-field">
+							<label>Title</label>
+							<h:inputText value="#{addPhotoBean.post.title}" />
+						</div>
+						
+						<div class="input-field">
+							<label>Memo</label>
+							<h:inputTextarea styleClass="materialize-textarea" value="#{addPhotoBean.post.description}" />
+						</div>
+						
+						<div>
+						
+							<h:selectManyCheckbox value="#{addPhotoBean.post.categories}" converter="#{categoryConverter}" styleClass="responsive-table"  >
+								<f:selectItems value="#{categories}" var="c" itemValue="#{c}" itemLabel="#{c.name}" ></f:selectItems>
+							</h:selectManyCheckbox>
+						</div>
+						
+						<div class="MarTop20">
+							<button type="reset" class="btn"><i class="material-icons left">delete</i>Clear</button>
+							
+							<h:commandLink action="#{addPhotoBean.upload()}" styleClass="btn" ><i class="material-icons left">backup</i>Upload</h:commandLink>
+						</div>
+						
+					</h:form>
+				</div>
+			</div>
+		
+			<script>
+				$(function() {
+					$(".uploadImage").click(function(){
+						$(".uploadFile").click();
+					});
+				});
+			</script>
+			
+		</ui:define>
+	</ui:composition>
+</html>

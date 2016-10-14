@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title><ui:insert name="title">JSF Tutorial 2</ui:insert></title>
+	<link rel="stylesheet" href="../resources/css/materialize.min.css"></link>
+	<link rel="stylesheet" href="../resources/css/material-icons.css"></link>
+	<link rel="stylesheet" href="../resources/css/common.css"></link>
+	
+	<h:outputStylesheet library="css" name="materialize.min.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="material-icons.css"></h:outputStylesheet>
+	<h:outputStylesheet library="css" name="common.css"></h:outputStylesheet>
+</h:head> 
+<body> 
+	
+	<!-- Menu -->
+	<nav >
+		<div class="nav-wrapper container">
+			<a href="#" class="brand-logo"><i class="material-icons left">volume_up</i> Shout!</a>
+			<a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li>
+					<h:link outcome="photos"> <i class="material-icons left">list</i> Photos</h:link>
+				</li>
+				<li>
+					<h:link outcome="add-photo" rendered="#{not empty loginUser}"><i class="material-icons left">backup</i> Add Photo</h:link>
+				</li>
+				<li>
+					<h:link outcome="add-photo" rendered="#{empty loginUser}"><i class="material-icons left">file_download</i> Login</h:link>
+				</li>
+				<li>
+ 					<h:form rendered="#{not empty loginUser}">
+ 						<h:commandLink action="#{signUpBean.signOut()}" >
+ 							<i class="material-icons left">file_upload</i> Logout
+ 						</h:commandLink>
+ 					</h:form>
+ 				</li>
+ 			</ul>
+			<ul class="side-nav" id="mobile-menu">
+				<li>
+					<div class="userView">
+						<h:graphicImage library="img" name="cover.jpg" styleClass="background responsive-img" />
+						<a href="#!"><i class="material-icons">volume_up</i> Shout Your Feelings!</a>
+					</div>
+				</li>
+ 				<li><h:link outcome="photos">Photos</h:link></li>
+ 				<li><h:link outcome="add-photo" rendered="#{not empty loginUser}">Add Photo</h:link></li>
+ 				<li><h:link outcome="add-photo" rendered="#{empty loginUser}">Login</h:link></li>
+ 				<li>
+ 					<h:form rendered="#{not empty loginUser}">
+ 						<h:commandLink action="#{signUpBean.signOut()}" value="Logout" />
+ 					</h:form>
+ 				</li>
+ 				
+			</ul>
+		</div>
+	</nav>
+	
+	<h:outputScript library="js" name="jquery.min.js"></h:outputScript>
+	<h:outputScript library="js" name="materialize.min.js"></h:outputScript>
+
+	<!-- Contents -->
+	<div class="container">
+		<ui:insert name="content">Default Contents</ui:insert>
+	</div>
+	
+	<!-- Footer -->
+	<footer class="page-footer">
+		<div class="center footer-copyright">
+			#{copyRight}
+		</div>
+	</footer>
+	
+	<script>
+		$(function(){
+			$(".button-collapse").sideNav();
+		});
+	</script>
+</body> 
+</html>

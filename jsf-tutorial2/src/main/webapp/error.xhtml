@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		<ui:define name="title">Index | Shout</ui:define>
+		
+		<ui:define name="content">
+			<div class="card MarTop20">
+				<div class="card-content center-align">
+					<div class="card-title center"><i class="material-icons">perm_identity</i> Login Error</div>
+					
+					<p>Please check your Login ID and Password.</p>
+					<div class="MarTop20 center-align">
+						<h:link outcome="login" styleClass="btn"><i class="material-icons left">perm_identity</i> Login </h:link>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</html>

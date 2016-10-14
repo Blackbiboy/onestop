@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		<ui:define name="title">Sign Up | Shout</ui:define>
+		
+		<ui:define name="content">
+			<div class="card MarTop20">
+				<div class="card-content">
+					<div class="card-title center"><i class="material-icons">perm_identity</i> Sign Up</div>
+					
+					<h:form>
+						<div class="row">
+							<div class="col s12">
+								<h:messages showDetail="true" showSummary="false"/>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="input-field col s12">
+								<label for="name">Name</label>
+								<h:inputText value="#{signUpBean.account.name}" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								<label for="loginId">Login Id</label>
+								<h:inputText value="#{signUpBean.account.loginId}" />
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+								<label for="pass">Password</label>
+								<h:inputSecret value="#{signUpBean.account.password}" />
+							</div>
+						</div>
+						
+						<div class="center">
+							<h:link styleClass="btn" outcome="login" ><i class="material-icons left">send</i>Login</h:link>
+							<h:commandLink action="#{signUpBean.signUp()}" styleClass="btn"><i class="material-icons left">perm_identity</i>Sign Up</h:commandLink>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</html>
