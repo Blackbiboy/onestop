@@ -16,6 +16,7 @@ import com.jdc.shout.service.PostService;
 @Stateless
 public class PostServiceImp implements PostService {
 
+	private static final long serialVersionUID = 1L;
 	@Inject
 	private PostRepository repo;
 	@Inject
@@ -35,6 +36,11 @@ public class PostServiceImp implements PostService {
 	public List<Post> findByCategory(int catId) {
 		Category cat = catRepo.findById(catId);
 		return repo.findByCategory(cat);
+	}
+
+	@Override
+	public void update(Post post) {
+		repo.update(post);
 	}
 
 }

@@ -28,5 +28,9 @@ public class PostRepository {
 		q.setParameter("cat", cat);
 		return q.getResultList();
 	}
+
+	public void update(Post post) {
+		em.merge(post);
+	}
 }
  

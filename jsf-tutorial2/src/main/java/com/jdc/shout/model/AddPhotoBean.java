@@ -9,7 +9,6 @@ import java.util.Date;
 
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,10 +16,10 @@ import javax.servlet.http.Part;
 
 import com.jdc.shout.entity.Account;
 import com.jdc.shout.entity.Post;
+import com.jdc.shout.model.converter.ModelView;
 import com.jdc.shout.service.PostService;
 
-@Named
-@ViewScoped
+@ModelView
 public class AddPhotoBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
