@@ -25,7 +25,6 @@
 				
 				<div class="col m8 s12">
 					
-					<h:form>
 					<ui:repeat var="post" value="#{photosBean.allPost}">
 					
 						<div class="card">
@@ -43,14 +42,9 @@
 							
 							<div class="card-action">
 								
-								<h:commandLink styleClass="small" actionListener="#{photosBean.like(post)}" rendered="#{not empty loginUser}">
+								<a class="small" href="#!">
 									<i class="material-icons fs18 left">sentiment_satisfied</i>#{post.smiles.size()}
-									<f:ajax execute="@form" render="@form"></f:ajax>
-								</h:commandLink>
-								
-								<h:panelGroup rendered="#{empty loginUser}">
-									<i class="material-icons fs18 left">sentiment_satisfied</i>#{post.smiles.size()}
-								</h:panelGroup>
+								</a>
 								
 								<span class="right small">
 									<i class="material-icons fs18 left">account_circle</i> #{post.owner.name}
@@ -59,7 +53,7 @@
 							</div>
 						</div>
 					</ui:repeat>
-					</h:form>
+					
 					
 				</div>
 			</div>

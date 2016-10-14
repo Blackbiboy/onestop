@@ -23,8 +23,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
-import static javax.persistence.CascadeType.PERSIST;
-import static javax.persistence.CascadeType.MERGE;
 
 @Entity
 @NamedQueries(value={
@@ -52,7 +50,7 @@ public class Post implements Serializable{
 	@ManyToMany(fetch = EAGER)
 	@OrderBy
 	private Set<Category> categories;
-	@OneToMany(mappedBy = "post", orphanRemoval = true, fetch = EAGER, cascade = { PERSIST, MERGE })
+	@OneToMany(mappedBy = "post", orphanRemoval = true, fetch = EAGER)
 	private Set<Smile> smiles;
 	
 	public Post() {
@@ -63,11 +61,6 @@ public class Post implements Serializable{
 	@PrePersist
 	private void setCreation() {
 		creation = new Date();
-	}
-	
-	public void addSmile(Smile smile) {
-		smile.setPost(this);
-		smiles.add(smile);
 	}
 	
 	public int getId() {

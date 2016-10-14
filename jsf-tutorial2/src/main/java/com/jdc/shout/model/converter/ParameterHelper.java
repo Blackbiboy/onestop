@@ -1,16 +1,13 @@
 package com.jdc.shout.model.converter;
 
-import java.io.Serializable;
-
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
 @RequestScoped
-public class ParameterHelper implements Serializable{
+public class ParameterHelper {
 	
-	private static final long serialVersionUID = 1L;
 	private ExternalContext ctx;
 	
 	@PostConstruct
