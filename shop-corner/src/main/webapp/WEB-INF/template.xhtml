@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title><ui:insert name="title"></ui:insert> | Shop Corner</title>
+	
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../resources/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="../resources/css/common.css" />
+	
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="font-awesome.min.css" />
+	<h:outputStylesheet library="css" name="common.css" />
+	
+	<h:outputScript library="js" name="jquery.min.js" />
+	<h:outputScript library="js" name="tether.min.js" />
+	<h:outputScript library="js" name="bootstrap.min.js" />
+	
+</h:head> 
+<body> 
+
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-fixed-top navbar-full navbar-light bg-nav">
+		
+		<a href="#" class="navbar-brand"><i class="fa fa-shopping-basket"></i> Shopping Corner</a>
+		
+		<ul class="nav navbar-nav">
+			<li class="nav-item">
+				<form class="form-inline">
+					<div class="input-group">
+						<input type="text" placeholder="Search Item" class="form-control" />
+						<span class="input-group-addon btn-info"><i class="fa fa-search"></i></span>
+					</div>
+				</form>
+			</li>
+			<li class="nav-item">
+				<a href="#!" class="nav-link"><i class="fa fa-list"></i> Products</a>
+			</li>
+		</ul>
+		
+		<ul class="nav navbar-nav pull-right">
+			<li class="nav-item">
+				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="My Cart"><i class="fa fa-shopping-cart"></i></a>
+			</li>
+			<li class="nav-item">
+				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="User Home"><i class="fa fa-user"></i></a>
+			</li>
+			<li class="nav-item">
+				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign Out"><i class="fa fa-sign-out"></i></a>
+			</li>
+			<li class="nav-item">
+				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign In"><i class="fa fa-sign-in"></i></a>
+			</li>
+		
+		</ul>
+		
+	</nav>
+	
+	<!-- Cover Images -->
+	<ui:insert name="cover">
+	
+	</ui:insert>
+	
+	<!-- Content -->
+	<div class="container">
+		
+		<div class="row">
+			<!-- Left Menu  -->
+			<div class="col-md-4">
+				<ui:insert name="left-menu">
+				</ui:insert>
+			</div>			
+
+			<!-- Right Content -->
+			<div class="col-md-8">
+				<ui:insert name="right-menu">
+				</ui:insert>
+			</div>			
+		
+		</div>
+		
+	</div>
+	
+	<!-- Footer -->
+	<div class="container">
+	
+	</div>
+	
+	
+	<script>
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+</body> 
+</html>
