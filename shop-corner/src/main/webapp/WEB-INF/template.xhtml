@@ -52,7 +52,7 @@
 				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign Out"><i class="fa fa-sign-out"></i></a>
 			</li>
 			<li class="nav-item">
-				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign In"><i class="fa fa-sign-in"></i></a>
+				<a href="#!" id="signInLink" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign In" ><i class="fa fa-sign-in"></i></a>
 			</li>
 		
 		</ul>
@@ -89,10 +89,59 @@
 	
 	</div>
 	
+	<div class="modal fade" id="signInModel">
+		
+		<div class="modal-dialog" role="document">
+			<h:form>
+			<div class="modal-content">
+			
+				<div class="modal-header text-xl-center bg-info">
+					<h4 class="modal-title"><i class="fa fa-sign-in"></i> Sign In</h4>
+				</div>
+				
+				<div class="modal-body">
+				
+					<div class="container">
+						<div class="form-group row">
+							<label class="col-md-3"><i class="fa fa-user"></i> Login ID</label>
+							<div class="col-md-9">
+								<input placeholder="Enter Login ID" class="form-control" />
+							</div>
+						</div>
+					
+						<div class="form-group row">
+							<label class="col-md-3"><i class="fa fa-lock"></i> Password</label>
+							<div class="col-md-9">
+								<input type="password" placeholder="Enter Password" class="form-control" />
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-9 offset-md-3">
+								<a href="#!" class="btn btn-info"><i class="fa fa-close"></i> Close</a>
+								<a href="#!" class="btn btn-success"><i class="fa fa-signing"></i> Sing Up</a>
+								<h:commandLink class="btn btn-primary"><i class="fa fa-sign-in"></i> Sing In</h:commandLink>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+			
+			</div>
+			</h:form>
+		
+		</div>
+	
+	</div>
 	
 	<script>
 		$(function() {
 			$('[data-toggle="tooltip"]').tooltip();
+
+			$('#signInLink').click(function() {
+				$('#signInModel').modal('show');
+			});
 		});
 	</script>
 </body> 
