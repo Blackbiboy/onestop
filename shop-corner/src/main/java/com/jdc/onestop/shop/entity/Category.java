@@ -4,12 +4,24 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name="Category.getAll", query="select c from Category c")
+})
 public class Category implements Serializable {
 
  	private static final long serialVersionUID = 1L;
+
+	@Id
+    @GeneratedValue(strategy = IDENTITY)
+	private int id;
+
+    private String name;
 
 	public int getId() {
 		return id;
@@ -27,23 +39,7 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-	public Category getParent() {
-		return parent;
-	}
-
-	public void setParent(Category parent) {
-		this.parent = parent;
-	}
-
 	public Category() {
     }
-
-	@Id
-    private int id;
-
-    private String name;
-
-    @ManyToOne
-    private Category parent;
 
 }

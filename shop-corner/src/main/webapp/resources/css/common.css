@@ -1,3 +1,25 @@
+body {
+	margin-top: 50px;
+}
+
+footer {
+	background-color: #ef6c00;	
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
 .bg-nav {
 	background-color: #ffcc80;
+}
+
+footer .nav-link {
+	color: white;
+}
+
+.MarTop20 {
+	margin-top: 20px;
+}
+
+.MarBot20 {
+	margin-bottom: 20px;
 }
