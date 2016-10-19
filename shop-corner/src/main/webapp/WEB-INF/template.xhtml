@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"> 
 
 <h:head>
 	<title><ui:insert name="title"></ui:insert> | Forever</title>
@@ -25,7 +26,7 @@
 	<!-- Nav Bar -->
 	<nav class="navbar navbar-fixed-top navbar-full navbar-light bg-nav">
 		
-		<a href="#" class="navbar-brand"><i class="fa fa-shopping-cart"></i> FOREVER</a>
+		<h:link styleClass="navbar-brand" outcome="/home" ><i class="fa fa-shopping-cart"></i> FOREVER</h:link>
 		
 		<ul class="nav navbar-nav">
 			<li class="nav-item">
@@ -37,25 +38,27 @@
 				</form>
 			</li>
 			<li class="nav-item">
-				<a href="#!" class="nav-link"><i class="fa fa-list"></i> Products</a>
+				<h:link styleClass="nav-link" outcome="/public/products" ><i class="fa fa-list"></i> Products</h:link>
 			</li>
 		</ul>
 		
+		<h:form>
 		<ul class="nav navbar-nav pull-right">
 			<li class="nav-item">
-				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="My Cart"><i class="fa fa-shopping-cart"></i></a>
+				<h:link title="My Cart" styleClass="nav-link" outcome="/member/my-cart" p:data-toggle="tooltip" p:data-placement="bottom" ><i class="fa fa-shopping-cart"></i></h:link>				
 			</li>
 			<li class="nav-item">
-				<h:link title="User Home" styleClass="nav-link" outcome="/member/home" data-toggle="tooltip" data-placement="bottom" ><i class="fa fa-user"></i></h:link>				
+				<h:link rendered="#{not empty loginUser}" title="User Home" styleClass="nav-link" outcome="/member/home" p:data-toggle="tooltip" p:data-placement="bottom" ><i class="fa fa-user"></i></h:link>				
 			</li>
 			<li class="nav-item">
-				<a href="#!" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign Out"><i class="fa fa-sign-out"></i></a>
+				<h:commandLink rendered="#{not empty loginUser}" action="#{securityBean.signOut()}" styleClass="nav-link" p:data-toggle="tooltip" p:data-placement="bottom" title="Sign Out" ><i class="fa fa-sign-out"></i></h:commandLink>
 			</li>
 			<li class="nav-item">
-				<a href="#!" id="signInLink" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Sign In" ><i class="fa fa-sign-in"></i></a>
+				<h:link outcome="#!" rendered="#{empty loginUser}" title="Sign In" styleClass="signInLink nav-link" p:data-toggle="tooltip" p:data-placement="bottom" ><i class="fa fa-sign-in"></i></h:link>				
 			</li>
 		
 		</ul>
+		</h:form>
 		
 	</nav>
 	
@@ -66,7 +69,7 @@
 
 	<!-- Content -->
 	<div class="container MarTop20 MarBot20">
-		
+	
 		<div class="row">
 			<!-- Left Menu  -->
 			<div class="col-md-3">
@@ -82,16 +85,14 @@
 			</div>			
 
 			<!-- Content -->
-			<div class="col-md-6">
+			<div class="col-md-9">
+				
+				<h:messages showDetail="true" showSummary="false" styleClass="alert alert-warning" />
+				
 				<ui:insert name="content">
 				</ui:insert>
 			</div>			
 
-			<!-- Right Menu -->		
-			<div class="col-md-3">
-				<ui:insert name="right-menu">
-				</ui:insert>
-			</div>			
 		</div>
 		
 	</div>
@@ -108,6 +109,8 @@
 		</div>
 	</footer>
 	
+	
+	<!-- Login Form -->
 	<div class="modal fade" id="signInModel">
 		
 		<div class="modal-dialog" role="document">
@@ -122,24 +125,24 @@
 				
 					<div class="container">
 						<div class="form-group row">
-							<label class="col-md-3"><i class="fa fa-user"></i> Login ID</label>
+							<label class="col-md-3"><i class="fa fa-user-secret"></i> Login ID</label>
 							<div class="col-md-9">
-								<input placeholder="Enter Login ID" class="form-control" />
+								<h:inputText value="#{securityBean.login}" p:placeholder="Enter Login ID" styleClass="form-control"/>
 							</div>
 						</div>
 					
 						<div class="form-group row">
 							<label class="col-md-3"><i class="fa fa-lock"></i> Password</label>
 							<div class="col-md-9">
-								<input type="password" placeholder="Enter Password" class="form-control" />
+								<h:inputSecret value="#{securityBean.password}" p:placeholder="Enter Password" styleClass="form-control"/>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<div class="col-md-9 offset-md-3">
-								<a href="#!" class="btn btn-info"><i class="fa fa-close"></i> Close</a>
-								<a href="#!" class="btn btn-success"><i class="fa fa-signing"></i> Sing Up</a>
-								<h:commandLink class="btn btn-primary"><i class="fa fa-sign-in"></i> Sing In</h:commandLink>
+								<a href="#!" id="closeSignInBtn" class="btn btn-info"><i class="fa fa-close"></i> Close</a>
+								<a href="#!" id="signUpBtn" class="btn btn-success"><i class="fa fa-signing"></i> Sing Up</a>
+								<h:commandLink action="#{securityBean.signIn()}" class="btn btn-primary"><i class="fa fa-sign-in"></i> Sing In</h:commandLink>
 							</div>
 						</div>
 
@@ -154,12 +157,79 @@
 	
 	</div>
 	
+	<!-- Sign Up Form -->
+	<div class="modal fade" id="signUpModel">
+		
+		<div class="modal-dialog" role="document">
+			<h:form>
+			<div class="modal-content">
+			
+				<div class="modal-header text-xl-center bg-nav">
+					<h4 class="modal-title"><i class="fa fa-signing"></i> Sign Up</h4>
+				</div>
+				
+				<div class="modal-body">
+				
+					<div class="container">
+
+						<div class="form-group row">
+							<label class="col-md-3"><i class="fa fa-user"></i> Name</label>
+							<div class="col-md-9">
+								<h:inputText value="#{securityBean.name}" p:placeholder="Enter Name" styleClass="form-control"/>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label class="col-md-3"><i class="fa fa-user-secret"></i> Login ID</label>
+							<div class="col-md-9">
+								<h:inputText value="#{securityBean.login}" p:placeholder="Enter Login ID" styleClass="form-control"/>
+							</div>
+						</div>
+					
+						<div class="form-group row">
+							<label class="col-md-3"><i class="fa fa-lock"></i> Password</label>
+							<div class="col-md-9">
+								<h:inputSecret value="#{securityBean.password}" p:placeholder="Enter Password" styleClass="form-control"/>
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<div class="col-md-9 offset-md-3">
+								<a href="#!" id="closeSignUpBtn" class="btn btn-info MarRight10"><i class="fa fa-close"></i> Close</a>
+								<h:commandLink action="#{securityBean.signUp()}" class="btn btn-primary"><i class="fa fa-sign-in"></i> Sing Up</h:commandLink>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+			
+			</div>
+			</h:form>
+		
+		</div>
+	
+	</div>	
+	
 	<script>
 		$(function() {
 			$('[data-toggle="tooltip"]').tooltip();
 
-			$('#signInLink').click(function() {
+			$('.signInLink').click(function() {
 				$('#signInModel').modal('show');
+			});
+
+			$('#closeSignInBtn').click(function() {
+				$('#signInModel').modal('hide');
+			});
+
+			$('#signUpBtn').click(function() {
+				$('#signInModel').modal('hide');
+				$('#signUpModel').modal('show');
+			});
+
+			$('#closeSignUpBtn').click(function() {
+				$('#signUpModel').modal('hide');
 			});
 		});
 	</script>

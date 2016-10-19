@@ -6,9 +6,17 @@ import java.util.*;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
+
 import static javax.persistence.EnumType.STRING;
 import javax.persistence.Temporal;
+
+import com.jdc.onestop.shop.utils.PasswordUtils;
+
 import static javax.persistence.TemporalType.TIMESTAMP;
+import static javax.persistence.CascadeType.PERSIST;
+import static javax.persistence.CascadeType.MERGE;
 
 @Entity
 public class Member implements Serializable{
@@ -25,6 +33,9 @@ public class Member implements Serializable{
     private String name;
 
     private String password;
+    
+    @OneToOne(mappedBy = "member", cascade = { PERSIST, MERGE }, orphanRemoval = true)
+    private Contact contact;
 
     @Enumerated(STRING)
     private Role role;
@@ -34,9 +45,28 @@ public class Member implements Serializable{
 
     @Temporal(TIMESTAMP)
 	private Date modification;
+    
+    @PrePersist
+    private void setSecurity() {
+    	role = Role.Member;
+    	creation = new Date();
+    	modification = new Date();
+    	password = PasswordUtils.encript(password);
+    }
 
     
-    public String getLoginId() {
+    public Contact getContact() {
+		return contact;
+	}
+
+
+	public void setContact(Contact contact) {
+		this.contact = contact;
+		contact.setMember(this);
+	}
+
+
+	public String getLoginId() {
 		return loginId;
 	}
 
