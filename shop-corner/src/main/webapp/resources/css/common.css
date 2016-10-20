@@ -3,17 +3,30 @@ body {
 }
 
 footer {
-	background-color: #ef6c00;	
-	padding-top: 20px;
-	padding-bottom: 20px;
+	background-color: #e65100;	
+	color: #ffb74d;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 12px;
+}
+
+footer h6 {
+	color: #ffd180;
+}
+
+footer ul {
+	list-style: none;
+	color: aqua;
+	margin-left: -2em;
+}
+
+footer a.btn {
+	background-color: #ffd180;
+	color: #e65100;
 }
 
 .bg-nav {
 	background-color: #ffcc80;
-}
-
-footer .nav-link {
-	color: white;
 }
 
 .MarTop20 {
@@ -26,4 +39,14 @@ footer .nav-link {
 
 .MarRight10 {
 	margin-right: 10px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
 }
