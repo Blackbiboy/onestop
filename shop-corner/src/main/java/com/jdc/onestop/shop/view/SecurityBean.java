@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
 import com.jdc.onestop.shop.entity.Member;
+import com.jdc.onestop.shop.entity.Member.Role;
 import com.jdc.onestop.shop.service.MemberService;
 
 @Model
@@ -39,6 +40,13 @@ public class SecurityBean {
 		
 		try {
 			internalLogin();
+			
+			Member member = service.findById(login);
+			if(member.getRole() == Role.Admin) {
+				return "/admin/home?faces-redirect=true";
+			} else {
+				return "/member/home?faces-redirect=true";
+			}
 		} catch (Exception e) {
 			FacesMessage message = new FacesMessage("", "Please check login id and password!");
 			FacesContext.getCurrentInstance().addMessage(null, message);
