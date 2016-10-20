@@ -5,6 +5,13 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
+	
+	<ui:define name="title">Add Product</ui:define>
+
+	<ui:define name="left-menu">
+		<ui:include src="/admin/left-menu.xhtml" />
+	</ui:define>
+
 	<ui:define name="content">
 		<h:form enctype="multipart/form-data">
 			<div class="modal-content MarTop20">

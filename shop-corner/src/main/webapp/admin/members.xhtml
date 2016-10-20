@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:forever="http://java.sun.com/jsf/composite/forever">
 
 <ui:composition template="/WEB-INF/template.xhtml">
 	
@@ -18,77 +19,13 @@
 		
 		<div class="row">
 			
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="card user-card">
-					<div class="card-block">
-						<h5 class="card-title">
-							<i class="fa fa-user"></i> Aung Aung 
-							<a href="#!" class="pull-right btn btn-circle btn-danger"><i class="fa fa-pencil"></i></a>
-						</h5>
-						
-					</div>
-					<h:graphicImage library="image" name="user.png" styleClass="img-fluid" />
-					<div class="card-block">
-						<i class="fa fa-phone"></i> 0977788767 <br/>
-						<i class="fa fa-envelope"></i> aung@gmail.com <br/>
-						<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="card user-card">
-					<div class="card-block">
-						<h5 class="card-title">
-							<i class="fa fa-user"></i> Aung Aung 
-							<a href="#!" class="pull-right btn btn-circle btn-danger"><i class="fa fa-pencil"></i></a>
-						</h5>
-						
-					</div>
-					<h:graphicImage library="image" name="user.png" styleClass="img-fluid" />
-					<div class="card-block">
-						<i class="fa fa-phone"></i> 0977788767 <br/>
-						<i class="fa fa-envelope"></i> aung@gmail.com <br/>
-						<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/>
-					</div>
-				</div>
-			</div>
+			<forever:member-item ></forever:member-item>
 
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="card user-card">
-					<div class="card-block">
-						<h5 class="card-title">
-							<i class="fa fa-user"></i> Aung Aung 
-							<a href="#!" class="pull-right btn btn-circle btn-danger"><i class="fa fa-pencil"></i></a>
-						</h5>
-						
-					</div>
-					<h:graphicImage library="image" name="user.png" styleClass="img-fluid" />
-					<div class="card-block">
-						<i class="fa fa-phone"></i> 0977788767 <br/>
-						<i class="fa fa-envelope"></i> aung@gmail.com <br/>
-						<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/>
-					</div>
-				</div>
-			</div>
+			<forever:member-item ></forever:member-item>
 
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<div class="card user-card">
-					<div class="card-block">
-						<h5 class="card-title">
-							<i class="fa fa-user"></i> Aung Aung 
-							<a href="#!" class="pull-right btn btn-circle btn-danger"><i class="fa fa-pencil"></i></a>
-						</h5>
-						
-					</div>
-					<h:graphicImage library="image" name="user.png" styleClass="img-fluid" />
-					<div class="card-block">
-						<i class="fa fa-phone"></i> 0977788767 <br/>
-						<i class="fa fa-envelope"></i> aung@gmail.com <br/>
-						<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/>
-					</div>
-				</div>
-			</div>
+			<forever:member-item ></forever:member-item>
+
+			<forever:member-item ></forever:member-item>
 		</div>
 	</ui:define>
 </ui:composition>
