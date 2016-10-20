@@ -13,4 +13,4 @@ insert into Category (name) values ('Forever Collestions');
 
 
 -- admin user
-insert into Member (name, loginId, password) values ('Admin', 'admin', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=');
+insert into Member (name, loginId, password, role) values ('Admin', 'admin', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=', 'Admin');

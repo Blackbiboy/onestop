@@ -5,7 +5,12 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
-	<ui:define name="title">Orders_List</ui:define>
+	<ui:define name="title">Orders</ui:define>
+	
+	<ui:define name="left-menu">
+		<ui:include src="/admin/left-menu.xhtml" />
+	</ui:define>
+	
 	<ui:define name="content">
 		<div class="card MarTop20">
 	  		<div class="card-header">
