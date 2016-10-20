@@ -13,7 +13,203 @@
 	</ui:define>
 
 	<ui:define name="content">
+	
+		<div class="MarBot20">
+			<h3 class="page-title"><i class="fa fa-home"></i> #{loginUser.name}'s Home</h3><hr />
+			
+			<div class="row">
+				
+				<div class="col-xs-12 col-md-4">
+					<h:graphicImage library="image" name="user.png" styleClass="img-circle img-fluid" />
+				</div>
+				
+				<div class="col-xs-12 col-md-8">
+					<p>
+						<span class="muteText"><i class="fa fa-user MarRight10"></i> Login ID</span><br/>
+						<h:outputText value="aung" styleClass="MarLeft30 Fs24" />
+					</p>
+					<p>
+						<span class="muteText"><i class="fa fa-phone MarRight10"></i> Phone Number</span><br/>
+						<h:outputText value="09 98778867" styleClass="MarLeft30 Fs24" />
+					</p>
+					<p>
+						<span class="muteText"><i class="fa fa-envelope MarRight10"></i> Email</span><br/>
+						<h:outputText value="aung@gmail.com" styleClass="MarLeft30 Fs24" />
+					</p>
+					<p>
+						<span class="muteText"><i class="fa fa-send MarRight10"></i> Address</span><br/>
+						<h:outputText value="No 43 Insein Road, Kamayut, Yangon." styleClass="MarLeft30 Fs24" />
+					</p>
+					<p>
+						<span class="muteText"><i class="fa fa-calendar MarRight10"></i> Creation</span><br/>
+						<h:outputText value="2016-10-15 10:00" styleClass="MarLeft30 Fs24" />
+					</p>
+					
+				</div>
+			
+			</div>
+		</div>
+		
+		<div class="MarBot20">
+			<h3 class="page-title"><i class="fa fa-history"></i> My Orders</h3><hr/>
+			
+			<table class="table table-striped">
+				
+				<thead>
+					<tr>
+						<th>Order Number</th>
+						<th>Date</th>
+						<th>Status</th>
+						<th>Items</th>
+					</tr>
+				</thead>
+				
+				<tbody>
 
+					<tr>
+						<td>
+							<h:outputText value="201610D0001" />
+						</td>
+						<td>
+							<h:outputText value="2016-10-11" />
+						</td>
+						<td>
+							<h:outputText value="Accepted" />
+						</td>
+						<td>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - XS Sweet Child</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - XL Hard Boy</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - L Java Guys</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<h:outputText value="201610D0001" />
+						</td>
+						<td>
+							<h:outputText value="2016-10-11" />
+						</td>
+						<td>
+							<h:outputText value="Accepted" />
+						</td>
+						<td>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - XS Sweet Child</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - XL Hard Boy</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - L Java Guys</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<h:outputText value="201610D0001" />
+						</td>
+						<td>
+							<h:outputText value="2016-10-11" />
+						</td>
+						<td>
+							<h:outputText value="Accepted" />
+						</td>
+						<td>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - XS Sweet Child</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - XL Hard Boy</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">T Shirt - L Java Guys</div>
+								<div class="col-xs-2">1</div>
+								<div class="col-xs-4 text-sm-right">8000 MMK</div>
+							</div>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+
+		<div class="MarBot20">
+			<h3 class="page-title"><i class="fa fa-heartbeat"></i> To Seller Items</h3><hr/>
+			
+			<div class="row">
+				
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					
+					<div class="card">
+						<h:graphicImage library="image" name="boyTshirt.jpg" styleClass="img-fluid card-img-top" />
+						<div class="card-block">
+							<div class="pull-left">
+								<span class="card-title">Boys TShirt</span><br/>
+								<span class="muteText Fs12">8000 MMK</span>
+							</div>
+							<a href="#!" class="btn btn-circle bg-inverse pull-right"><i class="fa fa-shopping-cart"></i></a>
+						</div>
+					</div>
+					
+				</div>
+			
+
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					
+					<div class="card">
+						<h:graphicImage library="image" name="boyTshirt.jpg" styleClass="img-fluid card-img-top" />
+						<div class="card-block">
+							<div class="pull-left">
+								<span class="card-title">Boys TShirt</span><br/>
+								<span class="muteText Fs12">8000 MMK</span>
+							</div>
+							<a href="#!" class="btn btn-circle bg-inverse pull-right"><i class="fa fa-shopping-cart"></i></a>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="col-xs-12 col-md-6 col-lg-4">
+					
+					<div class="card">
+						<h:graphicImage library="image" name="girlTshirt.jpg" styleClass="img-fluid card-img-top" />
+						<div class="card-block">
+							<div class="pull-left">
+								<span class="card-title">Girl TShirt</span><br/>
+								<span class="muteText Fs12">8000 MMK</span>
+							</div>
+							<a href="#!" class="btn btn-circle bg-inverse pull-right"><i class="fa fa-shopping-cart"></i></a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
 	</ui:define>
 
 	</ui:composition>
