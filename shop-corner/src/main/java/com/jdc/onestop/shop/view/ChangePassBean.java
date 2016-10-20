@@ -57,7 +57,5 @@ public class ChangePassBean {
 	public void setConfPass(String confPass) {
 		this.confPass = confPass;
 	}
-	
-	
 
 }
