@@ -5,5 +5,84 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
+	<ui:define name="title">Member </ui:define>
+	<ui:define name="content">
+	
+	<div class="card MarTop20">
+  		<div class="card-header">
+    		<i class="fa fa-info-circle MarRight10"></i>Personal Info
+    		<a href="#!" class="pull-right" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class="fa fa-edit pull-right"></i></a>
+  		</div>
+  
+		<div class="card-block">
+		    <div class="row">
+		    	<div class="col-md-3">
+		    		<h:graphicImage value="../resources/image/mandalay.jpg" library="image"/>
+		    	</div>
+		    	<div class="col-md-9">
+		    			
+			    	<h:panelGrid columns="2" styleClass="table">
+			    		<h:outputLabel value="LoginId" />
+						<h:outputText value="saw" />
+					
+						<h:outputLabel value="Name" />
+						<h:outputText value="Saw Nyaw" />
+						
+						<h:outputLabel value="Phone" />
+						<h:outputText value="09111111111" />
+						
+						<h:outputLabel value="Email" />
+						<h:outputText value="saw@gmail.com" />
+						
+						<h:outputLabel value="Creation" />
+						<h:outputText value="12/2/2016" />
+						
+						<h:outputLabel value="Address" />
+						<h:outputText value="Yangon" />
+				    	</h:panelGrid>
+		    		
+		    	</div>
+		    </div>
+		</div>
+	</div>
+	
+		<div class="card card-outline-primary">
+			  <div class="card-block">
+			    <blockquote class="card-blockquote">
+			     <h4>Orders History</h4>
+			    </blockquote>
+			  </div>
+		</div>
+	
+		<div class="card-deck-wrapper">
+			  <div class="card-deck">
+			    <div class="card">
+			      <img class="card-img-top" src="../resources/image/book1.jpg" alt="Card image cap"></img>
+			      <div class="card-block">
+			        <h4 class="card-title">Pencil</h4>
+			        <p class="card-text">Price - 500</p>
+			        <p class="card-text"><small class="text-muted">22/2/2016</small></p>
+			      </div>
+			    </div>
+			    <div class="card">
+			      <img class="card-img-top" src="../resources/image/book1.jpg" alt="Card image cap"></img>
+			      <div class="card-block">
+			        <h4 class="card-title">T-Shirt</h4>
+			        <p class="card-text">Price - 300</p>
+			        <p class="card-text"><small class="text-muted">22/2/2016</small></p>
+			      </div>
+			    </div>
+			    <div class="card">
+			      <h:graphicImage library="image" value="../resources/image/book1.jpg" styleClass="car-img-top MarRight20" />
+			      <div class="card-block">
+			        <h4 class="card-title">Book</h4>
+			        <p class="card-text">price - 2000</p>
+			        <p class="card-text"><small class="text-muted">22/2/2016</small></p>
+			      </div>
+			    </div>
+			  </div>
+		</div>
+	
+	</ui:define>
 	</ui:composition>
 </html>
