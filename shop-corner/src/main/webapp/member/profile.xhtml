@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/template.xhtml">
+
+	<ui:define name="title">#{loginUser.name}</ui:define>
+
+	<ui:define name="left-menu">
+		<ui:include src="/member/left-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="content">
+		<h3><i class="fa fa-edit"></i> Edit #{loginUser.name}'s Profile</h3>
+		<hr class="MarBot20"/>
+		
+		<h:form>
+			<div class="row">
+				
+				<div class="col-md-8 col-xs-12">
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-user"></i> Name</label>
+						<div class="col-xs-9">
+							<h:inputText styleClass="form-control" p:placeholder="Enter Name" />
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-phone"></i> Phone</label>
+						<div class="col-xs-9">
+							<h:inputText styleClass="form-control" p:placeholder="Enter Phone" />
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-envelope"></i> Email</label>
+						<div class="col-xs-9">
+							<h:inputText styleClass="form-control" p:placeholder="Enter Email" />
+						</div>
+					</div>
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-send"></i> Address</label>
+						<div class="col-xs-9">
+							<h:inputTextarea styleClass="form-control" p:placeholder="Enter Address" rows="5" />
+						</div>
+					</div>
+					<div class="row form-group">
+						<div class="col-xs-9 offset-xs-3">
+							<h:commandLink styleClass="btn btn-outline-danger" >
+								<i class="fa fa-save"></i> Update Profile
+							</h:commandLink>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-xs-12">
+					<h:graphicImage library="image" name="user.png" styleClass="img-circle img-fluid" />
+				</div>
+				
+			</div>
+		
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
+</html>
