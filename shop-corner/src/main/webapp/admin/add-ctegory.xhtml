@@ -5,5 +5,33 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
+	
+	<ui:define name="title">Add Category</ui:define>
+	
+	<ui:define name="content">	
+    <h:form>
+	    <div class="modal-content MarTop20">
+	    <div class="modal-header text-xl-center bg-nav"><h4 class="modal-title">Add Category</h4></div>	
+	    
+	    <div class="modal-body">
+		    <div class="container">
+				<div class="form-group row">
+					<label class="col-md-3">Name</label>
+					<div class="col-md-9">
+						<input placeholder="Enter Category" class="form-control" />
+					</div>
+				</div>
+		
+				<div class="form-group row">
+					<div class="col-md-9 offset-md-3">
+						<h:commandLink class="btn btn-primary">Add</h:commandLink>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		</div>	
+	</h:form>	
+	</ui:define>									
 	</ui:composition>
 </html>
