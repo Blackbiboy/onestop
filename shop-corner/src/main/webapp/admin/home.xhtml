@@ -5,5 +5,37 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
+	
+		<!-- Title -->
+		<ui:define name="title">Home</ui:define>
+		
+		<!-- Left Menu (Admin Menu) -->
+		<ui:define name="left-menu">
+			
+			<div class="list-group">
+				<span class="list-group-item list-group-item-heading"><i class="fa fa-adjust"></i> Admin Actions</span>
+				
+				<h:link outcome="/admin/orders" styleClass="list-group-item list-group-item-action" >
+					<i class="fa fa-list-ul"></i> Order Management
+				</h:link>
+				<h:link outcome="/admin/messages" styleClass="list-group-item list-group-item-action" >
+					<i class="fa fa-envelope"></i> Messages
+				</h:link>
+				<h:link outcome="/admin/add-category" styleClass="list-group-item list-group-item-action" >
+					<i class="fa fa-list"></i> Category Admin
+				</h:link>
+				<h:link outcome="/admin/add-product" styleClass="list-group-item list-group-item-action" >
+					<i class="fa fa-gift"></i> Product Admin
+				</h:link>
+				<h:link outcome="/admin/members" styleClass="list-group-item list-group-item-action" >
+					<i class="fa fa-users"></i> Member Management
+				</h:link>
+
+			</div>
+			
+		</ui:define>
+		
+		<!-- Contents -->
+		
 	</ui:composition>
 </html>
