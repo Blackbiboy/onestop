@@ -33,12 +33,15 @@
 				<form class="form-inline">
 					<div class="input-group">
 						<input type="text" placeholder="Search Item" class="form-control" />
-						<span class="input-group-addon btn-info"><i class="fa fa-search"></i></span>
+						<span class="input-group-addon btn btn-danger"><i class="fa fa-search"></i></span>
 					</div>
 				</form>
 			</li>
 			<li class="nav-item">
 				<h:link styleClass="nav-link" outcome="/public/products" ><i class="fa fa-list"></i> Products</h:link>
+			</li>
+			<li class="nav-item">
+				<h:link styleClass="nav-link" outcome="/public/contact" ><i class="fa fa-send"></i> Contact</h:link>
 			</li>
 		</ul>
 		
@@ -64,7 +67,7 @@
 	
 	<!-- Cover Images -->
 	<ui:insert name="cover">
-	
+		<div class="MarTop20 MarBot20 row"></div>
 	</ui:insert>
 
 	<!-- Content -->
@@ -124,6 +127,9 @@
 						<a href="#!" class="btn btn-circle MarRight10"><i class="fa fa-google-plus"></i></a>
 						<a href="#!" class="btn btn-circle MarRight10"><i class="fa fa-linkedin"></i></a>
 					</div>
+					
+					<h6 class="MarTop20">Powered By</h6>
+					<p>ONE STOP <br/>JAVA DEVELOPER CLASS</p>
 				</div>
 			</div>
 		</div>
