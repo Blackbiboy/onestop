@@ -3,15 +3,19 @@ body {
 }
 
 footer {
-	background-color: #e65100;	
-	color: #ffb74d;
+	background-color: #fff3e0;	
+	color: #e65100;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 12px;
 }
 
+.list-group-item-heading {
+	background-color: #fff3e0;	
+}
+
 footer h6 {
-	color: #ffd180;
+	color: #e65100;
 }
 
 footer ul {
@@ -49,4 +53,17 @@ footer a.btn {
   font-size: 12px;
   line-height: 1.42;
   border-radius: 15px;
+}
+
+nav .form-control, nav .input-group-addon {
+	background-color: #ffcc80;
+}
+
+.user-card .card-block{
+	font-size: 12px;
+	color: gray;
+}
+
+.user-card .img-fluid {
+	margin-top: -10px;
 }

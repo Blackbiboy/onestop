@@ -24,7 +24,16 @@ public class Product implements Serializable {
 
 	private Category category;
 
+	private String photo;
 	private String description;
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
 
 	public int getId() {
 		return id;
