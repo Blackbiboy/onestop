@@ -1,9 +1,81 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/WEB-INF/template.xhtml">
-	</ui:composition>
+<ui:composition template="/WEB-INF/template.xhtml">
+
+	<ui:define name="title">Checkout</ui:define>
+	<ui:define name="content">
+
+		<div class="form-group row">
+			<label for="example-text-input" class="col-xs-2 col-form-label">Name</label>
+			<div class="col-xs-10">
+				<input class="form-control" type="text" value="#"></input>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="example-text-input" class="col-xs-2 col-form-label">Email</label>
+			<div class="col-xs-10">
+				<input class="form-control" type="text" value="#"></input>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="example-text-input" class="col-xs-2 col-form-label">Phone</label>
+			<div class="col-xs-10">
+				<input class="form-control" type="text" value="#"></input>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label for="example-text-input" class="col-xs-2 col-form-label">Address</label>
+			<div class="col-xs-10">
+				<input class="form-control" type="text" value="#"></input>
+			</div>
+		</div>
+
+		<table class="table table-inverse">
+			<thead>
+				<tr>
+
+					<th>Items</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+
+					<td>shirt</td>
+					<td>2</td>
+					<td>25000</td>
+				</tr>
+				<tr>
+
+					<td>T-shirt</td>
+					<td>5</td>
+					<td>40000</td>
+				</tr>
+				<tr>
+
+					<td>Jeans</td>
+					<td>1</td>
+					<td>20000</td>
+				</tr>
+				<tr>
+
+					<td>Total Price</td>
+					<td>8</td>
+					<td>85000</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</ui:define>
+
+
+</ui:composition>
 </html>
