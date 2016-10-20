@@ -1,9 +1,196 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/WEB-INF/template.xhtml">
-	</ui:composition>
+<ui:composition template="/WEB-INF/template.xhtml">
+
+	<ui:define name="title">Order</ui:define>
+
+	<ui:define name="content">
+
+		<h4 class="modal-title MarTop20 text-xl-center"
+			style="background-color: #F2DEDE">
+			<i class="fa fa-shopping-basket"></i> Chosen Items
+		</h4>
+		<div class="card-deck-wrapper MarTop20">
+			<div class="card-deck">
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/guitar.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 1</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 40000</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 40000</small>
+						</p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/coffee.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 10</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 300</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 3000</small>
+						</p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/ice-cream.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 6</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 500</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 3000</small>
+						</p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/lighter.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 6</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 500</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 3000</small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-deck-wrapper MarTop20">
+			<div class="card-deck">
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/logo.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 2</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 200</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 400</small>
+						</p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/knife.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 10</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 2500</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 25000</small>
+						</p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/phone.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 1</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 230000</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 230000</small>
+						</p>
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="../resources/image/paint.jpg"
+						style="width: 190px; height: 200px;" alt="Card image cap"></img>
+					<div class="card-block">
+						<p class="card-text">Summary</p>
+						<p class="card-text">
+							<small class="text-muted">Quantity - 1</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Individual Price - 230000</small>
+						</p>
+						<p class="card-text">
+							<small class="text-muted">Total Price - 230000</small>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<h4 class="modal-title MarTop20 text-xl-center"
+			style="background-color: #F2DEDE">
+			<i class="fa fa-desktop"></i> Order Details
+		</h4>
+		<table class="table MarTop20">
+
+			<tbody>
+				<tr>
+					<td>SubTotal</td>
+					<td>400000 (MMK)</td>
+				</tr>
+				<tr>
+					<td>Tax(5%)</td>
+					<td>20000 (MMK)</td>
+				</tr>
+				<tr>
+					<td>Total</td>
+					<td>420000 (MMK)</td>
+				</tr>
+				<tr>
+					<td>Order-Date</td>
+					<td>24.5.2016</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="MarTop20">
+			<form>
+				<div class="form-group">
+					<label for="formGroupExampleInput">Enter The Wish Date</label> <input
+						type="text" class="form-control" id="formGroupExampleInput"
+						placeholder="dd-MM-yyyy"></input>
+				</div>
+				<div class="form-group row pull-right">
+					<div class="col-md-9 offset-md-3">
+						<a href="#!" id="orderBtn" class="btn btn-success">Order Now!</a>
+						<a href="#!" id="" class="btn btn-info"><i class="fa fa-close"></i>Product</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</ui:define>
+</ui:composition>
 </html>
