@@ -5,7 +5,6 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
-	
 	<ui:define name="title">Add Product</ui:define>
 
 	<ui:define name="left-menu">
@@ -13,115 +12,196 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<h:form enctype="multipart/form-data">
-			<div class="modal-content MarTop20">
-				<div class="modal-header text-xl-center bg-success">
+
+		<h:form>
+			<div class="modal-content MarBot20">
+
+				<div class="list-group-item text-xl-center list-group-item-heading">
 					<h4 class="modal-title">
 						<i class="fa fa-product-hunt"></i>Add Product
 					</h4>
 				</div>
 
-				<div class="modal-body">
-					<div class="container">
-						<div class="col-md-9">
-							<div class="row">
-								<div class="form-group row">
-									<h:graphicImage id="image" name="/image/img2.jpg" styleClass="responsive-img uploadImage"/>
-									<h:inputFile styleClass="hide uploadFile">
+				<div class="container-fluid">
+
+					<div class="col-md-12 MarTop20">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="form-group MarRight10"> 
+									<h:graphicImage id="image" name="/image/img2.jpg"
+										styleClass="uploadImage" class="img-thumbnail"  />
+									<h:inputFile styleClass="uploadFile" value="image" style="display:none !important">
 										<f:ajax execute="@this" render="@form"></f:ajax>
 									</h:inputFile>
-								</div>
-
-							</div>
+								 </div>
 						</div>
 
-
-						<div class="col-md-9">
+						<div class="col-md-8 MarTop20">
 							<div class="row">
 								<div class="form-group row">
-									<label class="col-md-3">Product</label>
+									<label class="col-md-3">Item Code</label>
 									<div class="col-md-9">
-										<input placeholder="Add Prodcut" class="form-control" />
+										<input placeholder="Add Item Code" class="form-control" />
 									</div>
 								</div>
-
+								
+								
+								
 								<div class="form-group row">
 									<label class="col-md-3">Name</label>
 									<div class="col-md-9">
 										<input placeholder="Add Name" class="form-control" />
 									</div>
 								</div>
-
+								
 								<div class="form-group row">
 									<label class="col-lg-3">Category</label>
 									<div class="col-md-9">
 										<div class="row">
-											<div class="col-lg-9">
+											<div class="col-lg-12">
 												<select class="form-control">
-													<option>Select 1</option>
-													<option>Select 2</option>
-													<option>Select 3</option>
-													<option>Select 4</option>
+													<option>T-Shirt</option>
+													<option>Code</option>
+													<option>Jeans</option>
 												</select>
 											</div>
 										</div>
-
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label class="col-lg-3">Size</label>
+									<div class="col-md-9">
+										<div class="row">
+											<div class="col-lg-12">
+												<select class="form-control">
+													<option>XL</option>
+													<option>L</option>
+													<option>S</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label class="col-lg-3">Color</label>
+									<div class="col-md-9">
+										<div class="row">
+											<div class="col-lg-12">
+												<select class="form-control">
+													<option>Blue</option>
+													<option>Red</option>
+													<option>Green</option>
+													<option>Gray</option>
+													<option>Pink</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label class="col-lg-3">Brand</label>
+									<div class="col-md-9">
+										<div class="row">
+											<div class="col-lg-12">
+												<select class="form-control">
+													<option>Giordano</option>
+													<option>Step</option>
+													<option>BandBang</option>
+													<option>NextGeneration</option>
+													<option>Bossni</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="form-group row">
+									<label class="col-md-3">Cotton</label>
+									<div class="col-md-9">
+										<div class="input-group">
+											
+											<input type="text" class="form-control" placeholder="Quality"/>
+											<span class="input-group-addon">%</span> 
+										</div>
 									</div>
 								</div>
 
+								
 								<div class="form-group row">
 									<label class="col-lg-3">Price</label>
-									<div class="input-group-btn">
-										<div class="col-md-9">
-											<input placeholder="0.0" class="form-control" />
-											<!-- <button type="button" class="btn btn-secondary">$</button> -->
+									<div class="col-md-9">
+										<div class="input-group">
+											<span class="input-group-addon">$</span> 
+											<input type="text" class="form-control" placeholder="Amount" aria-label="Amount(to the nearest dollar)"/>
+											<span class="input-group-addon">.00</span>
 										</div>
 									</div>
 								</div>
-
+								
 								<div class="form-group row">
-									<label class="col-lg-3">Description</label>
+									<label class="col-lg-3">Manufacture</label>
 									<div class="col-md-9">
-										<textarea rows="2" cols="25" placeholder="Add Description"></textarea>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-lg-3">Condition</label>
-									<div class="col-md-9">
-										<div class="form-check">
-											<label class="form-check-label"> <input
-												class="form-check-input" type="radio" name="condition"
-												id="new" value="new" /> New
-											</label> <label class="form-check-label"> <input
-												class="form-check-input" type="radio" name="condition"
-												id="old" value="old" /> Old
-											</label>
+										<div class="row">
+											<div class="col-lg-12">
+												<select class="form-control">
+													<option>Japan</option>
+													<option>Singapore</option>
+													<option>China</option>
+													<option>Korea</option>
+													<option>Taiwan</option>
+													<option>India</option>
+												</select>
+											</div>
 										</div>
 									</div>
 								</div>
-
-
-								<div class="form-group row">
-									<div class="pull-right">
-										<button type="reset" class="btn btn-primary"
-											data-toggle="modal" data-target="#myModal">Clear</button>
-										<button type="submit" class="btn btn-primary"
-											data-toggle="modal">Add</button>
-									</div>
+								
+						<div class="form-group row">
+							<label class="col-lg-3" for="description">Description</label>
+							<div class="col-md-9">
+								<textarea rows="3" class="form-control" id="description" placeholder="Add Description"></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-lg-3">Condition</label>
+							<div class="col-md-9">
+								<div class="form-check">
+									<label class="form-check-label"> 
+										<input class="form-check-input" type="radio" name="condition" id="new" value="new" /> New
+									</label> 
+									<label class="form-check-label">
+										<input class="form-check-input" type="radio" name="condition" id="old" value="old" /> Old
+									</label>
 								</div>
 							</div>
 						</div>
+						<div class="form-group row">
+							<div class="col-lg-3"></div>
+							<div class="col-lg-9">
+								<button type="reset" class="btn btn-primary" data-toggle="modal">
+									<i class="fa fa-recycle"></i>Clear
+								</button>
+								<button type="submit" class="btn btn-primary"
+									data-toggle="modal">
+									<i class="fa fa-plus"></i>Add
+								</button>
+							</div>
+						</div>
+						</div>
+						</div>
 					</div>
 				</div>
+		</div>
 			</div>
-
 			<script>
-			$(function() {
-				$(".uploadImage").click(function(){
-					$(".uploadFile").click();
+				$(function() {
+					$(".uploadImage").click(function(){
+						$(".uploadFile").click();
+					});
 				});
-			});
 			</script>
 
 		</h:form>
