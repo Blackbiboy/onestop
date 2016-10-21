@@ -7,80 +7,92 @@
 <ui:composition template="/WEB-INF/template.xhtml">
 
 	<ui:define name="title">Checkout</ui:define>
-	<ui:define name="content">Personal Information
+	<ui:define name="content">
+		<div class="container">
+			<h4 class="modal-title text-xl-center"
+				style="background-color: #F2DEDE">
+				<i class="fa fa-money"></i> Check Out
+			</h4>
+		
 
-		<div class="form-group row">
-			<label for="example-text-input" class="col-xs-2 col-form-label">Name</label>
-			<div class="col-xs-10">
-				<input class="form-control" type="text" value="#"></input>
-			</div>
-		</div>
-		
-		<div class="form-group row">
-			<label for="example-text-input" class="col-xs-2 col-form-label">Email</label>
-			<div class="col-xs-10">
-				<input class="form-control" type="text" value="#"></input>
-			</div>
-		</div>
-		
-		<div class="form-group row">
-			<label for="example-text-input" class="col-xs-2 col-form-label">Phone</label>
-			<div class="col-xs-10">
-				<input class="form-control" type="text" value="#"></input>
-			</div>
-		</div>
-		
-		<div class="form-group row">
-			<label for="example-text-input" class="col-xs-2 col-form-label">Address</label>
-			<div class="col-xs-10">
-				<input class="form-control" type="text" value="#"></input>
-			</div>
-		</div>
-
-		<table class="table table-inverse">
+		<table class="table table-bordered">
 			<thead>
 				<tr>
-
-					<th>Items</th>
+					<th>No</th>
+					<th>Item Name</th>
+					<th>Item Code</th>
+					<th>Size</th>
+					<th>Individual Price</th>
 					<th>Quantity</th>
 					<th>Price</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-
-					<td>shirt</td>
+					<th scope="row">1</th>
+					<td>Girl T-shirt</td>
+					<td>0001</td>
+					<td>L</td>
+					<td>$30</td>
 					<td>2</td>
-					<td>25000</td>
+					<td>$60</td>
 				</tr>
 				<tr>
-
-					<td>T-shirt</td>
-					<td>5</td>
-					<td>40000</td>
-				</tr>
-				<tr>
-
-					<td>Jeans</td>
+					<th scope="row">2</th>
+					<td>Boy T-shirt</td>
+					<td>0002</td>
+					<td>XL</td>
+					<td>$20</td>
 					<td>1</td>
-					<td>20000</td>
+					<td>$20</td>
 				</tr>
 				<tr>
-
-					<td>Total Price</td>
-					<td>8</td>
-					<td>85000</td>
+					<th scope="row">3</th>
+					<td>Kpop Shirt</td>
+					<td>0003</td>
+					<td>M</td>
+					<td>$25</td>
+					<td>4</td>
+					<td>$100</td>
+				</tr>			
+				<tr>
+					<th scope="row">4</th>
+					<td>Rapper Jean Pan</td>
+					<td>0004</td>
+					<td>XXL</td>
+					<td>$40</td>
+					<td>1</td>
+					<td>$40</td>
 				</tr>
+				<tr class="">
+					<td colspan="6">Total Price : </td>
+					<td>$220</td>
+				</tr>			
+				<tr class="">
+					<td colspan="6">Tax (5%) : </td>
+					<td>$11</td>
+				</tr>			
+				<tr class="">
+					<td colspan="6">TOTAL : </td>
+					<td>$231</td>
+				</tr>			
 			</tbody>
 		</table>
-		<form>
-		<div>
-			<div class="row pull-right">
-				<a href="#!" id="" class="btn btn-info">Cancel</a>
-				<a href="#!" id="" class="btn btn-info">Confirm</a>
+		</div>
+		<div class="MarTop20">
+			<div class="form-group row">
+				<div class="col-md-2 offset-md-6 MarTop20">
+					<a href="my-cart.xhtml" id="myCardBtn"
+						class="btn btn-info MarRight10"><i class="fa fa-shopping-cart"></i>
+						My Cart</a>
+				</div>
+				<div class="col-md-3 MarTop20">
+					<a href="#!" id="confirmBtn"
+						class="btn btn-success MarRight10"><i class="fa fa-check"></i>
+						Confirm</a>
+				</div>
 			</div>
 		</div>
-		</form>
 	</ui:define>
 
 
