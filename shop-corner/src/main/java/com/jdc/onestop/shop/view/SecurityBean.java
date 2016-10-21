@@ -45,7 +45,12 @@ public class SecurityBean {
 			if(member.getRole() == Role.Admin) {
 				return "/admin/home?faces-redirect=true";
 			} else {
-				return "/member/home?faces-redirect=true";
+				
+				if(null == member.getContact()) {
+					return "/member/profile?faces-redirect=true";
+				} else {
+					return "/member/home?faces-redirect=true";
+				}
 			}
 		} catch (Exception e) {
 			FacesMessage message = new FacesMessage("", "Please check login id and password!");

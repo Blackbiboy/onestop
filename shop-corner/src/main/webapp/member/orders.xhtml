@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/WEB-INF/template.xhtml">
+
+	<ui:define name="title">My Orders</ui:define>
+
+	<ui:define name="left-menu">
+		<ui:include src="/member/left-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="content">
+		
+		<h3 class="page-title"><i class="fa fa-history"></i> My Orders</h3>
+		<hr/>
+		<table class="table table-striped">
+			
+			<thead>
+				<tr>
+					<th>Order Number</th>
+					<th>Date</th>
+					<th>Status</th>
+					<th>Items</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+
+				<tr>
+					<td>
+						<h:outputText value="201610D0001" />
+					</td>
+					<td>
+						<h:outputText value="2016-10-11" />
+					</td>
+					<td>
+						<h:outputText value="Accepted" />
+					</td>
+					<td>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - XS Sweet Child</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - XL Hard Boy</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - L Java Guys</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<h:outputText value="201610D0001" />
+					</td>
+					<td>
+						<h:outputText value="2016-10-11" />
+					</td>
+					<td>
+						<h:outputText value="Accepted" />
+					</td>
+					<td>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - XS Sweet Child</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - XL Hard Boy</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - L Java Guys</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<h:outputText value="201610D0001" />
+					</td>
+					<td>
+						<h:outputText value="2016-10-11" />
+					</td>
+					<td>
+						<h:outputText value="Accepted" />
+					</td>
+					<td>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - XS Sweet Child</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - XL Hard Boy</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">T Shirt - L Java Guys</div>
+							<div class="col-xs-2">1</div>
+							<div class="col-xs-4 text-sm-right">8000 MMK</div>
+						</div>
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+
+	</ui:define>
+
+</ui:composition>
+</html>

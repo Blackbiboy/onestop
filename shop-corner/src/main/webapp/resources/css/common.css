@@ -45,6 +45,10 @@ footer a.btn {
 	margin-right: 10px;
 }
 
+.MarLeft30 {
+	margin-left: 30px;
+}
+
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -66,4 +70,24 @@ nav .form-control, nav .input-group-addon {
 
 .user-card .img-fluid {
 	margin-top: -10px;
+}
+
+.muteText {
+	color: gray;
+}
+
+.Fs20 {
+	font-size: 20px;
+}
+
+.Fs24 {
+	font-size: 24px;
+}
+
+.Fs12 {
+	font-size: 12px;
+}
+
+.page-title {
+	color: #e65100;
 }

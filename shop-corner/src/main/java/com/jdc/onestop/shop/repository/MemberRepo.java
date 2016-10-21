@@ -22,4 +22,8 @@ public class MemberRepo implements Serializable {
 		return em.find(Member.class, loginId);
 	}
 
+	public void save(Member member) {
+		em.merge(member);
+	}
+
 }
