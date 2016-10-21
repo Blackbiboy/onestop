@@ -15,4 +15,6 @@ public interface MemberService extends Serializable{
 	
 	Member findById(String loginId);
 
+	void save(Member member);
+
 }

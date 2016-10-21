@@ -1,9 +1,164 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/WEB-INF/template.xhtml">
-	</ui:composition>
+<ui:composition template="/WEB-INF/template.xhtml">
+	<ui:define name="title">My Cart</ui:define>
+	<ui:define name="content">
+		<div class="container">
+			<h4 class="modal-title text-xl-center"
+				style="background-color: #F2DEDE">
+				<i class="fa fa-shopping-basket"></i> Chosen Items
+			</h4>
+		</div>
+		<div>
+			<div class="container">
+				<div class="MarTop20">
+					<div class="card">
+						<div class="col-sm-6">
+							<div class="MarTop20">
+								<h:graphicImage library="image" name="girlTshirt.jpg"
+									width="170px" height="250px" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="MarTop20 ">
+								<h4>Girl Tshirt</h4>
+								<p>Item Code - 0001</p>
+								<p>Size - L</p>
+								<p>Price - $30</p>
+								<p>
+									Quantity - 2
+									<button type="button" class="btn btn-success btn-sm">
+										<i class="fa fa-plus-square"></i>
+									</button>
+									<button type="button" class="btn btn-warning btn-sm">
+										<i class="fa fa-minus-square"></i>
+									</button>
+								</p>
+								<button type="button" class="btn btn-danger">
+									<i class="fa fa-trash MarRight10"></i>Remove
+								</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="MarTop20">
+				<div class="container">
+					<div class="MarTop20">
+						<div class="card">
+							<div class="col-sm-6">
+								<div class="MarTop20">
+									<h:graphicImage library="image" name="boyTshirt.jpg"
+										width="170px" height="250px" />
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="MarTop20 ">
+									<h4>Boy Tshirt</h4>
+									<p>Item Code - 0002</p>
+									<p>Size - XL</p>
+									<p>Price - $20</p>
+									<p>
+										Quantity - 1
+										<button type="button" class="btn btn-success btn-sm">
+											<i class="fa fa-plus-square"></i>
+										</button>
+										<button type="button" class="btn btn-warning btn-sm">
+											<i class="fa fa-minus-square"></i>
+										</button>
+									</p>
+									<button type="button" class="btn btn-danger">
+										<i class="fa fa-trash MarRight10"></i>Remove
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="MarTop20">
+				<div class="container">
+					<div class="MarTop20">
+						<div class="card">
+							<div class="col-sm-6">
+								<div class="MarTop20">
+									<h:graphicImage library="image" name="bigbangshirt.jpg"
+										width="170px" height="250px" />
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="MarTop20 ">
+									<h4>Kpop Shirt</h4>
+									<p>Item Code - 0003</p>
+									<p>Size - M</p>
+									<p>Price - $25</p>
+									<p>
+										Quantity - 4
+										<button type="button" class="btn btn-success btn-sm">
+											<i class="fa fa-plus-square"></i>
+										</button>
+										<button type="button" class="btn btn-warning btn-sm">
+											<i class="fa fa-minus-square"></i>
+										</button>
+									</p>
+									<button type="button" class="btn btn-danger">
+										<i class="fa fa-trash MarRight10"></i>Remove
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="MarTop20">
+				<div class="container">
+					<div class="MarTop20">
+						<div class="card">
+							<div class="col-sm-6">
+								<div class="MarTop20">
+									<h:graphicImage library="image" name="rapperJeans.jpg"
+										width="170px" height="250px" />
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="MarTop20 ">
+									<h4>Rapper Jean Pan</h4>
+									<p>Item Code - 0004</p>
+									<p>Size - XXL</p>
+									<p>Price - $40</p>
+									<p>
+										Quantity - 1
+										<button type="button" class="btn btn-success btn-sm">
+											<i class="fa fa-plus-square"></i>
+										</button>
+										<button type="button" class="btn btn-warning btn-sm">
+											<i class="fa fa-minus-square"></i>
+										</button>
+									</p>
+									<button type="button" class="btn btn-danger">
+										<i class="fa fa-trash MarRight10"></i>Remove
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="MarTop20">
+			<div class="row">
+				<div class="col-md-3 offset-md-9 MarTop20">
+					<a href="checkout.xhtml" id="checkoutBtn"
+						class="btn btn-success MarRight10"><i class="fa fa-money"></i>
+						Check Out</a>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
 </html>
