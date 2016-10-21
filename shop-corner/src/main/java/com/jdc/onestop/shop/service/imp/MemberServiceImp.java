@@ -27,4 +27,9 @@ public class MemberServiceImp implements MemberService {
 		return repo.find(loginId);
 	}
 
+	@Override
+	public void save(Member member) {
+		repo.save(member);
+	}
+
 }
