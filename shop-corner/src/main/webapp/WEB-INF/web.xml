@@ -40,5 +40,27 @@
 		</form-login-config>
 	</login-config>
 	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Admin Pages</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Admin</role-name>
+		</auth-constraint>
+	</security-constraint>
 	
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Member Pages</web-resource-name>
+			<url-pattern>/member/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Member</role-name>
+		</auth-constraint>
+	</security-constraint>
 </web-app>

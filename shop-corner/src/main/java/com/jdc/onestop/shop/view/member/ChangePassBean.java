@@ -1,4 +1,4 @@
-package com.jdc.onestop.shop.view;
+package com.jdc.onestop.shop.view.member;
 
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;

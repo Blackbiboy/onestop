@@ -1,4 +1,4 @@
-package com.jdc.onestop.shop.view.cart;
+package com.jdc.onestop.shop.utils;
 
 import java.io.Serializable;
 import java.util.Date;

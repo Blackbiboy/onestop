@@ -1,4 +1,4 @@
-package com.jdc.onestop.shop.view.converter;
+package com.jdc.onestop.shop.utils.converter;
 
 import javax.enterprise.inject.Model;
 import javax.faces.component.UIComponent;

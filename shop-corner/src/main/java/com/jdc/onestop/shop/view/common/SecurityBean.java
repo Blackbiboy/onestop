@@ -1,4 +1,4 @@
-package com.jdc.onestop.shop.view;
+package com.jdc.onestop.shop.view.common;
 
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;

@@ -1,4 +1,4 @@
-package com.jdc.onestop.shop.view.converter;
+package com.jdc.onestop.shop.utils.converter;
 
 import javax.enterprise.inject.Model;
 import javax.faces.component.UIComponent;
@@ -6,7 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 
 @Model
-public class CurrencyConverter implements Converter {
+public class DateTimeConverter implements Converter {
 
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
