@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"> 
+
+<h:head></h:head> 
+<body> 
+<composite:interface>
+	<composite:attribute name="item" type="com.jdc.onestop.shop.entity.Member"  />
+</composite:interface>
+<composite:implementation>
+<div class="container">
+	
+				<div class="card">
+					<div class="col-sm-4">
+						<div class="MarTop20">
+							<h:graphicImage library="image" name="girlTshirt1.jpg" width="170px" height="250px"/>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="MarTop20 ">
+							<h4>Girl Tshirt</h4>
+							<p>oweur vjoweusoiw owfwrwj jdfoewfjojfo
+							jfhsdjfwfjwfj</p>
+							<p> XL / XXL /S </p>
+							<p> $25</p>
+							<p>
+								<a href="../../public/product.xhtml" class="btn btn-warning">View</a>							
+								<button class="btn btn-warning"><i class="fa fa-cart-plus"></i>Add to Cart</button>
+								<button type="button" class="btn btn-danger btn-sm4"><i class="fa fa-heart"></i></button>
+								 
+							</p>
+							
+							<p>
+								Shared by
+							 	<a class="btn btn-info btn-twitter  btn-sm4"><span class="fa fa-twitter"></span></a>
+							 	<a class="btn btn-primary btn-facebook bnt-sm3"><span class="fa fa-facebook"></span></a>
+							 	
+   							</p>
+   							
+							
+						</div>
+					</div>
+				</div> 
+				
+</div>
+</composite:implementation>
+</body> 
+</html>
