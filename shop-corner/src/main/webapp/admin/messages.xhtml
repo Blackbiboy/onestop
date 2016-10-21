@@ -2,13 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:forever="http://java.sun.com/jsf/composite/forever">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Messages</ui:define>
 	
 	<ui:define name="left-menu">
 		<ui:include src="/admin/left-menu.xhtml" />
+	</ui:define>
+	
+	<ui:define name="content">
+
+	<h4 class="MarBot20"><i class="fa fa-envelope"></i>Messages</h4>
+	
+	<div class="row">
+		<forever:message-item></forever:message-item>
+		<forever:message-item></forever:message-item>
+		<forever:message-item></forever:message-item>
+		<forever:message-item></forever:message-item>
+	</div>
+	
 	</ui:define>
 	</ui:composition>
 </html>
