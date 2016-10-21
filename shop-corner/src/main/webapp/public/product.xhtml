@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/WEB-INF/template.xhtml">
-		<ui:define name="title">Details</ui:define>
-		
-		<ui:define name="content">
-		
-			
-			
-		</ui:define>
-	</ui:composition>
+<ui:composition template="/WEB-INF/template.xhtml">
+	<ui:define name="title">Details</ui:define>
+
+	<ui:define name="content">
+
+		<div class="container">
+			<div class="MarTop20">
+				<div class="card">
+					<div class="col-sm-6">
+						<div class="MarTop20">
+							<h:graphicImage library="image" name="girlTshirt.jpg"
+								width="170px" height="250px" />
+							<h:graphicImage library="image" name="girlshirtback.jpg"
+								width="170px" height="250px" />
+							<h:graphicImage library="image" name="girlshirtfront.jpg"
+								width="170px" height="250px" />
+							<h:graphicImage library="image" name="girltshirtback.jpg"
+								width="170px" height="250px" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="MarTop20 ">
+							<h4>Girl Tshirt</h4>
+							<p>-Item Code - 0001</p>
+							<p>-Available Size - XL/L/M/S</p>
+							<p>-Available Color - Red/Black/Grey/Pink</p>
+							<p>-Brand - Giordano</p>
+							<p>-100% COTTON</p>
+							<p>-Made In Taiwan</p>
+							<p>-Price - $30</p>
+
+							<div class="form-group row">
+								<label class="col-lg-3">Size</label>
+								<div class="col-md-9">
+									<div class="row">
+										<div class="col-lg-9">
+											<select class="form-control">
+												
+												<option>XL</option>
+												<option>L</option>
+												<option>M</option>
+												<option>S</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3">Color</label>
+								<div class="col-md-9">
+									<div class="row">
+										<div class="col-lg-9">
+											<select class="form-control">
+											
+												<option>Red</option>
+												<option>Black</option>
+												<option>Grey</option>
+												<option>Pink</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-lg-3">Quantity</label>
+								<div class="col-md-9">
+									<div class="row">
+										<div class="col-lg-9">
+											<select class="form-control">
+												
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<button type="button" class="btn btn-success">
+							
+								<i class="fa fa-cart-plus MarRight10"></i>Add to cart
+							</button>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
 </html>
