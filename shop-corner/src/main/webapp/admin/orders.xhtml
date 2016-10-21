@@ -1,92 +1,70 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="/WEB-INF/template.xhtml">
+<ui:composition template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Orders</ui:define>
-	
+
 	<ui:define name="left-menu">
 		<ui:include src="/admin/left-menu.xhtml" />
 	</ui:define>
-	
+
 	<ui:define name="content">
-		<div class="card MarTop20">
-	  		<div class="card-header">
-	    		<h:link outcome="#"><i class="fa fa-user MarRight10">Aung Aung</i></h:link> <a href="order.xhtml" data-toggle="tooltip" data-placement="bottom" title="Detail" class="pull-right"><i class="fa fa-arrow-circle-o-right pull-right"></i></a>
-	    		<i class=""></i>
-	  		</div>
-  
-			<div class="card-block">
-			    <table class="table">
-			    	<thead>
-			    		<tr>
-			    			<th>Category</th>
-			    			<th>Item</th>
-			    			<th>Price</th>
-			    			<th>Qty</th>
-			    			<th>T-price</th>
-			    		</tr>
-			    	</thead>
-			    	<tbody>
-			    		<tr>
-			    			<td>Mens</td>
-			    			<td>T-Shirt</td>
-			    			<td>200</td>
-			    			<td>2</td>
-			    			<td>400</td>
-			    		</tr>
-			    		<tr>
-			    			<td>Boys</td>
-			    			<td>Hat</td>
-			    			<td>100</td>
-			    			<td>2</td>
-			    			<td>200</td>
-			    		</tr>
-			    	</tbody>
-			    </table>	    
+
+		<div class="container">
+
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text" class="form-control" id="exampleInputName2"
+						placeholder="Search Name"></input>
+				</div>
+				<button type="submit" class="btn btn-primary">
+					<i class="fa fa-search"></i>
+				</button>
+				<div class="form-group">
+					<select class="form-control" id="exampleSelect1">
+						<option>Deliver</option>
+						<option>Cancel</option>					
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary">
+					<i class="fa fa-search"></i>
+				</button>
+
+			</form>
+		</div>
+
+		<div class="container">
+			<div class="MarTop20">
+				<div class="card">
+					<div class="col-sm-6">
+						<div class="MarTop20">
+							<h:graphicImage library="image" name="user.png" width="170px"
+								height="250px" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="MarTop20 ">
+							<h4>
+								<i class="fa fa-user"></i> Aung Aung
+							</h4>
+							<p>Order Date-12/6/2016</p>
+							<p>Wish Date-16/6/2016</p>
+							<p>SubTotal-600000 MMK</p>
+							<p>Tax-2000 MMK</p>
+							<p>Total-602000 MMK</p>
+							<p>Status-Deliver</p>
+
+							<h:link outcome="order.xhtml">
+								<i class="fa fa-arrow-circle-right MarRight10"></i>Detail</h:link>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="card-footer">
-				<h:outputText value="12/6/2016 06:20" />
-			</div>
-	</div>
-	
-	<div class="card MarTop20">
-	  		<div class="card-header">
-	    		<h:link outcome="#"><i class="fa fa-user MarRight10">Aye Aye</i></h:link> <a href="order.xhtml" data-toggle="tooltip" data-placement="bottom" title="Detail" class="pull-right"><i class="fa fa-arrow-circle-o-right pull-right"></i></a>
-	    		<i class=""></i>
-	  		</div>
-  
-			<div class="card-block">
-			    <table class="table">
-			    	<thead>
-			    		<tr>
-			    			<th>Category</th>
-			    			<th>Item</th>
-			    			<th>Price</th>
-			    			<th>Qty</th>
-			    			<th>T-price</th>
-			    		</tr>
-			    	</thead>
-			    	<tbody>
-			    		<tr>
-			    			<td>Girls</td>
-			    			<td>Jeans</td>
-			    			<td>200</td>
-			    			<td>3</td>
-			    			<td>600</td>
-			    		</tr>
-			    	</tbody>
-			    </table>	    
-			</div>
-			<div class="card-footer">
-				<h:outputText value="12/6/2016 12:10" />
-			</div>
-	</div>
-	
-	
-	
+		</div>
+
 	</ui:define>
-	</ui:composition>
+</ui:composition>
 </html>

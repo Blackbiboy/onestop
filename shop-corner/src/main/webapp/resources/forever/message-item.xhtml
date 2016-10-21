@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+<composite:interface>
+	<composite:attribute name="item" />
+</composite:interface>
+<composite:implementation>
+	<div class="col-lg-12">
+		<div class="card">
+		  <div class="card-block">
+		  	<h:link styleClass="pull-right btn btn-circle btn-danger"><i class="fa fa-pencil"></i></h:link>
+		  	<h:link styleClass="pull-right btn btn-circle btn-success MarRight10"><i class="fa fa-trash"></i></h:link>
+		    <h5 class="card-text">Nice Shopping Site!</h5>
+		    <p class="card-text">Ma Ma</p>
+		    <h6>21.10.2016</h6>
+		  </div>
+		</div>
+	</div>
+</composite:implementation>
+</body>
+</html>

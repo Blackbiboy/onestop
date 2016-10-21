@@ -5,47 +5,78 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
-	<ui:define name="title">ContactUs</ui:define>
+	<ui:define name="title">Contact</ui:define>
 	<ui:define name="content">
-	  
-		<h4 class="font text-xl-center MarTop20">Contact Us</h4>
+		<h1 class="font-italic text-xl-center MarBot20 ">Contact</h1>
 
-		<div class="container">
-			<form class="alert-danger MarTop50 padding ">
+		<div class="container MarBot20">
+			<form class="alert-danger row">
 
-				<div class="form-group row">
-					<label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
+				<div class="form-group row MarTop20">
+					<label for="example-email-input" class="col-xs-1 col-form-label">Email</label>
 					<div class="col-xs-10">
-						<input class="form-control" type="email"
-							 id="example-email-input " placeholder="Enter your email"/>
+						<input class="form-control" type="email" id="example-email-input "
+							placeholder="Enter your email" />
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="example-tel-input" class="col-xs-2 col-form-label">Phone</label>
+					<label for="example-tel-input" class="col-xs-1 col-form-label">Phone</label>
 					<div class="col-xs-10">
-						<input class="form-control" type="tel" placeholder="Enter your Phone Number"
-							id="example-tel-input" />
+						<input class="form-control" type="tel"
+							placeholder="Enter your Phone Number" id="example-tel-input" />
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="example-text-input" class="col-xs-2 col-form-label">Address</label>
+					<label for="example-text-input" class="col-xs-1 col-form-label">Address</label>
 					<div class="col-xs-10">
 						<TEXTAREA placeholder="Enter your Address" class="form-control"
 							type="text" id="example-text-input" />
 					</div>
 				</div>
-				
-              <div class="col-md-12 text-right">
-                <button type="submit" class="btn btn-primary btn-info">OK</button>
-              <button type="submit" class="btn btn-primary btn-info">Cancel</button>
-            </div>
-            <div class="form-group">
-              
-             
-              
-            </div>
+				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-1 col-form-label">Message</label>
+					<div class="col-xs-10">
+						<TEXTAREA placeholder="Enter your sugestion here!"
+							class="form-control" type="text" id="example-text-input" />
+					</div>
+				</div>
+
+				<div class="col-md-12 text-right">
+					<button type="submit"
+						class="btn btn-primary btn-info text-xs-right">OK</button>
+					<button type="submit" class="btn btn-primary btn-info">Cancel</button>
+				</div>
+				<div class="form-group"></div>
+
 			</form>
 		</div>
+			 <div class="col-md-6">
+            <div>
+                <div class="panel panel-default">
+                    <div class="text-center header alert-danger">Our Office</div>
+                    <div class="panel-body text-center ">
+                        <h4>Address</h4>
+                        <div>
+                         No. 52/B(5F), Yangon Insein Raod,<br />
+                         Kamayut, Yangon ,<br />
+                         09 97 110 2280 <br />
+                        Forever10@gmail.com<br />
+                        </div>
+                        <hr />
+                        <div id="map1" class="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<ui:include src="/public/style.html" />
+
+		
+		
+
+
+
+
 
 	</ui:define>
 </ui:composition>
