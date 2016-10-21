@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
@@ -12,57 +13,123 @@
 	</ui:define>
 
 	<ui:define name="content">
-
-		<div class="container">
-
-			<form class="form-inline">
-				<div class="form-group">
-					<input type="text" class="form-control" id="exampleInputName2"
-						placeholder="Search Name"></input>
-				</div>
-				<button type="submit" class="btn btn-primary">
-					<i class="fa fa-search"></i>
-				</button>
-				<div class="form-group">
-					<select class="form-control" id="exampleSelect1">
-						<option>Deliver</option>
-						<option>Cancel</option>					
-					</select>
-				</div>
-				<button type="submit" class="btn btn-primary">
-					<i class="fa fa-search"></i>
-				</button>
-
-			</form>
-		</div>
-
-		<div class="container">
-			<div class="MarTop20">
-				<div class="card">
-					<div class="col-sm-6">
-						<div class="MarTop20">
-							<h:graphicImage library="image" name="user.png" width="170px"
-								height="250px" />
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="MarTop20 ">
-							<h4>
-								<i class="fa fa-user"></i> Aung Aung
-							</h4>
-							<p>Order Date-12/6/2016</p>
-							<p>Wish Date-16/6/2016</p>
-							<p>SubTotal-600000 MMK</p>
-							<p>Tax-2000 MMK</p>
-							<p>Total-602000 MMK</p>
-							<p>Status-Deliver</p>
-
-							<h:link outcome="order.xhtml">
-								<i class="fa fa-arrow-circle-right MarRight10"></i>Detail</h:link>
-						</div>
-					</div>
+	
+		<!-- Page Title -->
+		<h3 class="page-title"><i class="fa fa-list"></i> Oder List</h3><hr/>
+		
+		<!-- Search Panel -->
+		<h:form styleClass="form-inline">
+			<!-- Status -->
+			<h:selectOneMenu styleClass="form-control" >
+				<f:selectItems var="s" value="#{orderStatuses}" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
+			</h:selectOneMenu>
+			
+			<!-- Date -->
+			<div class="form-group">
+				<div class="input-group">
+					<h:inputText styleClass="form-control" p:placeholder="Search Date" />
+					<span class="input-group-addon">
+						<i class="fa fa-calendar"></i>
+					</span>			
 				</div>
 			</div>
+			
+			<!-- Order Number -->
+			<div class="form-group">
+				<h:inputText styleClass="form-control" p:placeholder="Order Number" />
+			</div>
+			
+			<!-- Search Button -->
+			<div class="form-group">
+				<h:commandLink styleClass="btn btn-outline-danger">
+					<i class="fa fa-search"></i> Search
+				</h:commandLink>
+			</div>
+			
+		</h:form>
+		
+		<!-- Order List  -->
+		<table class="table table-striped MarTop20">
+			<thead class="bg-danger">
+				<tr>
+					<th>ID</th>
+					<th>Customer</th>
+					<th>Phone</th>
+					<th>Order Date</th>
+					<th>Wish Date</th>
+					<th>Status</th>
+					<th>Sub Total</th>
+					<th>Tax</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td>
+						<h:link value="1" outcome="/admin/order">
+							<f:param name="id" value="1"></f:param>
+						</h:link>
+					</td>
+					<td>Aung Aung</td>
+					<td>09876788876</td>
+					<td>2016-10-11</td>
+					<td>2016-10-25</td>
+					<td>Accepted</td>
+					<td>8000</td>
+					<td>400</td>
+					<td>8400</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Aung Aung</td>
+					<td>09876788876</td>
+					<td>2016-10-11</td>
+					<td>2016-10-25</td>
+					<td>Accepted</td>
+					<td>8000</td>
+					<td>400</td>
+					<td>8400</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Aung Aung</td>
+					<td>09876788876</td>
+					<td>2016-10-11</td>
+					<td>2016-10-25</td>
+					<td>Accepted</td>
+					<td>8000</td>
+					<td>400</td>
+					<td>8400</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<!-- Pagination -->
+		<div>
+			<ul class="pagination pull-right">
+				<li class="page-item">
+					<h:link styleClass="page-link">
+						<i class="fa fa-arrow-left"></i>
+					</h:link>
+				</li>
+
+				<li class="page-item active">
+					<h:link styleClass="page-link" value="1" />
+				</li>
+				<li class="page-item">
+					<h:link styleClass="page-link" value="2" />
+				</li>
+				<li class="page-item">
+					<h:link styleClass="page-link" value="3" />
+				</li>
+
+				<li class="page-item">
+					<h:link styleClass="page-link">
+						<i class="fa fa-arrow-right"></i>
+					</h:link>
+				</li>
+			</ul>
 		</div>
 
 	</ui:define>

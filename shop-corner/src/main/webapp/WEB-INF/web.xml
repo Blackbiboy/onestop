@@ -19,6 +19,11 @@
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
 	
+	<context-param>
+		<param-name>shop.taxRate</param-name>
+		<param-value>0.05</param-value>
+	</context-param>
+	
 	<security-role>
 		<role-name>Admin</role-name>
 	</security-role>

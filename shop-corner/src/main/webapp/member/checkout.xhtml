@@ -7,13 +7,23 @@
 <ui:composition template="/WEB-INF/template.xhtml">
 
 	<ui:define name="title">Checkout</ui:define>
+	
+	<ui:define name="left-menu">
+		<ui:include src="/member/left-menu.xhtml" />
+	</ui:define>
+	
 	<ui:define name="content">
 		<div class="container">
-			<h4 class="modal-title text-xl-center"
-				style="background-color: #F2DEDE">
-				<i class="fa fa-money"></i> Check Out
-			</h4>
-		
+
+		<h3 class="page-title">
+			<i class="fa fa-money"></i> Check Out
+			<h:link styleClass="btn btn-outline-primary pull-right" outcome="/member/orders">
+				<i class="fa fa-money"></i> Confirm
+			</h:link>
+			<h:link outcome="/member/my-cart" styleClass="btn btn-outline-danger pull-right MarRight10">
+				<i class="fa fa-shopping-cart"></i> My Cart
+			</h:link>
+		</h3> <hr/>		
 
 		<table class="table table-bordered">
 			<thead>
@@ -78,20 +88,6 @@
 				</tr>			
 			</tbody>
 		</table>
-		</div>
-		<div class="MarTop20">
-			<div class="form-group row">
-				<div class="col-md-2 offset-md-6 MarTop20">
-					<a href="my-cart.xhtml" id="myCardBtn"
-						class="btn btn-info MarRight10"><i class="fa fa-shopping-cart"></i>
-						My Cart</a>
-				</div>
-				<div class="col-md-3 MarTop20">
-					<a href="#!" id="confirmBtn"
-						class="btn btn-success MarRight10"><i class="fa fa-check"></i>
-						Confirm</a>
-				</div>
-			</div>
 		</div>
 	</ui:define>
 

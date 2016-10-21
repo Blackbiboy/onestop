@@ -6,167 +6,140 @@
 
 <ui:composition template="/WEB-INF/template.xhtml">
 	<ui:define name="title">My Cart</ui:define>
-	<ui:define name="content">
-		<div class="container">
-			<h4 class="modal-title text-xl-center"
-				style="background-color: #F2DEDE">
-				<i class="fa fa-shopping-basket"></i> Chosen Items
-			</h4>
-		</div>
-		<div>
-			<div class="container">
-				<div class="MarTop20">
-					<div class="card">
-						<div class="col-sm-6">
-							<div class="MarTop20">
-								<h:graphicImage library="image" name="girlTshirt.jpg"
-									width="170px" height="250px" />
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="MarTop20 ">
-								<h4>Girl Tshirt</h4>
-								<p>Item Code - 0001</p>
-								<p>Size - L</p>
-								<p>Price - $30</p>
-									<div class="form-group row">
-										<label class="col-lg-3">Quantity</label>
-										<div class="col-md-9">
-											<div class="row">
-												<div class="col-lg-4">
-													<input class="form-control" id="qty" placeholder="1"
-														type="number"></input>
-												</div>
-											</div>
-										</div>
-									</div>
-								<button type="button" class="btn btn-danger">
-									<i class="fa fa-trash MarRight10"></i>Remove
-								</button>
 
+	<ui:define name="left-menu">
+		<ui:include src="/member/left-menu.xhtml" />
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h3 class="page-title">
+			<i class="fa fa-shopping-cart"></i> My Cart 
+			<h:link styleClass="btn btn-outline-danger pull-right" outcome="/member/checkout">
+				<i class="fa fa-check"></i> Check Out
+			</h:link>
+		</h3> <hr/>		
+
+		<h:form>
+		<table class="table table-sm table-hover">
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th class="text-xs-right">Unit Price</th>
+					<th class="text-xs-right">Count</th>
+					<th class="text-xs-right">Total</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td style="width: 50%">
+						<div class="row">
+							<div class="col-xs-3">
+								<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
+							</div>
+							<div class="col-xs-6">
+								<h6>Boy T Shirt </h6>
+								<h:outputText value="Blue" /><br/>
+								<h:outputFormat value="XXL" />
+							</div>
+							<div class="col-xs-2">
+								<h:link styleClass="btn btn-link" ><i class="fa fa-trash"></i></h:link>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="MarTop20">
-				<div class="container">
-					<div class="MarTop20">
-						<div class="card">
-							<div class="col-sm-6">
-								<div class="MarTop20">
-									<h:graphicImage library="image" name="boyTshirt.jpg"
-										width="170px" height="250px" />
-								</div>
+					</td>
+
+					<td class="text-xs-right">8000</td>
+					<td class="text-xs-right">
+						<h:link styleClass="btn btn-circle btn-outline-info MarRight10" >
+							<i class="fa fa-minus"></i>
+						</h:link>
+						<h:outputText styleClass="MarRight10" value="1" />
+						<h:link styleClass="btn btn-circle btn-outline-info" >
+							<i class="fa fa-plus"></i>
+						</h:link>
+					</td>
+					<td class="text-xs-right">8000</td>
+				</tr>
+
+				<tr>
+					<td style="width: 50%">
+						<div class="row">
+							<div class="col-xs-3">
+								<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
 							</div>
-							<div class="col-sm-6">
-								<div class="MarTop20 ">
-									<h4>Boy Tshirt</h4>
-									<p>Item Code - 0002</p>
-									<p>Size - XL</p>
-									<p>Price - $20</p>
-									<div class="form-group row">
-										<label class="col-lg-3">Quantity</label>
-										<div class="col-md-9">
-											<div class="row">
-												<div class="col-lg-4">
-													<input class="form-control" id="qty" placeholder="1"
-														type="number"></input>
-												</div>
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-danger">
-										<i class="fa fa-trash MarRight10"></i>Remove
-									</button>
-								</div>
+							<div class="col-xs-6">
+								<h6>Boy T Shirt </h6>
+								<h:outputText value="Blue" /><br/>
+								<h:outputFormat value="XXL" />
+							</div>
+							<div class="col-xs-2">
+								<h:link styleClass="btn btn-link" ><i class="fa fa-trash"></i></h:link>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="MarTop20">
-				<div class="container">
-					<div class="MarTop20">
-						<div class="card">
-							<div class="col-sm-6">
-								<div class="MarTop20">
-									<h:graphicImage library="image" name="bigbangshirt.jpg"
-										width="170px" height="250px" />
-								</div>
+					</td>
+
+					<td class="text-xs-right">8000</td>
+					<td class="text-xs-right">
+						<h:link styleClass="btn btn-circle btn-outline-info MarRight10" >
+							<i class="fa fa-minus"></i>
+						</h:link>
+						<h:outputText styleClass="MarRight10" value="1" />
+						<h:link styleClass="btn btn-circle btn-outline-info" >
+							<i class="fa fa-plus"></i>
+						</h:link>
+					</td>
+					<td class="text-xs-right">8000</td>
+				</tr>
+
+				<tr>
+					<td style="width: 50%">
+						<div class="row">
+							<div class="col-xs-3">
+								<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
 							</div>
-							<div class="col-sm-6">
-								<div class="MarTop20 ">
-									<h4>Kpop Shirt</h4>
-									<p>Item Code - 0003</p>
-									<p>Size - M</p>
-									<p>Price - $25</p>
-									<div class="form-group row">
-										<label class="col-lg-3">Quantity</label>
-										<div class="col-md-9">
-											<div class="row">
-												<div class="col-lg-4">
-													<input class="form-control" id="qty" placeholder="1"
-														type="number"></input>
-												</div>
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-danger">
-										<i class="fa fa-trash MarRight10"></i>Remove
-									</button>
-								</div>
+							<div class="col-xs-6">
+								<h6>Boy T Shirt </h6>
+								<h:outputText value="Blue" /><br/>
+								<h:outputFormat value="XXL" />
+							</div>
+							<div class="col-xs-2">
+								<h:link styleClass="btn btn-link" ><i class="fa fa-trash"></i></h:link>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="MarTop20">
-				<div class="container">
-					<div class="MarTop20">
-						<div class="card">
-							<div class="col-sm-6">
-								<div class="MarTop20">
-									<h:graphicImage library="image" name="rapperJeans.jpg"
-										width="170px" height="250px" />
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="MarTop20 ">
-									<h4>Rapper Jean Pan</h4>
-									<p>Item Code - 0004</p>
-									<p>Size - XXL</p>
-									<p>Price - $40</p>
-									<div class="form-group row">
-										<label class="col-lg-3">Quantity</label>
-										<div class="col-md-9">
-											<div class="row">
-												<div class="col-lg-4">
-													<input class="form-control" id="qty" placeholder="1"
-														type="number"></input>
-												</div>
-											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-danger">
-										<i class="fa fa-trash MarRight10"></i>Remove
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="MarTop20">
-			<div class="row">
-				<div class="col-md-3 offset-md-9 MarTop20">
-					<a href="checkout.xhtml" id="checkoutBtn"
-						class="btn btn-success MarRight10"><i class="fa fa-money"></i>
-						Check Out</a>
-				</div>
-			</div>
-		</div>
+					</td>
+
+					<td class="text-xs-right">8000</td>
+					<td class="text-xs-right">
+						<h:link styleClass="btn btn-circle btn-outline-info MarRight10" >
+							<i class="fa fa-minus"></i>
+						</h:link>
+						<h:outputText styleClass="MarRight10" value="1" />
+						<h:link styleClass="btn btn-circle btn-outline-info" >
+							<i class="fa fa-plus"></i>
+						</h:link>
+					</td>
+					<td class="text-xs-right">8000</td>
+				</tr>
+			</tbody>
+			
+			<tfoot>
+				<tr>
+					<td colspan="3" class="text-xs-right">Sub Total</td>
+					<td class="text-xs-right">24000</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="text-xs-right">Tax</td>
+					<td class="text-xs-right">1200</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="text-xs-right">Total</td>
+					<td class="text-xs-right">25200</td>
+				</tr>
+			</tfoot>
+		</table>
+		</h:form>
+		
 	</ui:define>
 </ui:composition>
 </html>
