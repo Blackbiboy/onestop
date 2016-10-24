@@ -59,6 +59,14 @@ footer a.btn {
   border-radius: 15px;
 }
 
+.PadRight20 {
+	padding-right: 20px;
+}
+
+.PadRight5 {
+	padding-right: 5px;
+}
+
 nav .form-control, nav .input-group-addon {
 	background-color: #ffcc80;
 }

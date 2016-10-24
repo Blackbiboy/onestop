@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
@@ -13,162 +14,92 @@
 
 	<ui:define name="content">
 
-				<h3 class="MarBot20"><i class="fa fa-product-hunt"></i> Add Product</h3>
-				<hr />
-
-					<div class="col-md-12 MarTop20">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="form-group MarRight10"> 
-									<h:graphicImage id="image" name="/image/If-Found.jpg"
-										styleClass="responsive-img img-thumbnail uploadImage"  />
-									<h:inputFile styleClass="hide uploadFile" value="image" style="display:none !important">
-										<f:ajax execute="@this" render="@form"></f:ajax>
-									</h:inputFile>
-								 </div>
-						</div>
-
-						<div class="col-md-8">
-							<div class="row">
-								<div class="form-group row">
-									<label class="col-lg-3">Category</label>
-									<div class="col-lg-9">
-										<div class="row">
-												<div class="btn-group col-lg-3">
-														<input type="radio" name="color" id="color" autocomplete="off"/>
-														<label>T-Shirt</label>
-												</div>
-												<div class="btn-group col-lg-3">
-														<input type="radio" name="color" id="color" autocomplete="off"/>
-														<label>Jean</label>
-												</div>
-												<div class="btn-group col-lg-3">
-														<input type="radio" name="color" id="color" autocomplete="off"/>
-														<label>Shoe</label>
-												</div>
-										</div>
-										</div>
-									</div>
-						<div class="form-group row">
-							<label class="col-lg-3">Gender</label>
-							<div class="col-md-9">
-								<div class="row">
-									<div class="input-group">
-										<div class="col-lg-3">
-											<input type="checkbox"/>
-											<label>Male</label> 
-										</div>
-										<div class="col-lg-3">
-											<input type="checkbox"/>
-											<label>Female</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-								<div class="form-group row">
-									<label class="col-lg-3">Size</label>
-									<div class="col-md-9">
-										<div class="row">
-												<div class="input-group">
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>S</label> 
-													</div>
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>M</label>
-													</div>
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>L</label>
-													</div>
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>XL</label>
-													</div>
-												</div>
-										</div>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-lg-3">Color</label>
-									<div class="col-md-9">
-										<div class="row">
-												<div class="input-group">
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>Blue</label> 
-													</div>
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>Red</label>
-													</div>
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>Green</label>
-													</div>
-													<div class="col-lg-3">
-														<input type="checkbox" aria-label="Checkbox for following text input"/>
-														<label>Gray</label>
-													</div>
-												</div>
-										</div>
-									</div>
-								</div>
-								
-								
-								<div class="form-group row">
-									<label class="col-md-3">Cotton</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											
-											<input type="text" class="form-control" placeholder="Quality"/>
-											<span class="input-group-addon">%</span> 
-										</div>
-									</div>
-								</div>
-
-								
-								<div class="form-group row">
-									<label class="col-lg-3">Price</label>
-									<div class="col-md-9">
-										<div class="input-group">
-											<span class="input-group-addon">$</span> 
-											<input type="text" class="form-control" placeholder="Amount" aria-label="Amount(to the nearest dollar)"/>
-											<span class="input-group-addon">.00</span>
-										</div>
-									</div>
-								</div>
-						<div class="form-group row">
-							<label class="col-lg-3" for="description">Description</label>
-							<div class="col-md-9">
-								<textarea rows="3" class="form-control" id="description" placeholder="Add Description"></textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-lg-3"></div>
-							<div class="col-lg-9">
-								<button type="reset" class="btn btn-primary" data-toggle="modal">
-									<i class="fa fa-recycle"></i> Clear
-								</button>
-								<button type="submit" class="btn btn-primary"
-									data-toggle="modal">
-									<i class="fa fa-plus"></i> Add
-								</button>
-							</div>
-						</div>
-						</div>
-						</div>
+		<h3 class="MarBot20"><i class="fa fa-product-hunt"></i> Add Product</h3>
+		<hr />
+		
+		<h:form>
+			<div class="row">
+				<div class="col-md-4">
+					<h:graphicImage id="image" name="/image/If-Found.jpg"
+						styleClass="responsive-img img-thumbnail uploadImage"  />
+					<h:inputFile styleClass="hide uploadFile" value="image" style="display:none !important">
+						<f:ajax execute="@this" render="@form"></f:ajax>
+					</h:inputFile>
+				</div>
+				
+				<div class="col-md-8">
+				
+					<div class="form-group row">
+						<h:outputLabel value="Category" styleClass="col-md-3" />
+						
+						<div class="col-md-9">
+							<h:selectOneMenu value="#{productAdminBean.product.category}" styleClass="form-control">
+								<f:selectItems value="#{categories}" var="c" itemLabel="#{c.name}" itemValue="#{c}"></f:selectItems>
+							</h:selectOneMenu>			
 						</div>
 					</div>
-			<script>
-				$(function() {
-					$(".uploadImage").click(function(){
-						$(".uploadFile").click();
-					});
+				
+					<div class="form-group row">
+						<h:outputLabel value="Name" styleClass="col-md-3" />
+						
+						<div class="col-md-9">
+							<h:inputText value="#{productAdminBean.product.name}" styleClass="form-control" p:placeholder="Enter Product Name"  />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<h:outputLabel value="Price" styleClass="col-md-3" />
+						
+						<div class="col-md-9">
+							<h:inputText value="#{productAdminBean.price}" styleClass="form-control" p:placeholder="Enter Price"  />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<h:outputLabel value="Size" styleClass="col-md-3" />
+						
+						<div class="col-md-9 myCheck">
+							<h:selectManyCheckbox validator="#{productAdminBean.product.sizes}">
+								<f:selectItems value="#{sizes}" var="s" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
+							</h:selectManyCheckbox>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<h:outputLabel value="Description" styleClass="col-md-3" />
+						
+						<div class="col-md-9">
+							<h:inputTextarea value="#{productAdminBean.product.description}" styleClass="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-9 offset-md-3">
+							<button type="reset" class="btn btn-outline-info MarRight10">
+								<i class="fa fa-recycle"></i> Clear
+							</button>
+							
+							<h:commandLink styleClass="btn btn-outline-danger" action="#{productAdminBean.add()}">
+								<i class="fa fa-plus"></i> Add
+							</h:commandLink>
+						</div>
+					</div>
+				</div>
+						
+			</div>
+		</h:form>
+
+
+		<script>
+			$(function() {
+				$(".uploadImage").click(function(){
+					$(".uploadFile").click();
 				});
-			</script>
+
+				$(".myCheck td").attr("class", "PadRight20");
+				$(".myCheck input").attr("class", "MarRight10");
+			});
+		</script>
 
 	</ui:define>
 </ui:composition>

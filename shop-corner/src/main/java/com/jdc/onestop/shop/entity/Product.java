@@ -1,12 +1,22 @@
 package com.jdc.onestop.shop.entity;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import static javax.persistence.GenerationType.IDENTITY;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Product implements Serializable {
@@ -21,11 +31,47 @@ public class Product implements Serializable {
 	private int id;
 
 	private String name;
-
+	
+	@ManyToOne
 	private Category category;
-
 	private String photo;
+	
+	@Enumerated
+	@ElementCollection
+	@CollectionTable
+	private List<Size> sizes;
+	@Lob
 	private String description;
+	@Enumerated
+	private Status status;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date creation;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date modification;
+	
+	@PrePersist
+	private void init() {
+		creation = new Date();
+		modification = new Date();
+	}
+	
+	public enum Size {
+		XS, S, M, L, XL, XXL 
+	}
+
+	public enum Status {
+		Available, SoldOut
+	}
+
+	
+	public List<Size> getSizes() {
+		return sizes;
+	}
+
+	public void setSizes(List<Size> sizes) {
+		this.sizes = sizes;
+	}
 
 	public String getPhoto() {
 		return photo;
@@ -91,15 +137,6 @@ public class Product implements Serializable {
 		this.modification = modification;
 	}
 
-	private Status status;
-
-	private Date creation;
-
-	private Date modification;
-
-	public enum Status {
-		Available, SoldOut
-	}
 
 	@Override
 	public int hashCode() {
