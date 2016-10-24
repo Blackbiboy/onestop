@@ -9,7 +9,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.jdc.onestop.shop.entity.Member;
-import com.jdc.onestop.shop.repository.MemberRepo;
+import com.jdc.onestop.shop.entity.Member.Status;
+import com.jdc.onestop.shop.service.MemberService;
 
 @Named
 @ViewScoped
@@ -18,12 +19,21 @@ public class MembersBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private List<Member> memList;
+	
 	@Inject
-	private MemberRepo memRepo;
+	private MemberService service;
+	
+	private Status status;
+	private String name;
 	
 	@PostConstruct
 	private void init(){
-		
+		search();
+	}
+	
+	public String search() {
+		memList = service.search(status, name);
+		return "";
 	}
 
 	public List<Member> getMemList() {
@@ -32,6 +42,22 @@ public class MembersBean implements Serializable{
 
 	public void setMemList(List<Member> memList) {
 		this.memList = memList;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	

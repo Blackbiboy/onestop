@@ -1,6 +1,7 @@
 package com.jdc.onestop.shop.repository;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -24,6 +25,10 @@ public class MemberRepo implements Serializable {
 
 	public void save(Member member) {
 		em.merge(member);
+	}
+
+	public List<Member> search(String sql) {
+		return em.createQuery(sql, Member.class).getResultList();
 	}
 
 }

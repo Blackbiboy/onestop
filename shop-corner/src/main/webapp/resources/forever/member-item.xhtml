@@ -10,23 +10,26 @@
 </head>
 <body>
 <composite:interface>
-	<composite:attribute name="item" type="com.jdc.onestop.shop.entity.Member"  />
+	<composite:attribute name="item" type="com.jdc.onestop.shop.entity.Member" required="true"  />
 </composite:interface>
 <composite:implementation>
 	<div class="col-lg-4 col-md-6 col-sm-12">
 		<div class="card user-card">
 			<div class="card-block">
 				<h5 class="card-title">
-					<i class="fa fa-user"></i> Aung Aung 
-					<h:link outcome="/admin/member" styleClass="pull-right btn btn-circle btn-danger"><i class="fa fa-pencil"></i></h:link>
+					<i class="fa fa-user"></i> #{cc.attrs.item.name}
+					<h:link outcome="/admin/member" styleClass="pull-right btn btn-circle btn-danger">
+						<i class="fa fa-pencil"></i>
+						<f:param name="id" value="#{cc.attrs.item.loginId}"></f:param>
+					</h:link>
 				</h5>
 				
 			</div>
 			<h:graphicImage library="image" name="user.png" styleClass="img-fluid" />
 			<div class="card-block">
-				<i class="fa fa-phone"></i> 0977788767 <br/>
-				<i class="fa fa-envelope"></i> aung@gmail.com <br/>
-				<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/>
+				<i class="fa fa-phone"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.phone} <br/>
+				<i class="fa fa-envelope"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.email} <br/>
+				<i class="fa fa-send"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.address} <br/>
 			</div>
 		</div>
 	</div>

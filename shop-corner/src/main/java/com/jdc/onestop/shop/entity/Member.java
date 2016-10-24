@@ -24,6 +24,8 @@ public class Member implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	public enum Status {Valid, Unvalid}
+	
 	public Member() {
 	}
 
@@ -45,6 +47,8 @@ public class Member implements Serializable {
 	@Enumerated(STRING)
 	private Role role;
 
+	private Status status;
+	
 	@Temporal(TIMESTAMP)
 	private Date creation;
 
@@ -57,6 +61,14 @@ public class Member implements Serializable {
 		creation = new Date();
 		modification = new Date();
 		password = PasswordUtils.encript(password);
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 	public String getPhoto() {
