@@ -25,6 +25,17 @@ public class OrderDetails implements Serializable {
 	private int count;
 
 	private int subTotal;
+	
+	@ManyToOne
+	private Order order;
+	
+	public Order getOrder() {
+		return order;
+	}
+	
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 
 	public int getId() {
 		return id;
@@ -64,6 +75,49 @@ public class OrderDetails implements Serializable {
 
 	public void setSubTotal(int subTotal) {
 		this.subTotal = subTotal;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + count;
+		result = prime * result + id;
+		result = prime * result + ((order == null) ? 0 : order.hashCode());
+		result = prime * result + ((product == null) ? 0 : product.hashCode());
+		result = prime * result + subTotal;
+		result = prime * result + unitPrice;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		OrderDetails other = (OrderDetails) obj;
+		if (count != other.count)
+			return false;
+		if (id != other.id)
+			return false;
+		if (order == null) {
+			if (other.order != null)
+				return false;
+		} else if (!order.equals(other.order))
+			return false;
+		if (product == null) {
+			if (other.product != null)
+				return false;
+		} else if (!product.equals(other.product))
+			return false;
+		if (subTotal != other.subTotal)
+			return false;
+		if (unitPrice != other.unitPrice)
+			return false;
+		return true;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.jdc.onestop.shop.view;
+package com.jdc.onestop.shop.view.member;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -10,7 +10,7 @@ import com.jdc.onestop.shop.entity.Member;
 import com.jdc.onestop.shop.service.MemberService;
 
 @Model
-public class ProfileEditBean {
+public class ProfileBean {
 	
 	@Named("loginUser")
 	@Inject

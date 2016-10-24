@@ -79,5 +79,61 @@ public class Question implements Serializable {
 	public void setOwner(Member owner) {
 		this.owner = owner;
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((answer == null) ? 0 : answer.hashCode());
+		result = prime * result + ((creation == null) ? 0 : creation.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((modification == null) ? 0 : modification.hashCode());
+		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
+		result = prime * result + ((question == null) ? 0 : question.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Question other = (Question) obj;
+		if (answer == null) {
+			if (other.answer != null)
+				return false;
+		} else if (!answer.equals(other.answer))
+			return false;
+		if (creation == null) {
+			if (other.creation != null)
+				return false;
+		} else if (!creation.equals(other.creation))
+			return false;
+		if (id != other.id)
+			return false;
+		if (modification == null) {
+			if (other.modification != null)
+				return false;
+		} else if (!modification.equals(other.modification))
+			return false;
+		if (owner == null) {
+			if (other.owner != null)
+				return false;
+		} else if (!owner.equals(other.owner))
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
+		return true;
+	}
 
 }

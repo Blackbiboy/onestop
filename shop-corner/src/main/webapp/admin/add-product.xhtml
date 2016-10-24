@@ -13,22 +13,16 @@
 
 	<ui:define name="content">
 
-		<h:form>
-			<div class="modal-content MarBot20">
+				<h3 class="MarBot20"><i class="fa fa-product-hunt"></i> Add Product</h3>
+				<hr />
 
-				<div class="list-group-item text-xl-center list-group-item-heading">
-					<h4 class="modal-title">
-						<i class="fa fa-product-hunt"></i>Add Product
-					</h4>
-				</div>
-
-				<div class="container-fluid">
-
+				<!-- <div class="container-fluid"> -->
+				
 					<div class="col-md-12 MarTop20">
 						<div class="row">
 							<div class="col-md-4">
 								<div class="form-group MarRight10"> 
-									<h:graphicImage id="image" name="/image/img2.jpg"
+									<h:graphicImage id="image" name="/image/photo2.jpg"
 										styleClass="uploadImage" class="img-thumbnail"  />
 									<h:inputFile styleClass="uploadFile" value="image" style="display:none !important">
 										<f:ajax execute="@this" render="@form"></f:ajax>
@@ -36,87 +30,95 @@
 								 </div>
 						</div>
 
-						<div class="col-md-8 MarTop20">
+						<div class="col-md-8">
 							<div class="row">
 								<div class="form-group row">
-									<label class="col-md-3">Item Code</label>
-									<div class="col-md-9">
-										<input placeholder="Add Item Code" class="form-control" />
-									</div>
-								</div>
-								
-								
-								
-								<div class="form-group row">
-									<label class="col-md-3">Name</label>
-									<div class="col-md-9">
-										<input placeholder="Add Name" class="form-control" />
-									</div>
-								</div>
-								
-								<div class="form-group row">
 									<label class="col-lg-3">Category</label>
-									<div class="col-md-9">
+									<div class="col-lg-9">
 										<div class="row">
-											<div class="col-lg-12">
-												<select class="form-control">
-													<option>T-Shirt</option>
-													<option>Code</option>
-													<option>Jeans</option>
-												</select>
-											</div>
+												<div class="btn-group col-lg-3">
+														<input type="radio" name="color" id="color" autocomplete="off"/>
+														<label>T-Shirt</label>
+												</div>
+												<div class="btn-group col-lg-3">
+														<input type="radio" name="color" id="color" autocomplete="off"/>
+														<label>Jean</label>
+												</div>
+												<div class="btn-group col-lg-3">
+														<input type="radio" name="color" id="color" autocomplete="off"/>
+														<label>Shoe</label>
+												</div>
+										</div>
+										</div>
+									</div>
+						<div class="form-group row">
+							<label class="col-lg-3">Gender</label>
+							<div class="col-md-9">
+								<div class="row">
+									<div class="input-group">
+										<div class="col-lg-3">
+											<input type="checkbox"/>
+											<label>Male</label> 
+										</div>
+										<div class="col-lg-3">
+											<input type="checkbox"/>
+											<label>Female</label>
 										</div>
 									</div>
 								</div>
-								
+							</div>
+						</div>
 								<div class="form-group row">
 									<label class="col-lg-3">Size</label>
 									<div class="col-md-9">
 										<div class="row">
-											<div class="col-lg-12">
-												<select class="form-control">
-													<option>XL</option>
-													<option>L</option>
-													<option>S</option>
-												</select>
-											</div>
+												<div class="input-group">
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>S</label> 
+													</div>
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>M</label>
+													</div>
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>L</label>
+													</div>
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>XL</label>
+													</div>
+												</div>
 										</div>
 									</div>
 								</div>
-								
 								<div class="form-group row">
 									<label class="col-lg-3">Color</label>
 									<div class="col-md-9">
 										<div class="row">
-											<div class="col-lg-12">
-												<select class="form-control">
-													<option>Blue</option>
-													<option>Red</option>
-													<option>Green</option>
-													<option>Gray</option>
-													<option>Pink</option>
-												</select>
-											</div>
+												<div class="input-group">
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>Blue</label> 
+													</div>
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>Red</label>
+													</div>
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>Green</label>
+													</div>
+													<div class="col-lg-3">
+														<input type="checkbox" aria-label="Checkbox for following text input"/>
+														<label>Gray</label>
+													</div>
+												</div>
 										</div>
 									</div>
 								</div>
 								
-								<div class="form-group row">
-									<label class="col-lg-3">Brand</label>
-									<div class="col-md-9">
-										<div class="row">
-											<div class="col-lg-12">
-												<select class="form-control">
-													<option>Giordano</option>
-													<option>Step</option>
-													<option>BandBang</option>
-													<option>NextGeneration</option>
-													<option>Bossni</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								</div>
 								
 								<div class="form-group row">
 									<label class="col-md-3">Cotton</label>
@@ -140,25 +142,6 @@
 										</div>
 									</div>
 								</div>
-								
-								<div class="form-group row">
-									<label class="col-lg-3">Manufacture</label>
-									<div class="col-md-9">
-										<div class="row">
-											<div class="col-lg-12">
-												<select class="form-control">
-													<option>Japan</option>
-													<option>Singapore</option>
-													<option>China</option>
-													<option>Korea</option>
-													<option>Taiwan</option>
-													<option>India</option>
-												</select>
-											</div>
-										</div>
-									</div>
-								</div>
-								
 						<div class="form-group row">
 							<label class="col-lg-3" for="description">Description</label>
 							<div class="col-md-9">
@@ -166,36 +149,21 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-lg-3">Condition</label>
-							<div class="col-md-9">
-								<div class="form-check">
-									<label class="form-check-label"> 
-										<input class="form-check-input" type="radio" name="condition" id="new" value="new" /> New
-									</label> 
-									<label class="form-check-label">
-										<input class="form-check-input" type="radio" name="condition" id="old" value="old" /> Old
-									</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
 							<div class="col-lg-3"></div>
 							<div class="col-lg-9">
 								<button type="reset" class="btn btn-primary" data-toggle="modal">
-									<i class="fa fa-recycle"></i>Clear
+									<i class="fa fa-recycle"></i> Clear
 								</button>
 								<button type="submit" class="btn btn-primary"
 									data-toggle="modal">
-									<i class="fa fa-plus"></i>Add
+									<i class="fa fa-plus"></i> Add
 								</button>
 							</div>
+						</div>
 						</div>
 						</div>
 						</div>
 					</div>
-				</div>
-		</div>
-			</div>
 			<script>
 				$(function() {
 					$(".uploadImage").click(function(){
@@ -204,7 +172,6 @@
 				});
 			</script>
 
-		</h:form>
 	</ui:define>
 </ui:composition>
 </html>

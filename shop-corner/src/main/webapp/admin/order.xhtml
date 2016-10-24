@@ -7,48 +7,176 @@
 <ui:composition template="/WEB-INF/template.xhtml">
 
 	<ui:define name="title">Order</ui:define>
+	
+	<ui:define name="left-menu">
+		<ui:include src="/admin/left-menu.xhtml" />
+	</ui:define>
 
 	<ui:define name="content">
+		
+		<h3 class="page-title"><i class="fa fa-shopping-cart"></i> Order Details - No.0001 <h:link styleClass="btn btn-circle btn-outline-danger pull-right"><i class="fa fa-pencil"></i></h:link> </h3>
+		<hr/>
+		
+		<div class="row">
+			<!-- Customer - Shipping Information -->
+			<div class="col-xs-12 col-md-6">
+			
+				<div class="card">
+					
+					<div class="card-header">
+						<h5 class="card-title">
+							<i class="fa fa-user MarRight10"></i> 
+							<h:outputText value="Aung Aung" />
+						</h5>
+					</div>	
+					<div class="card-block">
+						<div class="row">
+							<div class="col-xs-11 offset-xs-1">
+								<span ><i class="fa fa-phone"></i> 0908899878</span><br/>
+								<span ><i class="fa fa-envelope"></i> aung@gmail.com</span><br/>
+								<span ><i class="fa fa-send"></i> No. 43, Insein Road, Yangon.</span><br/>
+							</div>
+						</div>
+						
+					</div>
+				
+				</div>
+			
+			</div>
+	
+			<!-- Order Summary - Paid Informations -->
+			<div class="col-xs-12 col-md-6">
+			
+				<div class="card">
+					
+					<div class="card-header">
+						<h5 class="card-title">
+							<i class="fa fa-shopping-basket"></i> Order Status
+						</h5>
+					</div>
+					
+					<div class="card-block">
+						<div class="row">
+							<span class="col-xs-4 offset-xs-1">Order Date</span>
+							<h:outputText value="2016-10-01" styleClass="col-xs-7" />
+						</div>
+						<div class="row">
+							<span class="col-xs-4 offset-xs-1">Wish Date</span>
+							<h:outputText value="2016-10-06" styleClass="col-xs-7" />
+						</div>
+						<div class="row">
+							<span class="col-xs-4 offset-xs-1">Status</span>
+							<h:outputText value="Accepted" styleClass="col-xs-7" />
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		
+		<!-- Order Details -->
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="card">
+					
+					<div class="card-header">
+						<h5 class="card-title">
+							<i class="fa fa-shopping-bag"></i> Order Details
+						</h5>
+					</div>
+					
+					<div class="card-block">
+					
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>Item</th>
+									<th class="text-xs-right">Unit Price</th>
+									<th class="text-xs-right">Count</th>
+									<th class="text-xs-right">Total</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td style="width: 50%">
+										<div class="row">
+											<div class="col-xs-3">
+												<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
+											</div>
+											<div class="col-xs-8">
+												<h6>Boy T Shirt</h6>
+												<h:outputText value="Blue" /><br/>
+												<h:outputFormat value="XXL" />
+											</div>
+										</div>
+									</td>
 
-		<div class="MarBot20">
-		<h4 class="modal-title"
-			style="background-color: #F2DEDE">
-			<i class="fa fa-list MarLeft10"></i> Order List 
-		</h4>
-		</div>
-		
-		<div class="col-lg-4 col-md-6 col-sm-12">
-		<div class="card user-card">
-			<div class="card-block">
-				<div class="card-title">
-					<h4>Knife</h4> 
-				</div>				
+									<td class="text-xs-right">8000</td>
+									<td class="text-xs-right">1</td>
+									<td class="text-xs-right">8000</td>
+								</tr>
+
+								<tr>
+									<td style="width: 50%">
+										<div class="row">
+											<div class="col-xs-3">
+												<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
+											</div>
+											<div class="col-xs-8">
+												<h6>Boy T Shirt</h6>
+												<h:outputText value="Blue" /><br/>
+												<h:outputFormat value="XXL" />
+											</div>
+										</div>
+									</td>
+
+									<td class="text-xs-right">8000</td>
+									<td class="text-xs-right">1</td>
+									<td class="text-xs-right">8000</td>
+								</tr>
+
+								<tr>
+									<td style="width: 50%">
+										<div class="row">
+											<div class="col-xs-3">
+												<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
+											</div>
+											<div class="col-xs-8">
+												<h6>Boy T Shirt</h6>
+												<h:outputText value="Blue" /><br/>
+												<h:outputFormat value="XXL" />
+											</div>
+										</div>
+									</td>
+
+									<td class="text-xs-right">8000</td>
+									<td class="text-xs-right">1</td>
+									<td class="text-xs-right">8000</td>
+								</tr>
+							</tbody>
+							
+							<tfoot>
+								<tr>
+									<td colspan="3" class="text-xs-right">Sub Total</td>
+									<td class="text-xs-right">24000</td>
+								</tr>
+								<tr>
+									<td colspan="3" class="text-xs-right">Tax</td>
+									<td class="text-xs-right">1200</td>
+								</tr>
+								<tr>
+									<td colspan="3" class="text-xs-right">Total</td>
+									<td class="text-xs-right">25200</td>
+								</tr>
+							</tfoot>
+						</table>
+						
+					</div>
+				
+				</div>
+			
 			</div>
-			<h:graphicImage library="image" name="knife.jpg" styleClass="img-fluid" />
-			<div class="card-block">
-				<p>Category-Mens</p>
-				<p>Individual Price -  100000</p>
-				<p>Quantity         -  2</p>
-				<p>Total            -  200000</p>
-			</div>
-		</div>
-		</div>
-		
-		<div class="col-lg-4 col-md-6 col-sm-12">
-		<div class="card user-card">
-			<div class="card-block">
-				<div class="card-title">
-					<h4>Guitar</h4> 
-				</div>				
-			</div>
-			<h:graphicImage library="image" name="guitar.jpg" styleClass="img-fluid" />
-			<div class="card-block">
-				<p>Category-Mens</p>
-				<p>Individual Price -  200000</p>
-				<p>Quantity         -  2</p>
-				<p>Total            -  400000</p>
-			</div>
-		</div>
 		</div>
 				
 	</ui:define>
