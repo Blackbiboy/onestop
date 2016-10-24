@@ -64,6 +64,17 @@
 							</h:selectManyCheckbox>
 						</div>
 					</div>
+					
+					<div class="form-group row">
+						<h:outputLabel value="Status" styleClass="col-md-3" />
+						
+						<div class="col-md-9 myCheck">
+							<h:selectOneMenu styleClass="form-control" >
+							<f:selectItems var="s" value="#{memberStatuses}" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
+							</h:selectOneMenu>
+						</div>
+					</div>
+					
 
 					<div class="form-group row">
 						<h:outputLabel value="Description" styleClass="col-md-3" />
