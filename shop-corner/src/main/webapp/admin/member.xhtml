@@ -10,5 +10,72 @@
 		<ui:define name="left-menu">
 			<ui:include src="/admin/left-menu.xhtml" />
 		</ui:define>
+		
+		<ui:define name="content">
+		<div class="card"> 
+			<div class="card-header">
+				<h4><i class="fa fa-user"></i> User Details</h4>
+			</div>
+			<div class="card-block">
+				<div class="col-sm-6 col-md-4">
+                    <h:graphicImage library="image" name="user.png" width="240" height="200" styleClass="img-rounded"/>
+				</div>
+				<h4>
+					<i class="fa fa-user"></i> Aung Aung 
+				</h4> <br />
+				<i class="fa fa-phone"></i> 0977788767 <br/>
+				<i class="fa fa-envelope"></i> aung@gmail.com <br/>
+				<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/><br />
+				<button class="btn btn-danger"><i class="fa fa-user-times"></i>  BLOCK </button>
+				<button class="btn btn-success"><i class="fa fa-user"></i>  UNBLOCK </button>
+			</div>
+			
+					
+		</div>
+		<div class="card">
+			<div class="card-header">
+				<h4><i class="fa fa-history"></i> Order History</h4>
+			</div>
+			<div class="card-block">
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th>No</th>
+					<th>Item</th>
+					<th>Qty</th>
+					<th>T-Price</th>
+					<th>Order Date</th>
+					<th>Status</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Jeans</td>
+						<td>2</td>
+						<td>400</td>
+						<td>23.5.2016</td>
+						<td>Deliver</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>2</td>
+						<td>T-Shirt</td>
+						<td>1</td>
+						<td>600</td>
+						<td>13.7.2016</td>
+						<td>Cancel</td>
+					</tr>
+				</tbody>
+				
+			</table>
+			
+			</div>
+		</div>
+
+	
+		
+		</ui:define>
 	</ui:composition>
 </html>
