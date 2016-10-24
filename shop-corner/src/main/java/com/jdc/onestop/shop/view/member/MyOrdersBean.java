@@ -18,7 +18,7 @@ public class MyOrdersBean implements Serializable{
 
 	@Inject
 	private OrderRepo orderRepo; 
-	@Inject
+
 	private OrderService orderServ;
 	
 	@PostConstruct
