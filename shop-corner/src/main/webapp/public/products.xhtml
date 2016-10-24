@@ -3,6 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:forever="http://java.sun.com/jsf/composite/forever">
 
 
@@ -10,8 +11,27 @@
 	
 	<ui:define name="title">Products</ui:define>
 	<ui:define name="content">
-	<div class="MarTop20"></div>
 	
+	
+	<h:form styleClass="form-inline">
+		<div class="form-group">
+			<h:selectOneMenu styleClass="form-control" >
+			<f:selectItems var="c" value="#{categories}" itemValue="#{c.name}" itemLabel="#{c}"></f:selectItems>
+			</h:selectOneMenu>
+		</div>
+	
+		<div class="form-group">
+			<h:inputText styleClass="form-control" p:placeholder="price"  />
+		</div>
+		
+		<div class="form-group">
+				<h:commandLink styleClass="btn btn-outline-danger">
+					<i class="fa fa-search"></i> Search
+				</h:commandLink>
+			</div>
+		
+	</h:form>
+	<div class="MarTop20"></div>
 	<forever:products-item></forever:products-item>
 	<forever:products-item></forever:products-item>
 	<forever:products-item></forever:products-item>
