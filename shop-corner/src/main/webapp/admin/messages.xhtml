@@ -3,6 +3,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:forever="http://java.sun.com/jsf/composite/forever">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
@@ -16,6 +17,35 @@
 
 	<h3 class="page-title"><i class="fa fa-envelope"></i> Messages</h3>
 	<hr/>
+	<h:form styleClass="form-inline MarBot20">
+		<div class="form-group">
+			<h5>From</h5>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<h:inputText styleClass="form-control" p:placeholder="Search Date" />
+				<span class="input-group-addon">
+					<i class="fa fa-calendar"></i>
+				</span>			
+			</div>
+		</div>
+		<div class="form-group">
+			<h5>To</h5>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<h:inputText styleClass="form-control" p:placeholder="Search Date" />
+				<span class="input-group-addon">
+					<i class="fa fa-calendar"></i>
+				</span>			
+			</div>
+		</div>
+		<div class="form-group">
+			<h:commandLink styleClass="btn btn-outline-danger">
+				<i class="fa fa-search"></i> Search
+			</h:commandLink>
+		</div>
+	</h:form>
 	
 	<div class="row">
 		<forever:message-item></forever:message-item>
