@@ -2,65 +2,69 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Contact</ui:define>
 	<ui:define name="content">
-		<h1 class="font-italic text-xl-center MarBot20 ">Contact</h1>
-
-		<div class="container MarBot20">
-			<form class="alert-danger row">
-
-				<div class="form-group row MarTop20">
-					<label for="example-email-input" class="col-xs-1 col-form-label">Email</label>
-					<div class="col-xs-10">
-						<input class="form-control" type="email" id="example-email-input "
-							placeholder="Enter your email" />
+		<h3 class="page-title"><i class="fa fa-send"></i>Contact</h3>
+		<hr class="MarBot20"/>
+		
+		<h:form>
+		    <div class="row">
+		        
+		        <div class="col-md-8 col-xs-12">
+					
+					
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-envelope"></i> Email</label>
+						<div class="col-xs-9">
+							<h:inputText styleClass="form-control" p:placeholder="Enter Your Email" />
+						</div>
 					</div>
-				</div>
-				<div class="form-group row">
-					<label for="example-tel-input" class="col-xs-1 col-form-label">Phone</label>
-					<div class="col-xs-10">
-						<input class="form-control" type="tel"
-							placeholder="Enter your Phone Number" id="example-tel-input" />
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-phone"></i> Phone</label>
+						<div class="col-xs-9">
+							<h:inputText styleClass="form-control" p:placeholder="Enter Your Phone" />
+						</div>
 					</div>
-				</div>
-				<div class="form-group row">
-					<label for="example-text-input" class="col-xs-1 col-form-label">Address</label>
-					<div class="col-xs-10">
-						<TEXTAREA placeholder="Enter your Address" class="form-control"
-							type="text" id="example-text-input" />
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-send"></i> Address</label>
+						<div class="col-xs-9">
+							<h:inputTextarea styleClass="form-control" p:placeholder="Enter Your Address" rows="3" />
+						</div>
 					</div>
-				</div>
-				<div class="form-group row">
-					<label for="example-text-input" class="col-xs-1 col-form-label">Message</label>
-					<div class="col-xs-10">
-						<TEXTAREA placeholder="Enter your sugestion here!"
-							class="form-control" type="text" id="example-text-input" />
+					<div class="row form-group">
+						<label class="form-control-label col-xs-3"><i class="fa fa-envelope-o"></i> Message</label>
+						<div class="col-xs-9">
+							<h:inputTextarea styleClass="form-control" p:placeholder="Enter your suggestion here!" rows="5" />
+						</div>
 					</div>
-				</div>
-
-				<div class="col-md-12 text-right">
-					<button type="submit"
+					<div class="row form-group">
+						<div class="col-xs-9 offset-xs-3">
+							<button type="submit"
 						class="btn btn-primary btn-info text-xs-right">OK</button>
 					<button type="submit" class="btn btn-primary btn-info">Cancel</button>
+						</div>
+					</div>
 				</div>
-				<div class="form-group"></div>
+		    
+		    </div>
+		<hr />
+		</h:form>
 
-			</form>
-		</div>
-			 <div class="col-md-6">
+		
+			 <div class="col-md-8">
             <div>
                 <div class="panel panel-default">
                     <div class="text-center header alert-danger">Our Office</div>
                     <div class="panel-body text-center ">
                         <h4>Address</h4>
                         <div>
-                         No. 52/B(5F), Yangon Insein Raod,<br />
-                         Kamayut, Yangon ,<br />
-                         09 97 110 2280 <br />
-                        Forever10@gmail.com<br />
+                        <i class="fa fa-bus"></i> No. 52/B(5F), Yangon Insein Raod,Kamayut, Yangon <br />
+                        <i class="fa fa-phone"></i>  09 97 110 2280 <br />
+                        <i class="fa fa-envelope"></i>Forever10@gmail.com<br />
                         </div>
                         <hr />
                         <div id="map1" class="map">
@@ -70,13 +74,6 @@
             </div>
 		</div>
 		<ui:include src="/public/style.html" />
-
-		
-		
-
-
-
-
 
 	</ui:define>
 </ui:composition>
