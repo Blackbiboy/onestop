@@ -32,13 +32,12 @@
 							<div class="col-lg-9">
 								<div class="row">
 									<div class="col-lg-9">
-										<h4>T-Shirt</h4>
+										<h4>#{productDetailsBean.product.name}</h4>
 										<ul>
-											<li>$ 30</li>
-											<li>100% COTTON</li>
-											<li>XL / L / M / S</li>
-											<li>Red / Red / Green / Grey</li>
-											<li>The product is the most quality and beautiful.</li>
+											<li>size</li>
+											<li><h:outputText value="#{productDetailsBean.product.category}" converter="#{categoryConvertor}" /></li>
+											<li>#{productDetailsBean.product.status}</li>						
+											<li>#{productDetailsBean.product.description}</li>
 										</ul>
 									</div>
 								</div>
@@ -56,12 +55,6 @@
 										<option value="s">S</option>
 									</select> 
 									<select class="custom-select text-primary">
-										<option selected="selected">Color</option>
-										<option value="xl">Blue</option>
-										<option value="l">Red</option>
-										<option value="m">Green</option>
-										<option value="s">Gray</option>
-									</select> <select class="custom-select text-primary">
 										<option selected="selected">Quantity</option>
 										<option value="1">1</option>
 										<option value="2">2</option>

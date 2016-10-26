@@ -7,27 +7,32 @@ import javax.inject.Named;
 
 import com.jdc.onestop.shop.entity.Member;
 import com.jdc.onestop.shop.entity.Order.Status;
+import com.jdc.onestop.shop.entity.Product;
 import com.jdc.onestop.shop.entity.Product.Size;
 
 @ApplicationScoped
 public class CommonProducer {
+	@Named
+	@Produces
+	private Status[] orderStatuses;
 
 	@Named
 	@Produces
-	private Status [] orderStatuses;
-	
+	private Member.Status[] memberStatuses;
+
 	@Named
 	@Produces
-	private Member.Status [] memberStatuses;
-	
+	private Size[] sizes;
+
 	@Named
 	@Produces
-	private Size [] sizes;
-	
+	private Product.Status[] productStatus;
+
 	@PostConstruct
 	private void init() {
 		orderStatuses = Status.values();
 		memberStatuses = Member.Status.values();
 		sizes = Size.values();
+		productStatus = Product.Status.values();
 	}
 }

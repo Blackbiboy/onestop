@@ -14,11 +14,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@NamedQueries(value = { @NamedQuery(name = "Product.getAll", query = "select p from Product p") })
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -31,11 +34,11 @@ public class Product implements Serializable {
 	private int id;
 
 	private String name;
-	
+
 	@ManyToOne
 	private Category category;
 	private String photo;
-	
+
 	@Enumerated
 	@ElementCollection
 	@CollectionTable
@@ -44,27 +47,26 @@ public class Product implements Serializable {
 	private String description;
 	@Enumerated
 	private Status status;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date creation;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date modification;
-	
+
 	@PrePersist
 	private void init() {
 		creation = new Date();
 		modification = new Date();
 	}
-	
+
 	public enum Size {
-		XS, S, M, L, XL, XXL 
+		XS, S, M, L, XL, XXL
 	}
 
 	public enum Status {
 		Available, SoldOut
 	}
 
-	
 	public List<Size> getSizes() {
 		return sizes;
 	}
@@ -137,6 +139,12 @@ public class Product implements Serializable {
 		this.modification = modification;
 	}
 
+	/*
+	 * public String getSizesString() { StringBuffer b = new StringBuffer();
+	 * List<Size> s = new ArrayList<>(sizes); for (int i = 0; i < sizes.size();
+	 * i++) { if (i > 0) { b.append(", "); } b.append(s.get(i)); } return
+	 * b.toString(); }
+	 */
 
 	@Override
 	public int hashCode() {

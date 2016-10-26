@@ -31,11 +31,11 @@
 			</div>
 		
 	</h:form>
-	<div class="MarTop20"></div>
-	<forever:products-item></forever:products-item>
-	<forever:products-item></forever:products-item>
-	<forever:products-item></forever:products-item>
-	<forever:products-item></forever:products-item>
+	<div class="MarTop20">
+		<ui:repeat var="products" value="#{productsBean.productList}">
+		<forever:products-item product="#{products}"></forever:products-item>
+		</ui:repeat>
+	</div>
 
 	</ui:define>
 	</ui:composition>

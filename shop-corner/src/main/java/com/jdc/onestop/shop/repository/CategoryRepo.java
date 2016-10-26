@@ -11,12 +11,16 @@ import com.jdc.onestop.shop.entity.Category;
 public class CategoryRepo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private EntityManager em;
-	
+
 	public List<Category> getAll() {
 		return em.createNamedQuery("Category.getAll", Category.class).getResultList();
+	}
+
+	public Category findById(int id) {
+		return em.find(Category.class, id);
 	}
 
 }

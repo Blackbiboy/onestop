@@ -17,7 +17,7 @@
 		<h3 class="MarBot20"><i class="fa fa-product-hunt"></i> Add Product</h3>
 		<hr />
 		
-		<h:form>
+		<h:form enctype="multipart/form-data">
 			<div class="row">
 				<div class="col-md-4">
 					<h:graphicImage id="image" name="/image/If-Found.jpg"
@@ -25,7 +25,7 @@
 					<h:inputFile styleClass="hide uploadFile" value="image" style="display:none !important">
 						<f:ajax execute="@this" render="@form"></f:ajax>
 					</h:inputFile>
-				</div>
+				</div>  
 				
 				<div class="col-md-8">
 				
@@ -33,7 +33,7 @@
 						<h:outputLabel value="Category" styleClass="col-md-3" />
 						
 						<div class="col-md-9">
-							<h:selectOneMenu value="#{productAdminBean.product.category}" styleClass="form-control">
+							<h:selectOneMenu value="#{productAdminBean.product.category}" styleClass="form-control" converter="#{categoryConvertor}">
 								<f:selectItems value="#{categories}" var="c" itemLabel="#{c.name}" itemValue="#{c}"></f:selectItems>
 							</h:selectOneMenu>			
 						</div>
@@ -55,22 +55,22 @@
 						</div>
 					</div>
 
-					<div class="form-group row">
+					<!-- <div class="form-group row">
 						<h:outputLabel value="Size" styleClass="col-md-3" />
 						
 						<div class="col-md-9 myCheck">
 							<h:selectManyCheckbox validator="#{productAdminBean.product.sizes}">
 								<f:selectItems value="#{sizes}" var="s" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
 							</h:selectManyCheckbox>
-						</div>
-					</div>
+						</div>  
+					</div> -->
 					
 					<div class="form-group row">
 						<h:outputLabel value="Status" styleClass="col-md-3" />
 						
 						<div class="col-md-9 myCheck">
-							<h:selectOneMenu styleClass="form-control" >
-							<f:selectItems var="s" value="#{memberStatuses}" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
+							<h:selectOneMenu styleClass="form-control" value="#{productAdminBean.product.status}">
+							<f:selectItems var="s" value="#{productStatus}" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
 							</h:selectOneMenu>
 						</div>
 					</div>
