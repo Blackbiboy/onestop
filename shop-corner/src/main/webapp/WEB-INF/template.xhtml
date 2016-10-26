@@ -48,7 +48,7 @@
 		<h:form>
 		<ul class="nav navbar-nav pull-right">
 			<li class="nav-item">
-				<h:link title="My Cart" styleClass="nav-link" outcome="/member/my-cart" p:data-toggle="tooltip" p:data-placement="bottom" ><i class="fa fa-shopping-cart"></i></h:link>				
+				<h:link title="My Cart" styleClass="nav-link" outcome="/member/my-cart" p:data-toggle="tooltip" p:data-placement="bottom" ><i class="fa fa-shopping-cart MarRight10"></i> <h:outputText id="myCardCount" styleClass="tag tag-default tag-pill" value="#{myCartBean.itemCount}" /> </h:link>				
 			</li>
 			<li class="nav-item">
 				<h:link rendered="#{not empty loginUser}" title="User Home" styleClass="nav-link" outcome="/member/home" p:data-toggle="tooltip" p:data-placement="bottom" ><i class="fa fa-user"></i></h:link>				

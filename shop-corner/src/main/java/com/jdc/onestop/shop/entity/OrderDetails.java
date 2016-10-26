@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.jdc.onestop.shop.entity.Product.Size;
+import javax.persistence.Enumerated;
+
 @Entity
 public class OrderDetails implements Serializable {
 
@@ -20,6 +23,8 @@ public class OrderDetails implements Serializable {
 	@ManyToOne
 	private Product product;
 
+	@Enumerated
+	private Size size;
 	private int unitPrice;
 
 	private int count;
@@ -29,6 +34,18 @@ public class OrderDetails implements Serializable {
 	@ManyToOne
 	private Order order;
 	
+	public void calculate() {
+		subTotal = count * unitPrice;
+	}
+	
+	public Size getSize() {
+		return size;
+	}
+
+	public void setSize(Size size) {
+		this.size = size;
+	}
+
 	public Order getOrder() {
 		return order;
 	}

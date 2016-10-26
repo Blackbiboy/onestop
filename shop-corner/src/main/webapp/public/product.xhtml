@@ -3,6 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <ui:composition template="/WEB-INF/template.xhtml">
@@ -10,70 +11,69 @@
 
 	<ui:define name="content">
 
-		<h3 class="MarBot20">
+		<h3 class="MarBot20 page-title">
 			<i class="fa fa-tasks"></i> Product Details
 		</h3>
 		<hr />
 
-		<div class="col-md-13 MarTop20">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group MarRight10">
-						<h:graphicImage  library="image" name="If-Found.jpg"
-							styleClass="responsive-img img-thumbnail uploadImage" />
-					</div>
-				</div>
-
-				<div class="col-md-7">
-					<div class="row">
-		
-						<div class="form-group row">
-							<label class="col-lg-2"></label>
-							<div class="col-lg-9">
-								<div class="row">
-									<div class="col-lg-9">
-										<h4>#{productDetailsBean.product.name}</h4>
-										<ul>
-											<li><h:outputText value="#{productDetailsBean.product.sizes}" /></li>
-											<li><h:outputText value="#{productDetailsBean.product.category}" converter="#{categoryConvertor}" /></li>
-											<li>#{productDetailsBean.product.status}</li>						
-											<li>#{productDetailsBean.product.description}</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-lg-2"></label>
-							<div class="col-md-9">
-								<div class="row">
-									<select class="custom-select text-primary">
-										<option selected="selected">Size</option>
-										<option value="xl">XL</option>
-										<option value="l">L</option>
-										<option value="m">M</option>
-										<option value="s">S</option>
-									</select> 
-									<select class="custom-select text-primary">
-										<option selected="selected">Quantity</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-									</select>
-									<div>
-										<button type="button" class="btn btn-primary MarTop20">
-											<i class="fa fa-cart-plus MarRight10"></i>Add to cart
-										</button>
-									</div>
-								</div>
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
+		<div class="row MarTop20">
+			<!-- Image -->
+			<div class="col-md-4 text-md-center">
+				<h:graphicImage  library="image" name="If-Found.jpg"
+					styleClass="responsive-img img-thumbnail uploadImage" />
+				<br/>
+				<h:outputText value="#{productDetailsBean.product.category.name}" />
 			</div>
+
+			<div class="col-md-8">
+				
+				<h4><i class="fa fa-bullhorn"></i> <h:outputText value="#{productDetailsBean.product.name}"></h:outputText></h4>
+				
+				<h:panelGrid columns="2" styleClass="table table-responsive">
+				
+					<span class="muteText">Available Sizes</span>
+					<h:panelGroup>
+						<ui:repeat var="size" value="#{productDetailsBean.product.sizes}">
+							<h:outputText value="#{size}" styleClass="PadRight20" />
+						</ui:repeat>
+					</h:panelGroup>
+
+					<span class="muteText">Price</span>
+					<h:outputText value="#{productDetailsBean.product.prices}" converter="#{priceConverter}" />
+
+					<span class="muteText">Description</span>
+					<h:outputText value="#{productDetailsBean.product.description}"  />
+
+				</h:panelGrid>
+				
+				<h5><i class="fa fa-shopping-cart"></i> Add To Card </h5>
+				
+				<h:form styleClass="form-inline MarTop20">
+					
+					<div class="form-group ">
+						<h:selectOneMenu value="#{productDetailsBean.size}" styleClass="form-control">
+							<f:selectItems value="#{productDetailsBean.product.sizes}" var="s" itemLabel="#{s}" itemValue="#{s}"></f:selectItems>
+						</h:selectOneMenu>
+					</div>
+					
+					<div class="form-group">
+						<h:selectOneMenu value="#{productDetailsBean.count}" styleClass="form-control">
+							<c:forEach begin="1" end="6" step="1" var="index">
+								<f:selectItem itemLabel="${index}" itemValue="${index}"/>
+							</c:forEach>
+						</h:selectOneMenu>
+					</div>
+					
+					<div class="form-group">
+						<h:commandLink action="#{productDetailsBean.addToCart()}" styleClass="btn btn-outline-danger" >
+							<i class="fa fa-plus"></i> Add To Cart
+						</h:commandLink>
+					</div>
+					
+				</h:form>
+
+			</div>
+		</div>
 	</ui:define>
 </ui:composition>
 </html>

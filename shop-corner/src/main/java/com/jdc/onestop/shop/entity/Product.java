@@ -20,6 +20,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import static javax.persistence.FetchType.EAGER;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries(value = { @NamedQuery(name = "Product.getAll", query = "select p from Product p") })
@@ -42,7 +44,7 @@ public class Product implements Serializable {
 	private String photo;
 
 	@Enumerated
-	@ElementCollection
+	@ElementCollection(fetch = EAGER)
 	@CollectionTable
 	private List<Size> sizes;
 	@Lob
@@ -54,6 +56,9 @@ public class Product implements Serializable {
 	private Date creation;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date modification;
+	
+	@OneToMany(mappedBy = "product", fetch = EAGER)
+	private List<Price> prices;
 
 	@PrePersist
 	private void init() {
@@ -63,6 +68,14 @@ public class Product implements Serializable {
 
 	public enum Size {
 		XS, S, M, L, XL, XXL
+	}
+	
+	public List<Price> getPrices() {
+		return prices;
+	}
+
+	public void setPrices(List<Price> prices) {
+		this.prices = prices;
 	}
 
 	public enum Status {
