@@ -50,20 +50,23 @@
 					<div class="form-group row">
 						<h:outputLabel value="Price" styleClass="col-md-3" />
 						
-						<div class="col-md-9">
-							<h:inputText value="#{productAdminBean.price}" styleClass="form-control" p:placeholder="Enter Price"  />
+						<div class="col-md-4">
+							<h:inputText value="#{productAdminBean.price.price}" styleClass="form-control" p:placeholder="Enter Price"  />
+						</div>
+						<div class="col-md-5">
+							<h:inputText value="#{productAdminBean.price.refDate}" converter="#{dateConverter}" styleClass="form-control" p:placeholder="Reference Date (yyyy-MM-dd)"  />
 						</div>
 					</div>
 
-					<!-- <div class="form-group row">
+					<div class="form-group row">
 						<h:outputLabel value="Size" styleClass="col-md-3" />
 						
 						<div class="col-md-9 myCheck">
-							<h:selectManyCheckbox validator="#{productAdminBean.product.sizes}">
+							<h:selectManyCheckbox converter="#{sizeConverter}" value="#{productAdminBean.product.sizes}">
 								<f:selectItems value="#{sizes}" var="s" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
 							</h:selectManyCheckbox>
 						</div>  
-					</div> -->
+					</div>
 					
 					<div class="form-group row">
 						<h:outputLabel value="Status" styleClass="col-md-3" />

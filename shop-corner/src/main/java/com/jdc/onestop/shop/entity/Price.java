@@ -26,9 +26,19 @@ public class Price implements Serializable{
 
 	@ManyToOne
     private Product product;
+	
+	private int price;
 
 	@Temporal(TIMESTAMP)
     private Date refDate;
+	
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
 
 	public int getId() {
 		return id;

@@ -3,6 +3,7 @@ package com.jdc.onestop.shop.entity;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public Product() {
+		sizes = new ArrayList<>();
 	}
 
 	@Id

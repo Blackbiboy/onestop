@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 
+import com.jdc.onestop.shop.entity.Price;
 import com.jdc.onestop.shop.entity.Product;
 
 @Local
@@ -13,7 +14,7 @@ import com.jdc.onestop.shop.entity.Product;
 public interface ProductService extends Serializable {
 	int getPrice(Product product);
 
-	public void add(Product p);
+	public void add(Product p, Price price);
 
 	public Product findProductById(int id);
 

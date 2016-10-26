@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.jdc.onestop.shop.entity.Price;
 import com.jdc.onestop.shop.entity.Product;
 import com.jdc.onestop.shop.service.ProductService;
 
@@ -19,7 +20,7 @@ public class ProductAdminBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Product product;
-	private int price;
+	private Price price;
 
 	private Path file;
 
@@ -29,6 +30,8 @@ public class ProductAdminBean implements Serializable {
 	@PostConstruct
 	private void init() {
 		product = new Product();
+		price = new Price();
+		price.setProduct(product);
 
 		String id = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("id");
 		if (null != id) {
@@ -41,7 +44,7 @@ public class ProductAdminBean implements Serializable {
 	}
 
 	public String add() {
-		service.add(product);
+		service.add(product, price);
 
 		return "/public/product? faces-redirect=true&id=" + product.getId();
 	}
@@ -54,11 +57,12 @@ public class ProductAdminBean implements Serializable {
 		this.product = product;
 	}
 
-	public int getPrice() {
+
+	public Price getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(Price price) {
 		this.price = price;
 	}
 
