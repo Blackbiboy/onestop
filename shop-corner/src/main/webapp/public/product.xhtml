@@ -34,7 +34,7 @@
 									<div class="col-lg-9">
 										<h4>#{productDetailsBean.product.name}</h4>
 										<ul>
-											<li>size</li>
+											<li><h:outputText value="#{productDetailsBean.product.sizes}" /></li>
 											<li><h:outputText value="#{productDetailsBean.product.category}" converter="#{categoryConvertor}" /></li>
 											<li>#{productDetailsBean.product.status}</li>						
 											<li>#{productDetailsBean.product.description}</li>
