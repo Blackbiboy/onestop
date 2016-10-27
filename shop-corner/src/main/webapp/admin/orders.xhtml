@@ -20,14 +20,14 @@
 		<!-- Search Panel -->
 		<h:form styleClass="form-inline">
 			<!-- Status -->
-			<h:selectOneMenu styleClass="form-control" >
+			<h:selectOneMenu value="#{ordersAdminBean.status}" styleClass="form-control" >
 				<f:selectItems var="s" value="#{orderStatuses}" itemValue="#{s}" itemLabel="#{s}"></f:selectItems>
 			</h:selectOneMenu>
 			
 			<!-- Date -->
 			<div class="form-group">
 				<div class="input-group">
-					<h:inputText styleClass="form-control" p:placeholder="Search Date" />
+					<h:inputText value="#{ordersAdminBean.searchDate}" converter="#{dateConverter}" styleClass="form-control" p:placeholder="Search Date" />
 					<span class="input-group-addon">
 						<i class="fa fa-calendar"></i>
 					</span>			
@@ -36,12 +36,12 @@
 			
 			<!-- Order Number -->
 			<div class="form-group">
-				<h:inputText styleClass="form-control" p:placeholder="Order Number" />
+				<h:inputText value="#{ordersAdminBean.orderNumber}" styleClass="form-control" p:placeholder="Order Number" />
 			</div>
 			
 			<!-- Search Button -->
 			<div class="form-group">
-				<h:commandLink styleClass="btn btn-outline-danger">
+				<h:commandLink action="#{ordersAdminBean.search()}" styleClass="btn btn-outline-danger">
 					<i class="fa fa-search"></i> Search
 				</h:commandLink>
 			</div>
@@ -65,73 +65,26 @@
 			</thead>
 			
 			<tbody>
+				<ui:repeat var="od" value="#{ordersAdminBean.orders}">
 				<tr>
 					<td>
-						<h:link value="1" outcome="/admin/order">
-							<f:param name="id" value="1"></f:param>
+						<h:link value="#{od.id}" outcome="/admin/order">
+							<f:param name="id" value="#{od.id}"></f:param>
 						</h:link>
 					</td>
-					<td>Aung Aung</td>
-					<td>09876788876</td>
-					<td>2016-10-11</td>
-					<td>2016-10-25</td>
-					<td>Accepted</td>
-					<td>8000</td>
-					<td>400</td>
-					<td>8400</td>
+					<td>#{od.member.name}</td>
+					<td>#{od.delivery.phone}</td>
+					<td><h:outputText value="#{od.oderDate}" converter="#{dateConverter}" /></td>
+					<td><h:outputText value="#{od.wishDate}" converter="#{dateConverter}" /></td>
+					<td>#{od.status}</td>
+					<td>#{od.subTotal}</td>
+					<td>#{od.tax}</td>
+					<td>#{od.total}</td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>Aung Aung</td>
-					<td>09876788876</td>
-					<td>2016-10-11</td>
-					<td>2016-10-25</td>
-					<td>Accepted</td>
-					<td>8000</td>
-					<td>400</td>
-					<td>8400</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Aung Aung</td>
-					<td>09876788876</td>
-					<td>2016-10-11</td>
-					<td>2016-10-25</td>
-					<td>Accepted</td>
-					<td>8000</td>
-					<td>400</td>
-					<td>8400</td>
-				</tr>
+				</ui:repeat>
 			</tbody>
 		</table>
 		
-		<!-- Pagination -->
-		<div>
-			<ul class="pagination pull-right">
-				<li class="page-item">
-					<h:link styleClass="page-link">
-						<i class="fa fa-arrow-left"></i>
-					</h:link>
-				</li>
-
-				<li class="page-item active">
-					<h:link styleClass="page-link" value="1" />
-				</li>
-				<li class="page-item">
-					<h:link styleClass="page-link" value="2" />
-				</li>
-				<li class="page-item">
-					<h:link styleClass="page-link" value="3" />
-				</li>
-
-				<li class="page-item">
-					<h:link styleClass="page-link">
-						<i class="fa fa-arrow-right"></i>
-					</h:link>
-				</li>
-			</ul>
-		</div>
-
 	</ui:define>
 </ui:composition>
 </html>

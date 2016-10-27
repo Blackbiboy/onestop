@@ -9,71 +9,16 @@
 	<ui:define name="title">Contact</ui:define>
 	<ui:define name="content">
 		<h3 class="page-title"><i class="fa fa-send"></i>Contact</h3>
-		<hr class="MarBot20"/>
+		<hr/>
 		
-		<h:form>
-		    <div class="row">
-		        
-		        <div class="col-md-8 col-xs-12">
-					
-					
-					<div class="row form-group">
-						<label class="form-control-label col-xs-3"><i class="fa fa-envelope"></i> Email</label>
-						<div class="col-xs-9">
-							<h:inputText styleClass="form-control" p:placeholder="Enter Your Email" />
-						</div>
-					</div>
-					<div class="row form-group">
-						<label class="form-control-label col-xs-3"><i class="fa fa-phone"></i> Phone</label>
-						<div class="col-xs-9">
-							<h:inputText styleClass="form-control" p:placeholder="Enter Your Phone" />
-						</div>
-					</div>
-					<div class="row form-group">
-						<label class="form-control-label col-xs-3"><i class="fa fa-send"></i> Address</label>
-						<div class="col-xs-9">
-							<h:inputTextarea styleClass="form-control" p:placeholder="Enter Your Address" rows="3" />
-						</div>
-					</div>
-					<div class="row form-group">
-						<label class="form-control-label col-xs-3"><i class="fa fa-envelope-o"></i> Message</label>
-						<div class="col-xs-9">
-							<h:inputTextarea styleClass="form-control" p:placeholder="Enter your suggestion here!" rows="5" />
-						</div>
-					</div>
-					<div class="row form-group">
-						<div class="col-xs-9 offset-xs-3">
-							<button type="submit"
-						class="btn btn-primary btn-info text-xs-right">OK</button>
-					<button type="submit" class="btn btn-primary btn-info">Cancel</button>
-						</div>
-					</div>
-				</div>
-		    
-		    </div>
-		<hr />
-		</h:form>
-
-		
-			 <div class="col-md-8">
-            <div>
-                <div class="panel panel-default">
-                    <div class="text-center header alert-danger">Our Office</div>
-                    <div class="panel-body text-center ">
-                        <h4>Address</h4>
-                        <div>
-                        <i class="fa fa-bus"></i> No. 52/B(5F), Yangon Insein Raod,Kamayut, Yangon <br />
-                        <i class="fa fa-phone"></i>  09 97 110 2280 <br />
-                        <i class="fa fa-envelope"></i>Forever10@gmail.com<br />
-                        </div>
-                        <hr />
-                        <div id="map1" class="map">
-                        </div>
-                    </div>
-                </div>
-            </div>
-		</div>
-		<ui:include src="/public/style.html" />
+		 <ui:include src="/public/style.html" />
+		 
+         <h4>Address</h4>
+         <div class="muteText">
+	         <i class="fa fa-bus MarRight10"></i> No. 52/B(5F), Yangon Insein Raod,Kamayut, Yangon <br />
+	         <i class="fa fa-phone MarRight10"></i>  09 97 110 2280 <br />
+	         <i class="fa fa-envelope MarRight10"></i>Forever10@gmail.com<br />
+         </div>
 
 	</ui:define>
 </ui:composition>

@@ -14,7 +14,7 @@
 
 	<ui:define name="content">
 		
-		<h3 class="page-title"><i class="fa fa-shopping-cart"></i> Order Details - No.0001 <h:link styleClass="btn btn-circle btn-outline-danger pull-right"><i class="fa fa-pencil"></i></h:link> </h3>
+		<h3 class="page-title"><i class="fa fa-shopping-cart"></i> Order Details - No.<h:outputText value="#{orderAdmin.order.id}" /> <h:link styleClass="btn btn-circle btn-outline-danger pull-right"><i class="fa fa-pencil"></i></h:link> </h3>
 		<hr/>
 		
 		<div class="row">
@@ -26,15 +26,15 @@
 					<div class="card-header">
 						<h5 class="card-title">
 							<i class="fa fa-user MarRight10"></i> 
-							<h:outputText value="Aung Aung" />
+							<h:outputText value="#{orderAdmin.order.member.name}" />
 						</h5>
 					</div>	
 					<div class="card-block">
 						<div class="row">
 							<div class="col-xs-11 offset-xs-1">
-								<span ><i class="fa fa-phone"></i> 0908899878</span><br/>
-								<span ><i class="fa fa-envelope"></i> aung@gmail.com</span><br/>
-								<span ><i class="fa fa-send"></i> No. 43, Insein Road, Yangon.</span><br/>
+								<span ><i class="fa fa-phone"></i> #{orderAdmin.order.delivery.phone}</span><br/>
+								<span ><i class="fa fa-envelope"></i> #{orderAdmin.order.member.contact.email} </span><br/>
+								<span ><i class="fa fa-send"></i> #{orderAdmin.order.delivery.address}</span><br/>
 							</div>
 						</div>
 						
@@ -58,15 +58,15 @@
 					<div class="card-block">
 						<div class="row">
 							<span class="col-xs-4 offset-xs-1">Order Date</span>
-							<h:outputText value="2016-10-01" styleClass="col-xs-7" />
+							<h:outputText value="#{orderAdmin.order.oderDate}" converter="#{dateConverter}" styleClass="col-xs-7" />
 						</div>
 						<div class="row">
 							<span class="col-xs-4 offset-xs-1">Wish Date</span>
-							<h:outputText value="2016-10-06" styleClass="col-xs-7" />
+							<h:outputText value="#{orderAdmin.order.wishDate}" converter="#{dateConverter}" styleClass="col-xs-7" />
 						</div>
 						<div class="row">
 							<span class="col-xs-4 offset-xs-1">Status</span>
-							<h:outputText value="Accepted" styleClass="col-xs-7" />
+							<h:outputText value="#{orderAdmin.order.status}" styleClass="col-xs-7" />
 						</div>
 					</div>
 				
@@ -98,76 +98,40 @@
 							</thead>
 							
 							<tbody>
-								<tr>
-									<td style="width: 50%">
-										<div class="row">
-											<div class="col-xs-3">
-												<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
+								<ui:repeat var="od" value="#{orderAdmin.order.orderList}">
+									<tr>
+										<td style="width: 50%">
+											<div class="row">
+												<div class="col-xs-3">
+													<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
+												</div>
+												<div class="col-xs-8">
+													<h6>#{od.product.name}</h6>
+													<h:outputText value="#{od.product.description}" /><br/>
+													<h:outputFormat value="#{od.size}" />
+												</div>
 											</div>
-											<div class="col-xs-8">
-												<h6>Boy T Shirt</h6>
-												<h:outputText value="Blue" /><br/>
-												<h:outputFormat value="XXL" />
-											</div>
-										</div>
-									</td>
-
-									<td class="text-xs-right">8000</td>
-									<td class="text-xs-right">1</td>
-									<td class="text-xs-right">8000</td>
-								</tr>
-
-								<tr>
-									<td style="width: 50%">
-										<div class="row">
-											<div class="col-xs-3">
-												<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
-											</div>
-											<div class="col-xs-8">
-												<h6>Boy T Shirt</h6>
-												<h:outputText value="Blue" /><br/>
-												<h:outputFormat value="XXL" />
-											</div>
-										</div>
-									</td>
-
-									<td class="text-xs-right">8000</td>
-									<td class="text-xs-right">1</td>
-									<td class="text-xs-right">8000</td>
-								</tr>
-
-								<tr>
-									<td style="width: 50%">
-										<div class="row">
-											<div class="col-xs-3">
-												<h:graphicImage styleClass="img-thumbnail img-fluid" library="image" name="boyTshirt.jpg" />
-											</div>
-											<div class="col-xs-8">
-												<h6>Boy T Shirt</h6>
-												<h:outputText value="Blue" /><br/>
-												<h:outputFormat value="XXL" />
-											</div>
-										</div>
-									</td>
-
-									<td class="text-xs-right">8000</td>
-									<td class="text-xs-right">1</td>
-									<td class="text-xs-right">8000</td>
-								</tr>
+										</td>
+	
+										<td class="text-xs-right">#{od.unitPrice}</td>
+										<td class="text-xs-right">#{od.count}</td>
+										<td class="text-xs-right">#{od.subTotal}</td>
+									</tr>
+								</ui:repeat>
 							</tbody>
 							
 							<tfoot>
 								<tr>
 									<td colspan="3" class="text-xs-right">Sub Total</td>
-									<td class="text-xs-right">24000</td>
+									<td class="text-xs-right">#{orderAdmin.order.subTotal}</td>
 								</tr>
 								<tr>
 									<td colspan="3" class="text-xs-right">Tax</td>
-									<td class="text-xs-right">1200</td>
+									<td class="text-xs-right">#{orderAdmin.order.tax}</td>
 								</tr>
 								<tr>
 									<td colspan="3" class="text-xs-right">Total</td>
-									<td class="text-xs-right">25200</td>
+									<td class="text-xs-right">#{orderAdmin.order.total}</td>
 								</tr>
 							</tfoot>
 						</table>

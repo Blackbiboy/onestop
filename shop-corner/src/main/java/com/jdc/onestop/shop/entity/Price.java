@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Price implements Serializable{
@@ -29,6 +30,7 @@ public class Price implements Serializable{
 	
 	private int price;
 
+	@NotNull(message="Please reference Date for Price.")
 	@Temporal(TIMESTAMP)
     private Date refDate;
 	

@@ -49,47 +49,49 @@
 			
 			</div>
 		</div>
-		
-		<div class="MarBot20">
-			<h3 class="page-title"><i class="fa fa-history"></i> My Orders</h3><hr/>
-			
-			<table class="table table-striped">
+	
+		<h:panelGroup rendered="#{ not empty myOrdersBean.orders }">
+			<div class="MarBot20">
+				<h3 class="page-title"><i class="fa fa-history"></i> My Orders</h3><hr/>
 				
-				<thead>
-					<tr>
-						<th>Order Number</th>
-						<th>Date</th>
-						<th>Status</th>
-						<th>Items</th>
-					</tr>
-				</thead>
-				
-				<tbody>
-					<ui:repeat var="myod" value="#{myOrdersBean.orders}">
-					<tr>
-						<td>
-							<h:outputText value="#{myod.id}" />
-						</td>
-						<td>
-							<h:outputText value="#{myod.oderDate}" converter="#{dateTimeConverter}" />
-						</td>
-						<td>
-							<h:outputText value="#{myod.status}" />
-						</td>
-						<td>
-							<ui:repeat var="od" value="#{myod.orderList}">
-								<div class="row">
-									<div class="col-xs-6">#{od.product.name}</div>
-									<div class="col-xs-2">#{od.count}</div>
-									<div class="col-xs-4 text-sm-right">#{od.subTotal}</div>
-								</div>
-							</ui:repeat>
-						</td>
-					</tr>
-					</ui:repeat>
-				</tbody>
-			</table>
-		</div>
+				<table class="table table-striped">
+					
+					<thead>
+						<tr>
+							<th>Order Number</th>
+							<th>Date</th>
+							<th>Status</th>
+							<th>Items</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<ui:repeat var="myod" value="#{myOrdersBean.orders}">
+						<tr>
+							<td>
+								<h:outputText value="#{myod.id}" />
+							</td>
+							<td>
+								<h:outputText value="#{myod.oderDate}" converter="#{dateTimeConverter}" />
+							</td>
+							<td>
+								<h:outputText value="#{myod.status}" />
+							</td>
+							<td>
+								<ui:repeat var="od" value="#{myod.orderList}">
+									<div class="row">
+										<div class="col-xs-6">#{od.product.name}</div>
+										<div class="col-xs-2">#{od.count}</div>
+										<div class="col-xs-4 text-sm-right">#{od.subTotal}</div>
+									</div>
+								</ui:repeat>
+							</td>
+						</tr>
+						</ui:repeat>
+					</tbody>
+				</table>
+			</div>
+		</h:panelGroup>
 
 		<div class="MarBot20">
 			<h3 class="page-title"><i class="fa fa-heartbeat"></i> To Seller Items</h3><hr/>
@@ -110,37 +112,7 @@
 					</div>
 					
 				</div>
-			
 
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					
-					<div class="card">
-						<h:graphicImage library="image" name="boyTshirt.jpg" styleClass="img-fluid card-img-top" />
-						<div class="card-block">
-							<div class="pull-left">
-								<span class="card-title">Boys TShirt</span><br/>
-								<span class="muteText Fs12">8000 MMK</span>
-							</div>
-							<a href="#!" class="btn btn-circle bg-inverse pull-right"><i class="fa fa-shopping-cart"></i></a>
-						</div>
-					</div>
-					
-				</div>
-
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					
-					<div class="card">
-						<h:graphicImage library="image" name="girlTshirt.jpg" styleClass="img-fluid card-img-top" />
-						<div class="card-block">
-							<div class="pull-left">
-								<span class="card-title">Girl TShirt</span><br/>
-								<span class="muteText Fs12">8000 MMK</span>
-							</div>
-							<a href="#!" class="btn btn-circle bg-inverse pull-right"><i class="fa fa-shopping-cart"></i></a>
-						</div>
-					</div>
-					
-				</div>
 			</div>
 			
 		</div>

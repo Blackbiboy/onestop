@@ -5,6 +5,8 @@ import java.io.Serializable;
 import java.lang.String;
 import javax.persistence.*;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * Entity implementation class for Entity: DiliveryInfo
  *
@@ -17,7 +19,10 @@ public class DeliveryInfo implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@NotEmpty(message="You must enter Phone Number!")
 	private String phone;
+	@NotEmpty(message="You must enter Delivery Address!")
 	private String address;
 	@ManyToOne
 	private Member member;

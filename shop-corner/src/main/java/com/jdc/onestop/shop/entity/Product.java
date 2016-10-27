@@ -20,6 +20,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import static javax.persistence.FetchType.EAGER;
 import javax.persistence.OneToMany;
 
@@ -37,6 +40,7 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = IDENTITY)
 	private int id;
 
+	@NotEmpty(message="You must enter Product Name")
 	private String name;
 
 	@ManyToOne

@@ -1,26 +1,31 @@
 package com.jdc.onestop.shop.entity;
 
+import static javax.persistence.CascadeType.MERGE;
+import static javax.persistence.CascadeType.PERSIST;
+import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.TemporalType.DATE;
+import static javax.persistence.TemporalType.TIMESTAMP;
+
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Temporal;
-import static javax.persistence.TemporalType.TIMESTAMP;
-import javax.persistence.JoinColumn;
-import static javax.persistence.TemporalType.DATE;
-import static javax.persistence.CascadeType.PERSIST;
-import static javax.persistence.CascadeType.MERGE;
-import static javax.persistence.FetchType.EAGER;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="order_tbl")
@@ -55,9 +60,12 @@ public class Order implements Serializable {
 	@ManyToOne(cascade = { PERSIST, MERGE })
 	private DeliveryInfo delivery;
 
+	@NotNull(message="Please enter wish date")
 	@Temporal(DATE)
 	private Date wishDate;
 
+	private Date updateDate;
+	
 	private int subTotal;
 
 	private int tax;
@@ -69,6 +77,14 @@ public class Order implements Serializable {
 	
 	@OneToMany(mappedBy = "order", cascade = { PERSIST, MERGE }, orphanRemoval = true, fetch = EAGER)
 	private Set<OrderDetails> orders;
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
 
 	public Set<OrderDetails> getOrders() {
 		return orders;
