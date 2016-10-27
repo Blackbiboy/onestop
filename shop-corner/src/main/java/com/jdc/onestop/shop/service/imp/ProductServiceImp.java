@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import com.jdc.onestop.shop.entity.Price;
 import com.jdc.onestop.shop.entity.Product;
+import com.jdc.onestop.shop.entity.Product.Size;
 import com.jdc.onestop.shop.repository.PriceRepo;
 import com.jdc.onestop.shop.repository.ProductRepo;
 import com.jdc.onestop.shop.service.ProductService;
@@ -33,11 +34,22 @@ public class ProductServiceImp implements Serializable, ProductService {
 	@Override
 	public Product findProductById(int id) {
 		Product p = repo.find(id);
+		for(Size s : p.getSizes()) {
+			s.toString();
+		}
 		return p;
 	}
 
 	@Override
 	public List<Product> getAllProduct() {
+		List<Product> list = repo.getAll();
+		
+		for(Product p : list) {
+			for(Size s : p.getSizes()) {
+				s.toString();
+			}
+		}
+		
 		return repo.getAll();
 	}
 
@@ -47,3 +59,4 @@ public class ProductServiceImp implements Serializable, ProductService {
 		priceRepo.add(price);
 	}
 }
+ 

@@ -44,7 +44,7 @@ public class Product implements Serializable {
 	private String photo;
 
 	@Enumerated
-	@ElementCollection(fetch = EAGER)
+	@ElementCollection
 	@CollectionTable
 	private List<Size> sizes;
 	@Lob
