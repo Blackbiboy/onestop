@@ -53,4 +53,9 @@ public class MemberServiceImp implements MemberService {
 		return repo.search(sql);
 	}
 
+	@Override
+	public Member edit(Member m){
+		return repo.searchMember(m);
+	}
+
 }

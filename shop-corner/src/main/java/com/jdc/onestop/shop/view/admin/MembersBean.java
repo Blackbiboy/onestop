@@ -33,7 +33,8 @@ public class MembersBean implements Serializable{
 	
 	public String search() {
 		memList = service.search(status, name);
-		return "";
+		
+		return "/admin/members.xhtml";
 	}
 
 	public List<Member> getMemList() {

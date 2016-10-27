@@ -21,4 +21,10 @@ public interface MemberService extends Serializable{
 
 	List<Member> search(Status status, String name);
 
+	Member edit(Member m);
+
+	
+	
+	
+
 }

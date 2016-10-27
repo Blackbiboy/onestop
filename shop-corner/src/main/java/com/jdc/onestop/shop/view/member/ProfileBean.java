@@ -16,6 +16,8 @@ public class ProfileBean {
 	@Inject
 	private Member member;
 	
+	//private Member searchMember;
+	
 	private Contact contact;
 	
 	@Inject
@@ -50,4 +52,10 @@ public class ProfileBean {
 		return "/member/home?faces-redirect=true";
 	}
 
+	public String edit(){
+		
+		service.edit(member);
+		
+		return "/member/home?faces-redirect=true";
+	}
 }

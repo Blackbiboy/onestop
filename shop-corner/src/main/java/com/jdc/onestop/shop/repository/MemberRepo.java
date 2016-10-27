@@ -30,5 +30,10 @@ public class MemberRepo implements Serializable {
 	public List<Member> search(String sql) {
 		return em.createQuery(sql, Member.class).getResultList();
 	}
+	
+	public Member searchMember(Member m){
+		return em.merge(m);
+	}
+	
 
 }

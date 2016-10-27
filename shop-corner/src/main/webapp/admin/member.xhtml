@@ -21,11 +21,11 @@
                     <h:graphicImage library="image" name="user.png" width="240" height="200" styleClass="img-rounded"/>
 				</div>
 				<h4>
-					<i class="fa fa-user"></i> Aung Aung 
+					<i class="fa fa-user"></i>#{memberBean.member.name}
 				</h4> <br />
-				<i class="fa fa-phone"></i> 0977788767 <br/>
-				<i class="fa fa-envelope"></i> aung@gmail.com <br/>
-				<i class="fa fa-send"></i> No.42 Insein Road, Kamayut. <br/><br />
+				<i class="fa fa-phone"></i> #{memberBean.member.contact.phone} <br/>
+				<i class="fa fa-envelope"></i> #{memberBean.member.contact.email} <br/>
+				<i class="fa fa-send"></i> #{memberBean.member.contact.address} <br/><br />
 				<button class="btn btn-danger"><i class="fa fa-user-times"></i>  BLOCK </button>
 				<button class="btn btn-success"><i class="fa fa-user"></i>  UNBLOCK </button>
 			</div>
@@ -50,12 +50,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td>1</td>
-						<td>Jeans</td>
-						<td>2</td>
-						<td>400</td>
-						<td>23.5.2016</td>
-						<td>Deliver</td>
+					<ui:repeat var="order" value=""></ui:repeat>
 					</tr>
 				</tbody>
 				<tbody>
