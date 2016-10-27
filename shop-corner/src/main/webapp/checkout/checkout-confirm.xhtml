@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		
+		<ui:define name="title">Confirm</ui:define>
+
+		<ui:define name="left-menu">
+			<ui:include src="/member/left-menu.xhtml" />
+		</ui:define>
+		
+		<ui:define name="content">
+		
+			<h:form>
+				<h3 class="page-title"><i class="fa fa-shopping-cart"></i> Items
+					<h:commandLink styleClass="pull-right btn btn-outline-danger" action="#{checkOutBean.confirm()}" >
+						<i class="fa fa-money"></i> Confirm
+					</h:commandLink>
+				</h3>
+			</h:form>
+			<hr/>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Item Code</th>
+						<th>Item Name</th>
+						<th>Size</th>
+						<th>Individual Price</th>
+						<th>Quantity</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<ui:repeat var="od" value="#{myCartBean.orders}">
+					<tr>
+						<td>#{od.product.id}</td>
+						<td>#{od.product.name} </td>
+						<td>#{od.size} </td>
+						<td>#{od.unitPrice}</td>
+						<td>#{od.count}</td>
+						<td>#{od.subTotal}</td>
+					</tr>
+					</ui:repeat>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5" style="text-align: right;">Total Price : </td>
+						<td>#{myCartBean.subTotal}</td>
+					</tr>			
+					<tr>
+						<td colspan="5" style="text-align: right;">Tax (5%) : </td>
+						<td>#{myCartBean.tax}</td>
+					</tr>			
+					<tr >
+						<td colspan="5" style="text-align: right;">TOTAL : </td>
+						<td>#{myCartBean.total}</td>
+					</tr>			
+				</tfoot>
+			</table>
+		
+			<h3 class="page-title"><i class="fa fa-ship"></i> Delivery Informations</h3><hr/>
+			
+			<h:panelGrid columns="4" styleClass="table table-bordered">
+				
+				<span><i class="fa fa-user"></i> Customer</span>
+				<h:outputText value="#{loginUser.name}" />
+				
+				<span><i class="fa fa-phone"></i> Phone Number</span>
+				<h:outputText value="#{checkOutBean.delivery.phone}" />
+
+				<span><i class="fa fa-calendar"></i> Delivery Date</span>
+				<h:outputText value="#{checkOutBean.deliveryDate}" />
+				
+				<span><i class="fa fa-send"></i> Address</span>
+				<h:outputText value="#{checkOutBean.delivery.address}" />
+
+			</h:panelGrid>
+			
+			<h:form>
+				<h:commandLink styleClass="pull-right btn btn-outline-danger" action="#{checkOutBean.confirm()}" >
+					<i class="fa fa-money"></i> Confirm
+				</h:commandLink>
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</html>

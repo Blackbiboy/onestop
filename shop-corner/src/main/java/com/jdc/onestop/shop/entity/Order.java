@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -22,6 +24,10 @@ import static javax.persistence.FetchType.EAGER;
 
 @Entity
 @Table(name="order_tbl")
+@NamedQueries({
+	@NamedQuery(name="Order.findByMember",
+			query="select o from Order o where o.member = :member")
+})
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -45,6 +51,9 @@ public class Order implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "member")
 	private Member member;
+	
+	@ManyToOne(cascade = { PERSIST, MERGE })
+	private DeliveryInfo delivery;
 
 	@Temporal(DATE)
 	private Date wishDate;
@@ -80,7 +89,14 @@ public class Order implements Serializable {
 		}
 	}
 	
-	
+	public DeliveryInfo getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(DeliveryInfo delivery) {
+		this.delivery = delivery;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -147,6 +163,10 @@ public class Order implements Serializable {
 
 	public enum Status {
 		Accept, Cance, Delivered, Finish
+	}
+	
+	public List<OrderDetails> getOrderList() {
+		return new ArrayList<>(orders);
 	}
 
 	@Override

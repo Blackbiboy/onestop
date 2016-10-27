@@ -26,23 +26,23 @@
 				<div class="col-xs-12 col-md-8">
 					<p>
 						<span class="muteText"><i class="fa fa-user MarRight10"></i> Login ID</span><br/>
-						<h:outputText value="aung" styleClass="MarLeft30 Fs24" />
+						<h:outputText value="#{loginUser.loginId}" styleClass="MarLeft30 Fs24" />
 					</p>
 					<p>
 						<span class="muteText"><i class="fa fa-phone MarRight10"></i> Phone Number</span><br/>
-						<h:outputText value="09 98778867" styleClass="MarLeft30 Fs24" />
+						<h:outputText value="#{loginUser.contact.phone}" styleClass="MarLeft30 Fs24" />
 					</p>
 					<p>
 						<span class="muteText"><i class="fa fa-envelope MarRight10"></i> Email</span><br/>
-						<h:outputText value="aung@gmail.com" styleClass="MarLeft30 Fs24" />
+						<h:outputText value="#{loginUser.contact.email}" styleClass="MarLeft30 Fs24" />
 					</p>
 					<p>
 						<span class="muteText"><i class="fa fa-send MarRight10"></i> Address</span><br/>
-						<h:outputText value="No 43 Insein Road, Kamayut, Yangon." styleClass="MarLeft30 Fs24" />
+						<h:outputText value="#{loginUser.contact.address}" styleClass="MarLeft30 Fs24" />
 					</p>
 					<p>
 						<span class="muteText"><i class="fa fa-calendar MarRight10"></i> Creation</span><br/>
-						<h:outputText value="2016-10-15 10:00" styleClass="MarLeft30 Fs24" />
+						<h:outputText value="#{loginUser.creation}" styleClass="MarLeft30 Fs24" converter="#{dateTimeConverter}" />
 					</p>
 					
 				</div>
@@ -65,94 +65,28 @@
 				</thead>
 				
 				<tbody>
-
+					<ui:repeat var="myod" value="#{myOrdersBean.orders}">
 					<tr>
 						<td>
-							<h:outputText value="201610D0001" />
+							<h:outputText value="#{myod.id}" />
 						</td>
 						<td>
-							<h:outputText value="2016-10-11" />
+							<h:outputText value="#{myod.oderDate}" converter="#{dateTimeConverter}" />
 						</td>
 						<td>
-							<h:outputText value="Accepted" />
+							<h:outputText value="#{myod.status}" />
 						</td>
 						<td>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - XS Sweet Child</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - XL Hard Boy</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - L Java Guys</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
+							<ui:repeat var="od" value="#{myod.orderList}">
+								<div class="row">
+									<div class="col-xs-6">#{od.product.name}</div>
+									<div class="col-xs-2">#{od.count}</div>
+									<div class="col-xs-4 text-sm-right">#{od.subTotal}</div>
+								</div>
+							</ui:repeat>
 						</td>
 					</tr>
-
-					<tr>
-						<td>
-							<h:outputText value="201610D0001" />
-						</td>
-						<td>
-							<h:outputText value="2016-10-11" />
-						</td>
-						<td>
-							<h:outputText value="Accepted" />
-						</td>
-						<td>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - XS Sweet Child</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - XL Hard Boy</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - L Java Guys</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<h:outputText value="201610D0001" />
-						</td>
-						<td>
-							<h:outputText value="2016-10-11" />
-						</td>
-						<td>
-							<h:outputText value="Accepted" />
-						</td>
-						<td>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - XS Sweet Child</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - XL Hard Boy</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">T Shirt - L Java Guys</div>
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-4 text-sm-right">8000 MMK</div>
-							</div>
-						</td>
-					</tr>
-					
+					</ui:repeat>
 				</tbody>
 			</table>
 		</div>

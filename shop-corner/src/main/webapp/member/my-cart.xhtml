@@ -12,14 +12,15 @@
 	</ui:define>
 
 	<ui:define name="content">
-
+		<h:form>
 		<h3 class="page-title">
 			<i class="fa fa-shopping-cart"></i> My Cart 
-			<h:link styleClass="btn btn-outline-danger pull-right" outcome="/member/checkout">
+			<h:commandLink styleClass="btn btn-outline-danger pull-right" action="checkout">
 				<i class="fa fa-check"></i> Check Out
-			</h:link>
+			</h:commandLink>
 		</h3>
 		<hr/>		
+		</h:form>
 
 		<h:form>
 		<table class="table table-sm table-hover">

@@ -24,30 +24,32 @@
 					<div class="row form-group">
 						<label class="form-control-label col-xs-3"><i class="fa fa-user"></i> Name</label>
 						<div class="col-xs-9">
-							<h:inputText styleClass="form-control" p:placeholder="Enter Name" />
+							<h:inputText value="#{profileBean.member.name}" styleClass="form-control" p:placeholder="Enter Name"
+								required="true" requiredMessage="You must enter Name!" />
 						</div>
 					</div>
 					<div class="row form-group">
 						<label class="form-control-label col-xs-3"><i class="fa fa-phone"></i> Phone</label>
 						<div class="col-xs-9">
-							<h:inputText styleClass="form-control" p:placeholder="Enter Phone" />
+							<h:inputText value="#{profileBean.contact.phone}" styleClass="form-control" p:placeholder="Enter Phone"
+								required="true" requiredMessage="You must enter Phone"/>
 						</div>
 					</div>
 					<div class="row form-group">
 						<label class="form-control-label col-xs-3"><i class="fa fa-envelope"></i> Email</label>
 						<div class="col-xs-9">
-							<h:inputText styleClass="form-control" p:placeholder="Enter Email" />
+							<h:inputText value="#{profileBean.contact.email}" styleClass="form-control" p:placeholder="Enter Email" />
 						</div>
 					</div>
 					<div class="row form-group">
 						<label class="form-control-label col-xs-3"><i class="fa fa-send"></i> Address</label>
 						<div class="col-xs-9">
-							<h:inputTextarea styleClass="form-control" p:placeholder="Enter Address" rows="5" />
+							<h:inputTextarea value="#{profileBean.contact.address}" styleClass="form-control" p:placeholder="Enter Address" rows="5" />
 						</div>
 					</div>
 					<div class="row form-group">
 						<div class="col-xs-9 offset-xs-3">
-							<h:commandLink action="#{profileBean.edit()}" styleClass="btn btn-outline-danger" >
+							<h:commandLink action="#{profileBean.save()}" styleClass="btn btn-outline-danger" >
 								<i class="fa fa-save"></i> Update Profile
 							</h:commandLink>
 						</div>

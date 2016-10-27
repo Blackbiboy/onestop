@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 
 import com.jdc.onestop.shop.entity.Product.Size;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 public class OrderDetails implements Serializable {
@@ -18,6 +20,7 @@ public class OrderDetails implements Serializable {
 	}
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	@ManyToOne

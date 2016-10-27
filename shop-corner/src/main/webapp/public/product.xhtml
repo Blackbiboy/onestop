@@ -9,6 +9,24 @@
 <ui:composition template="/WEB-INF/template.xhtml">
 	<ui:define name="title">Details</ui:define>
 
+	<ui:define name="left-menu">
+		<h:panelGroup rendered="#{not empty loginUser and loginUser.role eq 'Admin'}">
+			<ui:include src="/admin/left-menu.xhtml" />
+		</h:panelGroup>	
+		<h:panelGroup rendered="#{not empty loginUser and loginUser.role eq 'Member'}">
+			<ui:include src="/member/left-menu.xhtml" />
+		</h:panelGroup>	
+		<h:panelGroup rendered="#{empty loginUser}">
+			<div class="list-group">
+				<span class="list-group-item list-group-item-danger">Categories</span>
+				
+				<ui:repeat var="cat" value="#{categories}">
+					<h:link value="#{cat.name}" styleClass="list-group-item list-group-item-action"  />
+				</ui:repeat>
+			</div>
+		</h:panelGroup>	
+	</ui:define>
+
 	<ui:define name="content">
 
 		<h3 class="MarBot20 page-title">

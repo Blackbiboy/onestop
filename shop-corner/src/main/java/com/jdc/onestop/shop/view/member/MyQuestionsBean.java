@@ -4,11 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.jdc.onestop.shop.entity.Question;
-import com.jdc.onestop.shop.repository.QuestionRepo;
 
 @Named
 @ViewScoped
@@ -26,9 +24,6 @@ public class MyQuestionsBean implements Serializable{
 		this.questionList = questionList;
 	}
 
-	@Inject
-	private QuestionRepo questionRepo;
-	
 	public void addQuestion(){
 		
 	}

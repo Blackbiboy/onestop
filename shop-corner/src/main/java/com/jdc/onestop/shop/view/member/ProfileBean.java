@@ -16,8 +16,6 @@ public class ProfileBean {
 	@Inject
 	private Member member;
 	
-	//private Member searchMember;
-	
 	private Contact contact;
 	
 	@Inject
@@ -25,9 +23,22 @@ public class ProfileBean {
 	
 	@PostConstruct
 	private void init() {
-		contact = new Contact();
+		
+		contact = member.getContact();
+		
+		if(null == contact) {
+			contact = new Contact();
+		}
 	}
-
+	
+	public void setContact(Contact contact) {
+		this.contact = contact;
+	}
+	
+	public Contact getContact() {
+		return contact;
+	}
+	
 	public Member getMember() {
 		return member;
 	}
@@ -36,26 +47,10 @@ public class ProfileBean {
 		this.member = member;
 	}
 
-	public Contact getContact() {
-		return contact;
-	}
-
-	public void setContact(Contact contact) {
-		this.contact = contact;
-	}
-	
 	public String save() {
-		
 		member.setContact(contact);
 		service.save(member);
-		
 		return "/member/home?faces-redirect=true";
 	}
 
-	public String edit(){
-		
-		service.edit(member);
-		
-		return "/member/home?faces-redirect=true";
-	}
 }

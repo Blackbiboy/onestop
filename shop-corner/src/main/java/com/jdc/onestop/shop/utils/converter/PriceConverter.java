@@ -1,7 +1,6 @@
 package com.jdc.onestop.shop.utils.converter;
 
 import java.text.DecimalFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.enterprise.inject.Model;

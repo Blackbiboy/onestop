@@ -37,6 +37,10 @@ public class MyCartBean implements Serializable{
 		od.calculate();
 	}
 	
+	public void clear() {
+		this.orders.clear();
+	}
+	
 	public void countDown(OrderDetails od) {
 		od.setCount(od.getCount() - 1);
 		if(od.getCount() == 0) {
