@@ -1,5 +1,6 @@
 package com.jdc.onestop.shop.view.admin;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.ZoneId;
@@ -7,16 +8,20 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.inject.Model;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import com.jdc.onestop.shop.entity.Order;
 import com.jdc.onestop.shop.entity.Order.Status;
 import com.jdc.onestop.shop.service.OrderService;
 
-@Model
-public class OrdersAdminBean {
+@Named
+@ViewScoped
+public class OrdersAdminBean implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	private List<Order> orders;
 	
 	@Inject
@@ -30,14 +35,16 @@ public class OrdersAdminBean {
 	private void init() {
 		searchDate = Date.from(LocalDate.of(YearMonth.now().getYear(), YearMonth.now().getMonth(), 1)
 				.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		status = Status.values()[0];
+		
+		
+		if(status == null)
+			status = Status.values()[0];
 		
 		search();
 	}
 	
-	public String search() {
+	public void search() {
 		orders = service.search(status, searchDate, orderNumber);
-		return "";
 	}
 
 	public List<Order> getOrders() {

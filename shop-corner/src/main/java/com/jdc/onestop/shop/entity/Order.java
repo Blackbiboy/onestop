@@ -178,7 +178,7 @@ public class Order implements Serializable {
 	}
 
 	public enum Status {
-		Accept, Cance, Delivered, Finish
+		Accept, Cancel, Delivered, Finish
 	}
 	
 	public List<OrderDetails> getOrderList() {

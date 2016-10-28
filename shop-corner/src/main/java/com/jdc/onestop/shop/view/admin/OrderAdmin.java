@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.jdc.onestop.shop.entity.Order;
-import com.jdc.onestop.shop.entity.Order.Status;
 import com.jdc.onestop.shop.service.OrderService;
 import com.jdc.onestop.shop.utils.ParamsHelper;
 
@@ -20,7 +19,6 @@ public class OrderAdmin implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Order order;
-	private Status status;
 	
 	@Inject
 	private OrderService service;
@@ -28,7 +26,7 @@ public class OrderAdmin implements Serializable{
 	@PostConstruct
 	private void init() {
 		String str = ParamsHelper.getParam("id");
-		System.out.println("Parameter : " + str);
+
 		if(null != str) {
 			order = service.find(Integer.parseInt(str));
 		}
@@ -43,17 +41,10 @@ public class OrderAdmin implements Serializable{
 	}
 	
 	public String save() {
-		order.setStatus(status);
 		order.setUpdateDate(new Date());
+		service.save(order);
 		return "/admin/orders?faces-redirect=true";
 	}
 
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
-	}
 	
 }

@@ -41,8 +41,9 @@
 			
 			<!-- Search Button -->
 			<div class="form-group">
-				<h:commandLink action="#{ordersAdminBean.search()}" styleClass="btn btn-outline-danger">
+				<h:commandLink actionListener="#{ordersAdminBean.search()}" styleClass="btn btn-outline-danger">
 					<i class="fa fa-search"></i> Search
+					<f:ajax render="@all" execute="@form"></f:ajax>
 				</h:commandLink>
 			</div>
 			
