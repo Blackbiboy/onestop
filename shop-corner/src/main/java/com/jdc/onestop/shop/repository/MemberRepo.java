@@ -2,9 +2,11 @@ package com.jdc.onestop.shop.repository;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import com.jdc.onestop.shop.entity.Member;
 
@@ -27,8 +29,14 @@ public class MemberRepo implements Serializable {
 		em.merge(member);
 	}
 
-	public List<Member> search(String sql) {
-		return em.createQuery(sql, Member.class).getResultList();
+	public List<Member> search(String sql, Map<String, Object> params) {
+		TypedQuery<Member> q = em.createQuery(sql, Member.class);
+		
+		for(String key : params.keySet()) {
+			q.setParameter(key, params.get(key));
+		}
+		
+		return q.getResultList();
 	}
 	
 	public Member searchMember(Member m){

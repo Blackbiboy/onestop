@@ -47,6 +47,7 @@ public class Member implements Serializable {
 	@Enumerated(STRING)
 	private Role role;
 
+	@Enumerated
 	private Status status;
 	
 	@Temporal(TIMESTAMP)
@@ -60,6 +61,7 @@ public class Member implements Serializable {
 		role = Role.Member;
 		creation = new Date();
 		modification = new Date();
+		status = Status.Valid;
 		password = PasswordUtils.encript(password);
 	}
 

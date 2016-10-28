@@ -1,5 +1,6 @@
 package com.jdc.onestop.shop.view.common;
 
+import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -20,6 +21,9 @@ public class SecurityBean {
 	
 	@Inject
 	private MemberService service;
+	
+	@Inject
+	private Event<Member> event;
 	
 	public String signOut() {
 		try {
@@ -42,6 +46,8 @@ public class SecurityBean {
 			internalLogin();
 			
 			Member member = service.findById(login);
+			event.fire(member);
+			
 			if(member.getRole() == Role.Admin) {
 				return "/admin/home?faces-redirect=true";
 			} else {
@@ -72,6 +78,7 @@ public class SecurityBean {
 			service.addMember(member);
 			
 			internalLogin();
+			event.fire(member);
 			
 			return "/member/profile?faces-redirect=true";
 		

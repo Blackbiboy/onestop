@@ -17,19 +17,22 @@
 		<div class="card user-card">
 			<div class="card-block">
 				<h5 class="card-title">
-					<i class="fa fa-user"></i> #{cc.attrs.item.name}
-					<h:link outcome="/admin/member" styleClass="pull-right btn btn-circle btn-danger">
-						<i class="fa fa-pencil"></i>
-						<f:param name="id" value="#{cc.attrs.item.loginId}"></f:param>
-					</h:link>
+					#{cc.attrs.item.name}
 				</h5>
 				
 			</div>
 			<h:graphicImage library="image" name="user.png" styleClass="img-fluid" />
 			<div class="card-block">
-				<i class="fa fa-phone"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.phone} <br/>
-				<i class="fa fa-envelope"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.email} <br/>
-				<i class="fa fa-send"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.address} <br/>
+				<i class="fa fa-phone MarRight10"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.phone} <br/>
+				<i class="fa fa-envelope MarRight10"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.email} <br/>
+				<i class="fa fa-send MarRight10"></i> #{empty cc.attrs.item.contact ? 'No Data' : cc.attrs.item.contact.address} <br/>
+				<i class="fa fa-lock MarRight10"></i> #{cc.attrs.item.status} <br/>
+				
+				<br/>
+				<h:commandLink actionListener="#{membersBean.changeStatus(cc.attrs.item)}" styleClass="btn btn-primary btn-block">
+					<i class="fa fa-lock"></i> Switch Status
+					<f:ajax execute="@form" render="@all"></f:ajax>
+				</h:commandLink>
 			</div>
 		</div>
 	</div>

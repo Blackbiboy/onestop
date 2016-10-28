@@ -14,7 +14,7 @@
 	<composite:implementation>
 		<div class="container">
 
-			<div class="card">
+			<div>
 				<div class="col-sm-4">
 					<div class="MarTop20">
 						<h:graphicImage library="image" name="girlTshirt1.jpg"
@@ -24,24 +24,17 @@
 				<div class="col-sm-8">
 					<div class="MarTop20 ">
 						<h4>#{cc.attrs.product.name}</h4>
-						<!-- <p>
-							<h:outputText value="#{cc.attrs.product.category}"
-								converter="#{categoryConvertor}" />
-						</p> -->
-						<p>#{cc.attrs.product.status}</p>
-						<p><h:outputText value="#{cc.attrs.product.sizes}"/></p>
-						<p>#{cc.attrs.product.description}</p>
 						<p>
-							<h:link styleClass="btn btn-info" outcome="/public/product.xhtml"
-								value="View">
-								<f:param name="id" value="#{cc.attrs.product.id}"></f:param>
-							</h:link>
-							<button class="btn btn-warning">
-								<i class="fa fa-cart-plus"></i>Add to Cart
-							</button>
-							
-
+							<h:outputText value="#{cc.attrs.product.category.name}" />
 						</p>
+						<p>#{cc.attrs.product.status}</p>
+						<p>
+							<ui:repeat var="s" value="#{cc.attrs.product.sizes}">
+								<h:outputText value="#{s}" styleClass="MarRight10" />
+							</ui:repeat>
+						</p>
+						<p>#{cc.attrs.product.description}</p>
+
 
 						<p>
 							<button type="button" class="btn btn-danger btn-sm4">
@@ -49,8 +42,12 @@
 							</button>
 							<a class="btn btn-info btn-twitter  btn-sm4"><span
 								class="fa fa-twitter"></span></a> 
-							<a class="btn btn-primary btn-facebook bnt-sm3"><span
+							<a class="btn btn-primary btn-facebook bnt-sm3 MarRight10"><span
 								class="fa fa-facebook"></span></a>
+							<h:link styleClass="btn btn-info" outcome="/public/product.xhtml">
+								<f:param name="id" value="#{cc.attrs.product.id}"></f:param>
+								<i class="fa fa-cart-plus"></i>Add to Cart
+							</h:link>
 						</p>
 
 

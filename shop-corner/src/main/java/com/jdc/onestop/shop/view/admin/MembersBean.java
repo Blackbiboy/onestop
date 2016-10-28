@@ -31,10 +31,13 @@ public class MembersBean implements Serializable{
 		search();
 	}
 	
-	public String search() {
+	public void changeStatus(Member member) {
+		member.setStatus((member.getStatus() == Status.Unvalid) ? Status.Valid : Status.Unvalid); 
+		service.save(member);
+	}
+	
+	public void search() {
 		memList = service.search(status, name);
-		
-		return "/admin/members.xhtml";
 	}
 
 	public List<Member> getMemList() {
