@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:home="http://xmlns.jcp.org/jsf/composite/home"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		<ui:define name="title">
+			ကြိုဆိုပါတယ်
+		</ui:define>
+		
+		<ui:define name="content">
+			<!-- Cover -->
+			<div class="card deep-orange lighten-2 white-text">
+				<div class="row">
+					<div class="col s12 l4 card-image">
+						<h:graphicImage library="img" name="home.jpg" />
+					</div>
+					<div class="col s13 l8 card-content">
+						<h4>အိမ်</h4>
+						<div class="fs14">
+							<p>အခုတလောမှာ ငါမက်တဲ့ အိမ်မက်တွေ အရမ်းထူးဆန်းတယ်<br/>
+							မြက်ခင်းနဲ့ ခြံဝင်းနဲ့ အိမ်လေးကို တို့နှစ်ယောက်ပိုင်သတဲ့</p><br/>				
+		
+							<p>ပိုက်ဆံလေးတွေစုချင်တယ် လကုန်တိုင်းဆုတောင်းဆဲကွယ် <br/>
+							တို့နှစ်ယောက်အတွက် အိမ်လိုချင်တယ်</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Search Box -->
+			<div class="card white">
+				<div class="card-content">
+					<span class="card-title">ရှာဖွေရန်</span>
+					<h:form>
+						<div class="row">
+							<div class="col s12 l3">
+								<label>ရည်ရွယ်ချက်</label>
+								<select>
+									<option>အားလုံး</option>
+									<option>ရောင်းရန်</option>
+									<option>ငှားရန်</option>
+								</select>
+							</div>
+							<div class="col s12 l3">
+								<label>အမျိုးအစား</label>
+								<select>
+									<option>အားလုံး</option>
+									<option>တိုက်ခန်း</option>
+									<option>လုံးချင်းအိမ်</option>
+									<option>မြေကွက်</option>
+									<option>လယ်ယာမြေ</option>
+								</select>
+							</div>
+
+							<div class="col s12 l3">
+								<label>တိုင်းဒေသကြီး</label>
+								<select>
+									<option>အားလုံး</option>
+									<option>ရန်ကုန်</option>
+								</select>
+							</div>
+							<div class="col s12 l3">
+								<label>မြို့နယ်</label>
+								<select>
+									<option>အားလုံး</option>
+									<option>ဒဂုံ</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="input-field col s12 l4">
+								<label>အနိမ့်ဆုံးဈေး (သိန်း)</label>
+								<h:inputText value="" />
+							</div>
+							<div class="input-field col s12 l4">
+								<label>အမြင့်ဆုံးဈေး (သိန်း)</label>
+								<h:inputText value="" />
+							</div>
+							<div class="col s12 l4">
+								<h:link styleClass="btn blue-grey MarTop20" outcome="/public/properties-list">
+									ရှာရန်
+								</h:link>
+							</div>
+						</div>
+
+					</h:form>
+				</div>
+			</div>			
+			<!-- Search Result -->
+			<br/>
+			<h4 class="grey-text text-darken-2">အထူးအရောင်း အိမ်ခြံမြေများ</h4>
+			<br/>
+			
+			<home:property-result-item></home:property-result-item>
+			
+		</ui:define>
+	</ui:composition>
+</html>

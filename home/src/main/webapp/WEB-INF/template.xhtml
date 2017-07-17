@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<link href="../resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../resources/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../resources/css/common.css" rel="stylesheet" type="text/css"/>
+	
+	<h:outputStylesheet library="css" name="materialize.min.css" />
+	<h:outputStylesheet library="css" name="font-awesome.min.css" />
+	<h:outputStylesheet library="css" name="common.css" />
+	
+	<h:outputScript library="js" name="jquery.min.js"></h:outputScript>
+	<h:outputScript library="js" name="materialize.min.js"></h:outputScript>
+	
+	<title><ui:insert name="title"></ui:insert>  | အိမ်</title>
+</h:head> 
+<body> 
+	<div class="navbar-fixed">
+		<nav class="deep-orange">
+			<!-- Menu -->
+			<div class="nav-wrapper container">
+				<h:link outcome="/public/home" styleClass="brand-logo left">
+					<i class="fa fa-home"></i> အိမ်
+				</h:link>
+				
+				<ul class="right">
+					<li>
+						<h:link value="တိုက်ခန်း" outcome="/public/properties-list" />
+					</li>
+					<li>
+						<h:link value="လုံးချင်းအိမ်" outcome="/public/properties-list" />
+					</li>
+					<li>
+						<h:link value="မြေကွက်" outcome="/public/properties-list" />
+					</li>
+					<li>
+						<h:link value="လယ်ယာမြေ" outcome="/public/properties-list" />
+					</li>
+					<li>
+						<h:link value="အကျိုးဆောင်များ" outcome="/public/company" />
+					</li>
+					<li>
+						<h:link value="ဝင်ရောက်ရန်" outcome="/public/login" />
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<!-- Left Menu -->
+			<div class="col hide-on-med-and-down l3">
+				<!-- Rent -->
+				<div class="collection with-header">
+					<div class="collection-header">
+						ငှားရန်
+					</div>
+					<h:link styleClass="collection-item" value="တိုက်ခန်း" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="လုံးချင်းအိမ်" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="မြေကွက်" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="လယ်ယာမြေ" outcome="/public/properties-list" />
+				</div>
+
+				<!-- Sell -->
+				<div class="collection with-header">
+					<div class="collection-header">
+						ရောင်းရန်
+					</div>
+					<h:link styleClass="collection-item" value="တိုက်ခန်း" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="လုံးချင်းအိမ်" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="မြေကွက်" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="လယ်ယာမြေ" outcome="/public/properties-list" />
+				</div>
+
+				<!-- Search -->
+				<div class="collection with-header">
+					<div class="collection-header">
+						ဒေသအလိုက်ရှာဖွေရန်
+					</div>
+					<h:link styleClass="collection-item" value="ရန်ကုန်" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="မန္တလေး" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="ပဲခူး" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="မေမြို့" outcome="/public/properties-list" />
+				</div>
+			</div>
+					
+			<!-- Contents -->
+			<div class="col s12 l9">
+				<ui:insert name="content"></ui:insert>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<footer class="page-footer">
+	
+		<div class="container"></div>
+		
+		<div class="footer-copyright">
+			<div class="container">
+				© 2017 Java Developer Class
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		$(function(){
+			$('select').material_select();
+		});
+	</script>
+
+</body> 
+</html>
