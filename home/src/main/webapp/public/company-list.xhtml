@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		
+		<ui:define name="title">အကျိုးဆောင်များ</ui:define>
+		
+		<ui:define name="content">
+			<!-- Search Form -->
+			<div class="card white hoverable">
+			
+				<div class="card-content">
+					<span class="card-title">အကျိုးဆောင်ရှာဖွေရန်</span>
+										
+					<h:form styleClass="row MarTop20">
+						<div class="col s12 l3">
+							<label>အမျိုးအစား</label>
+							<select>
+								<option>အားလုံး</option>
+								<option>ဆောက်လုပ်ရေးကုမ္ပဏီ</option>
+								<option>အကျိုးဆောင်ကုမ္ပဏီ</option>
+								<option>ဒေသခံပွဲစား</option>
+								<option>ကိုယ်ပိုင် အကျိုးဆောင်</option>
+							</select>
+						</div>
+						<div class="col s12 l3">
+							<label>တိုင်းဒေသကြီး</label>
+							<select>
+								<option>အားလုံး</option>
+								<option>ရန်ကုန်</option>
+							</select>
+						</div>
+						<div class="col s12 l3">
+							<label>မြို့နယ်</label>
+							<select>
+								<option>အားလုံး</option>
+								<option>ဒဂုံ</option>
+							</select>
+						</div>						
+						<div class="col s12 l3">
+							<h:link styleClass="btn green MarTop20" outcome="/public/company-list">
+								<i class="fa fa-search left"></i> ရှာရန်
+							</h:link>
+						</div>
+					</h:form>
+				</div>
+				
+			</div>
+			
+			<!-- Search Result -->
+		</ui:define>
+	</ui:composition>
+</html>

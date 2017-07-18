@@ -7,7 +7,7 @@
 
 	<ui:composition template="/WEB-INF/template.xhtml">
 		<ui:define name="title">
-			အရောင်းအငှား
+			အဝယ်အငှား
 		</ui:define>
 
 		<ui:define name="content">
@@ -15,17 +15,18 @@
 			<!-- Search Form -->
 			<div class="card white hoverable">
 				<div class="card-content">
-					<span class="card-title">အရောင်း - အငှား ရှာဖွေရန်</span>
+					<span class="card-title">အဝယ် - အငှား ရှာဖွေရန်</span>
 					<h:form>
 						<div class="row">
-							<home:search-sell />
+							<home:search-buy />
 						</div>
+
 					</h:form>
 				</div>
 			</div>
 			
 			<!-- Search Result -->
-			<home:property-result-item></home:property-result-item>
+			<home:property-result-item />
 			
 		</ui:define>
 	</ui:composition>

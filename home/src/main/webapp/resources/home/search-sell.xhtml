@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+<composite:interface>
+
+</composite:interface>
+<composite:implementation>
+
+	<div id="sell-rent" class="col s12">
+
+		<div class="col s12 l3">
+			<label>ရည်ရွယ်ချက်</label>
+			<select>
+				<option>အားလုံး</option>
+				<option>ရောင်းရန်</option>
+				<option>ငှားရန်</option>
+			</select>
+		</div>
+		<div class="col s12 l3">
+			<label>အမျိုးအစား</label>
+			<select>
+				<option>အားလုံး</option>
+				<option>တိုက်ခန်း</option>
+				<option>လုံးချင်းအိမ်</option>
+				<option>မြေကွက်</option>
+				<option>လယ်ယာမြေ</option>
+			</select>
+		</div>
+
+		<div class="col s12 l3">
+			<label>တိုင်းဒေသကြီး</label>
+			<select>
+				<option>အားလုံး</option>
+				<option>ရန်ကုန်</option>
+			</select>
+		</div>
+		<div class="col s12 l3">
+			<label>မြို့နယ်</label>
+			<select>
+				<option>အားလုံး</option>
+				<option>ဒဂုံ</option>
+			</select>
+		</div>
+	
+		<div class="input-field col s12 l4">
+			<label>အနိမ့်ဆုံးဈေး (သိန်း)</label>
+			<h:inputText value="" />
+		</div>
+		<div class="input-field col s12 l4">
+			<label>အမြင့်ဆုံးဈေး (သိန်း)</label>
+			<h:inputText value="" />
+		</div>
+		<div class="col s12 l4">
+			<h:link styleClass="btn green MarTop20" outcome="/public/properties-list">
+				<i class="fa fa-search left"></i> ရှာရန်
+			</h:link>
+		</div>
+
+	</div>
+
+</composite:implementation>
+</body>
+</html>
