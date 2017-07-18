@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:home="http://java.sun.com/jsf/composite/home"
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
@@ -12,9 +13,10 @@
 			<!-- Search Form -->
 			<div class="card white hoverable">
 			
-				<div class="card-content">
+				<div class="card-content green lighten-4">
 					<span class="card-title">အကျိုးဆောင်ရှာဖွေရန်</span>
-										
+				</div>
+				<div class="card-content">
 					<h:form styleClass="row MarTop20">
 						<div class="col s12 l3">
 							<label>အမျိုးအစား</label>
@@ -51,6 +53,8 @@
 			</div>
 			
 			<!-- Search Result -->
+			<home:agent-list-item />
+			
 		</ui:define>
 	</ui:composition>
 </html>

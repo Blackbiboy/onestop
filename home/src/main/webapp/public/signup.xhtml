@@ -10,38 +10,43 @@
 		</ui:define>
 		
 		<ui:define name="content">
-			
-			<h3>စာရင်းသွင်းရန်</h3>
-			
-			<div class="row">
-				<h:form styleClass="col l8 s12">
-					
-					<div class="input-field">
-						<label>အဖွဲ့ဝင်အမည်</label>
-						<h:inputText value="" />
+			<div class="card white hoverable">
+				<div class="card-content green lighten-4">
+					<span class="card-title">စာရင်းသွင်းရန်</span>
+				</div>
+				<div class="card-content">
+					<div class="row">
+						<h:form styleClass="col offset-l2 l8 s12">
+							
+							<div class="input-field">
+								<label>အဖွဲ့ဝင်အမည်</label>
+								<h:inputText value="" />
+							</div>
+		
+							<div class="input-field">
+								<label>အီးမေလ်</label>
+								<h:inputText value="" />
+							</div>
+		
+							<div class="input-field">
+								<label>အဖွဲ့ဝင်အမှတ်</label>
+								<h:inputText value="" />
+							</div>
+							
+							<div class="input-field">
+								<label>စကာ:ဝှက်</label>
+								<h:inputText value="" />
+							</div>
+							
+							<div>
+								<h:link styleClass="btn MarRight10 green">စာရင်:သွင်:ရန်</h:link>
+								<h:link outcome="/public/login" styleClass="btn green darken-3">ဝင်ရောက်ရန်</h:link>
+							</div>
+						</h:form>
 					</div>
-
-					<div class="input-field">
-						<label>အီးမေလ်</label>
-						<h:inputText value="" />
-					</div>
-
-					<div class="input-field">
-						<label>အဖွဲ့ဝင်အမှတ်</label>
-						<h:inputText value="" />
-					</div>
-					
-					<div class="input-field">
-						<label>စကာ:ဝှက်</label>
-						<h:inputText value="" />
-					</div>
-					
-					<div>
-						<h:link styleClass="btn MarRight10">စာရင်:သွင်:ရန်</h:link>
-						<h:link outcome="/public/login" styleClass="btn blue-grey">ဝင်ရောက်ရန်</h:link>
-					</div>
-				</h:form>
+				</div>
 			</div>
+			
 			
 		</ui:define>
 	
