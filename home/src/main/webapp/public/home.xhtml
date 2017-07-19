@@ -31,33 +31,27 @@
 			</div>
 			
 			<!-- Search Box -->
-			<div class="card white">
+			<div class="card">
+				<ul class="tabs green lighten-5">
+					<li class="tab col s3"><a class="active"  href="#sell-rent">ရောင်းရန် - ငှားရန်</a></li>
+					<li class="tab col s3"><a href="#buy-rent">ဝယ်လိုသူ - ငှားလိုသူ</a></li>
+				</ul>							
 				<div class="card-content">
 					<h:form>
-						<div class="row">
-							<div class="col s12">
-								<ul class="tabs">
-									<li class="tab col s3"><a class="active" href="#sell-rent">ရောင်းရန် - ငှားရန်</a></li>
-									<li class="tab col s3"><a href="#buy-rent">ဝယ်လိုသူ - ငှားလိုသူ</a></li>
-								</ul>							
-							</div>
-						</div>
-						<div class="row">
-							<!-- Sell Search Form -->
-							<home:search-sell />								
-							<!-- Buy Search Form -->
-							<home:search-buy />	
-						</div>						
-
+						<!-- Sell Search Form -->
+						<home:search-sell />								
+						<!-- Buy Search Form -->
+						<home:search-buy />	
 					</h:form>
-				</div>
+				</div>						
+
 			</div>			
 			<!-- Search Result -->
 			<br/>
 			<h4 class="grey-text text-darken-2">အထူးအရောင်း အိမ်ခြံမြေများ</h4>
 			<br/>
 			
-			<home:property-result-item></home:property-result-item>
+			<home:result-item-sell></home:result-item-sell>
 			
 		</ui:define>
 	</ui:composition>
