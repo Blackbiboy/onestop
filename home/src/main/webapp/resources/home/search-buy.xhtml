@@ -6,7 +6,9 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
 <head>
-<title>Not present in rendered output</title>
+	<link href="../css/materialize.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../css/common.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <composite:interface>
@@ -59,8 +61,11 @@
 			<h:inputText value="" />
 		</div>
 		<div class="col s12 l4">
-			<h:link styleClass="btn green MarTop20" outcome="/public/desire-list">
+			<h:link styleClass="btn green MarTop20 hide-on-med-and-down" outcome="/public/desire-list">
 				<i class="fa fa-search left"></i> ရှာရန်
+			</h:link>
+			<h:link styleClass="btn green btn-block show-on-medium-and-down" outcome="/public/desire-list">
+				ရှာရန်
 			</h:link>
 		</div>
 

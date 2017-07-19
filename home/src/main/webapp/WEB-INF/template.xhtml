@@ -7,9 +7,11 @@
 <h:head>
 	<link href="../resources/css/materialize.min.css" rel="stylesheet" type="text/css"/>
 	<link href="../resources/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="../resources/css/material-icons.css" rel="stylesheet" type="text/css"/>
 	<link href="../resources/css/common.css" rel="stylesheet" type="text/css"/>
 	
 	<h:outputStylesheet library="css" name="materialize.min.css" />
+	<h:outputStylesheet library="css" name="material-icons.css" />
 	<h:outputStylesheet library="css" name="font-awesome.min.css" />
 	<h:outputStylesheet library="css" name="common.css" />
 	
@@ -23,11 +25,11 @@
 		<nav class="green darken-2">
 			<!-- Menu -->
 			<div class="nav-wrapper container">
-				<h:link outcome="/public/home" styleClass="brand-logo left">
-					<i class="fa fa-home"></i> အိမ်
+				<h:link outcome="/public/home" styleClass="brand-logo">
+					<i class="fa fa-home hide-on-med-and-down"></i> အိမ်
 				</h:link>
-				
-				<ul class="right">
+				<a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
 					<li>
 						<h:link value="ရောင်းရန်" outcome="/public/properties-list" />
 					</li>
@@ -47,10 +49,32 @@
 						<h:link value="ဝင်ရောက်ရန်" outcome="/public/login" />
 					</li>
 				</ul>
+
+			
 			</div>
 		</nav>
 	</div>
-	
+
+	<ul class="side-nav green lighten-1" id="mobile-menu">
+		<li>
+			<h:link value="ရောင်းရန်" outcome="/public/properties-list" />
+		</li>
+		<li>
+			<h:link value="ငှားရန်" outcome="/public/properties-list" />
+		</li>
+		<li>
+			<h:link value="ဝယ်လိုသူ" outcome="/public/desire-list" />
+		</li>
+		<li>
+			<h:link value="ငှားလိုသူ" outcome="/public/desire-list" />
+		</li>
+		<li>
+			<h:link value="အကျိုးဆောင်များ" outcome="/public/company-list" />
+		</li>
+		<li>
+			<h:link value="ဝင်ရောက်ရန်" outcome="/public/login" />
+		</li>
+	</ul>		
 	
 	<div class="container MarTop20">
 		<div class="row">
@@ -112,6 +136,7 @@
 	<script>
 		$(function(){
 			$('select').material_select();
+			$(".button-collapse").sideNav();
 		});
 	</script>
 
