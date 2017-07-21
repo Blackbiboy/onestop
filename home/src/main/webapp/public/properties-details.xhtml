@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+     xmlns:home="http://java.sun.com/jsf/composite/home"
+       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
 		<ui:define name="title">
@@ -10,6 +11,181 @@
 		</ui:define>
 		
 		<ui:define name="content">
+			
+			<h4 class="green-text text-darken-4">သင်တန်းကျောင်းဖွင့်ရန် အထူးသင့်တော်သောတိုက်ခန်း</h4>
+			<div class="divider"></div>
+			
+			<!-- Room Information -->
+			<div class="row MarTop20">
+				<!-- Cover Image -->
+				<div class="col s12 l6">
+					<h:graphicImage library="img" name="room1.jpeg" styleClass="responsive-img hoverable" />
+					<div class="row MarTop10">
+						<div class="col s6">
+							<h:outputLink styleClass="btn btn-block blue darken-2 white-text">
+								<i class="fa fa-smile-o"></i> နှစ်သက်သည်
+							</h:outputLink>
+						</div>
+						<div class="col s6">
+							<h:outputLink styleClass="btn btn-block red white-text">
+								<i class="fa fa-commenting-o"></i> မေးမည်
+							</h:outputLink>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Details -->
+				<div class="col s12 l6">
+					<h5 class="green-text text-darken-2">ငှားရန်တိုက်ခန်း</h5>
+					
+					<h:panelGrid columns="2" styleClass="bordered">
+						<h:outputText value="အိမ်လခ" />
+						<h:outputText value="၃ သိန်း" />
+						<h:outputText value="အကျိုးဆောင်ခ" />
+						<h:outputText value="၁ လခစာ" />
+						<h:outputText value="စာချူပ်" />
+						<h:outputText value="၁ နှစ်" />
+						<h:outputText value="အကျယ်အဝန်း" />
+						<h:outputText value="၁၂၀၀ စတုရန်းပေ" />
+						<h:outputText value="အလွှာ" />
+						<h:outputText value="၂ လွှာ" />
+						<h:outputText value="လိပ်စာ" />
+						<h:outputText value="စံရိပ်ငြိမ်၊ ကမာရွတ်၊ ရန်ကုန်။" />
+
+					</h:panelGrid>
+				</div>
+				
+				<div class="col s12">
+					<p>
+						မိသားစု နေထိုင်ရန်၊ စီးပွါးရေးလုပ်ငန်းလုပ်ကိုင်ရန်၊ သင်တန်းကျောင်းဖွင့်ရန် အထူးသင့်တော်သော အခန်းဖြစ်ပါတယ်။ လှဲတန်းမှတ်တိုင်အနီးတွင်ရှိပြီး ကားရပ်ရန်လဲ အစဉ်ပြေပါသည်။ ရေမီးအစုံအလင်ပါဝင်ပြီး အသင့်နေထိုင်နိုင်ပါသည်။
+					</p>
+					<p>
+						ကိုယ်ပိုင်ရေမော်တာပါဝင်ပြီး ကိုယ်ပိုင်အဝီစိတွင်းရှိသောကြောင့် ရေမရမှာ မပူရပါ။
+					</p>
+				</div>
+
+				<div class="col s12">
+					<div class="row">
+
+						<div class="col s12 l4">
+							<div class="card yellow lighten-3 hoverable">
+								<div class="card-content">
+									<div class="row">
+										<span class="col s4">
+											<i class="fa fa-search medium"></i>
+										</span>
+										<div class="col s8 right-align">
+											<p>
+												စိတ်ဝင်စားသူ
+											</p>
+											<p class="fs30">
+												၁၂၉
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col s12 l4">
+							<div class="card blue darken-2 white-text hoverable">
+								<div class="card-content">
+									<div class="row">
+										<span class="col s4">
+											<i class="fa fa-smile-o medium"></i>
+										</span>
+										<div class="col s8 right-align">
+											<p>
+												နှစ်သက်သူ
+											</p>
+											<p class="fs30">
+												၁၂၉
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col s12 l4">
+							<div class="card red white-text hoverable">
+								<div class="card-content">
+									<div class="row">
+										<span class="col s4">
+											<i class="fa fa-commenting-o medium"></i>
+										</span>
+										<div class="col s8 right-align">
+											<p>
+												မေးမြန်းစုံစမ်းသူ
+											</p>
+											<p class="fs30">
+												၁၂၉
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				
+			</div>			
+
+			<!-- Other Facilities -->
+			<h5 class="green-text text-darken-2">အခြာ:ပါဝင်သောအရာမျာ:</h5>
+			<div class="row MarTop20">
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> ခေတ်မှီ မီးဖိုချောင်စနစ်</div>
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> ကားပါကင်ပါသည်</div>
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> အဲယားကွန်း ၃လုံးတတ်ဆင်ပြီး</div>
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> ဝရန်တာ</div>
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> လုံခြံရေးစနစ်တတ်ဆင်ပြီး</div>
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> ၂၄နာရီစတိုးဆိုင်အနီး</div>
+				<div class="col l6 s12"><i class="fa fa-arrow-right"></i> ကားမှတ်တိုင်မှ လမ်းလျောက်၅ မိနစ်</div>
+			</div>			
+
+			<!-- Contact Information -->
+			<div class="row MarTop20">
+				<div class="col s12">
+					<home:agent-item-nocard></home:agent-item-nocard>
+				</div>
+			</div>			
+
+			<!-- Images -->
+			<h5 class="green-text text-darken-2">ဓါတ်ပုံများ</h5>
+			<div class="row MarTop20">
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room1.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room2.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room3.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room4.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room5.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room6.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room7.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+				<div class="col l3 s12">
+					<h:graphicImage library="img" name="room8.jpeg" styleClass="responsive-img MarBot10 materialboxed" />
+				</div>
+			</div>
+			
+			<script>
+				$(function() {
+					$('.materialbox').materialboxed();
+				});
+			</script>
 		
 		</ui:define>
 	</ui:composition>

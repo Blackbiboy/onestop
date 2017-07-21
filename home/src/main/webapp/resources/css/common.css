@@ -10,14 +10,27 @@
 	margin-top: 20px;
 }
 
-.fs22 {
-	font-size: 22px;
+.MarTop10 {
+	margin-top: 10px;
+}
+
+.MarBot10 {
+	margin-bottom: 10px;
 }
 
 .fs12 {
 	font-size: 12px;
 }
 
-.MarBot10 {
-	margin-bottom: 10px;
+.fs22 {
+	font-size: 22px;
+}
+
+.fs30 {
+	font-size: 30px;
+}
+
+.leftColumn {
+	vertical-align: top;
+	color: gray;
 }

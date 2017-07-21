@@ -2,16 +2,87 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:home="http://java.sun.com/jsf/composite/home"
       xmlns:h="http://java.sun.com/jsf/html">
 
 	<ui:composition template="/WEB-INF/template.xhtml">
 		<ui:define name="title">အကျိုးဆောင်</ui:define>
 		
 		<ui:define name="content">
-			<!-- Company Profile -->
-			
+			<!-- Title -->
+			<h5>အေစိုးအိုင်စီ အေဂျင်စီ</h5>
 			<!-- Properties with tab -->
+			<ul class="tabs tabs-fixed-width green lighten-5 MarTop20">
+				<li class="tab col s3">
+					<a href="#tab1">အကျိုးဆောင်</a>
+				</li>
+				<li class="tab col s3">
+					<a href="#tab2">ကြိုပွိုင့်</a>
+				</li>
+				<li class="tab col s3">
+					<a href="#tab3">အရောင်း</a>
+				</li>
+				<li class="tab col s3">
+					<a href="#tab4">အငှား</a>
+				</li>
+			</ul>
+
+			<div class="row MarTop20" id="tab1">
+				
+				<div class="col s12 l4">
+					<h:graphicImage library="img" styleClass="responsive-img" name="room5.jpeg" />
+
+					<div class="MarTop10 center-align">
+						<span class="chip green white-text">ကြို ၁၃</span>
+						<span class="chip blue white-text">ရောင်း ၃၀</span>
+						<span class="chip red white-text">ငှား ၁၅</span>
+					</div>
+				</div>
 			
+				<div class="col s12 l8">
+					<p>တိကျမှန်ကန်မြန်ဆန်သော အေစိုးအိုင်စီ အိမ်ခြံမြေအကျိုးဆောင်</p>
+					<p>
+					သင်၏ အိမ်ခြံမြေအရောင်အဝယ်နှင့် ပတ်သက်သော လုပ်င်နးများအတွက် အေစိုးအိုင်စီကို တာဝန်ပေးလိုက်ပါ။
+					သင့်အတွက် အေစိုးအိုင်စီမှ အကောင်းဆုံးဖြစ်အောင် ဆောင်ရွက်ပေးပါမည်။					
+					</p>
+					<div class="divider"></div>
+					<h:panelGrid columns="2" styleClass="bordered MarBot10" columnClasses="leftColumn,rightColumn">
+						<h:outputText value="စတင်သည့်ခုနှစ်" />
+						<h:outputText value="၂၀၀၁ခု" />
+						<h:outputText value="လိပ်စာ" />
+						<h:outputText value="အမှတ် ၁၁၀ အနော်ရထာလမ်းနှင့် ၃၁လမ်းထောင့်၊ ကျောက်တံတားမြို့နယ်၊ ရန်ကုန်။" />
+						<h:outputText value="ဖုန်းနံပါတ်" />
+						<h:outputText value="၀၉၇၁၇၁၆၁၇၊ ၀၉၇၁၆၁၆၁" />
+					</h:panelGrid>
+					
+				</div>
+			</div>
+				
+			<div class="row MarTop20" id="tab2">
+				
+				<div class="col s12">
+					<home:result-item-sell></home:result-item-sell>
+				</div>
+			
+			</div>
+
+			<div class="row MarTop20" id="tab3">
+				
+				<div class="col s12">
+					<home:result-item-sell></home:result-item-sell>
+				</div>
+				
+			
+			</div>
+
+			<div class="row MarTop20" id="tab4">
+				
+				<div class="col s12">
+					<home:result-item-sell></home:result-item-sell>
+				</div>
+			
+			</div>
+
 		</ui:define>
 	</ui:composition>
 </html>
