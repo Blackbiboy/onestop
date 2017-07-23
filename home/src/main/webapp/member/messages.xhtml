@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:home="http://java.sun.com/jsf/composite/home"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		<ui:define name="title">
+			မေးခွန်းများ
+		</ui:define>
+		
+		<ui:define name="content">
+			<!-- Search Form -->
+			<h5 class="left">မေးခွန်းများ</h5>
+			<a href="#" id="showHide" class="right MarTop10 btn btn-floating green lighten-2"><i class="fa fa-search"></i> </a>
+			<div class="clearfix"></div>
+			<h:form id="searchForm" styleClass="row MarTop20 hide clearfix">
+				<div class="col s12 l3">
+					<label>အခြေအနေ</label>
+					<select>
+						<option>အားလုံး</option>
+						<option>မကြည့်ရသေးသောမေးခွန်း</option>
+						<option>ကြည့်ပြီးမေးခွန်း</option>
+					</select>
+				</div>
+				<div class="col s12 l3">
+					<label>အမျိုးအစား</label>
+					<select>
+						<option>အားလုံး</option>
+						<option>ရောက်လာသောမေးခွန်း</option>
+						<option>မေးထားသောမေးခွန်း</option>
+					</select>
+				</div>
+				<div class="col s12 l3">
+					<label>စရှာမည့်ရက်</label>
+					<input type="date" class="datepicker"/>
+				</div>						
+				<div class="col s12 l3">
+					<h:link styleClass="btn green MarTop20 hide-on-med-and-down" outcome="/public/company-list">
+						<i class="fa fa-search left"></i> ရှာရန်
+					</h:link>
+					<h:link styleClass="btn btn-block green show-on-medium-and-down hide-on-med-and-up" outcome="/public/company-list">
+						ရှာရန်
+					</h:link>
+				</div>
+			</h:form>
+			<div class="divider MarTop10"></div>
+			
+			<home:message-list-item></home:message-list-item>
+			<home:message-list-item></home:message-list-item>
+			<home:message-list-item></home:message-list-item>
+			<home:message-list-item></home:message-list-item>
+			<home:message-list-item></home:message-list-item>
+			<home:message-list-item></home:message-list-item>
+
+			<script>
+				$(function() {
+					$('.datepicker').pickadate({
+						selectMonth:true,
+						selectYear:3
+					});
+
+					$('#showHide').click(function() {
+						if($('#searchForm').hasClass('hide')) {
+							$('#searchForm').removeClass('hide');
+						} else {
+							$('#searchForm').addClass('hide');
+						}
+					});
+
+					$('.message-item').click(function(){
+						var controls = $(this).children(".controls");
+						if(controls.hasClass("hide")) {
+							controls.removeClass('hide');
+						} else {
+							controls.addClass('hide');
+						}
+					});
+					
+				});
+			</script>
+		</ui:define>
+	</ui:composition>
+</html>

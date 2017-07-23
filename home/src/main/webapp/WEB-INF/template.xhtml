@@ -77,9 +77,33 @@
 	</ul>		
 	
 	<div class="container MarTop20">
+		<ui:insert name="full-width-content">
 		<div class="row">
 			<!-- Left Menu -->
 			<div class="col hide-on-med-and-down l3">
+				<!-- Admin Menu -->
+				<div class="collection with-header">
+					<div class="collection-header">
+						ကြီးကြပ်သူအတွက်
+					</div>
+					<h:link styleClass="collection-item" value="အဖွဲ့ဝင်များ" outcome="/admin/user-management" />
+					<h:link styleClass="collection-item" value="စကားဝှက်ပြောင်းရန်" outcome="/member/change-pass" />
+				</div>
+				
+				<!-- Member Menu -->
+				<div class="collection with-header">
+					<div class="collection-header">
+						ကိုယ်ပိုင်အကြောင်းအရာများ
+					</div>
+					<h:link styleClass="collection-item" value="ပရိုဖိုင်း" outcome="/member/profile" />
+					<h:link styleClass="collection-item" value="အကျိုးဆောင်များ" outcome="/public/company-list" />
+					<h:link styleClass="collection-item" value="ရောင်းရန်ငှားရန်များ" outcome="/public/properties-list" />
+					<h:link styleClass="collection-item" value="ဝယ်လိုငှားလိုသည့်အရာများ" outcome="/public/desire-list" />
+					<h:link styleClass="collection-item" value="နှစ်သက်သည့်အိမ်ခြံမြေ" outcome="/member/properties-list" />
+					<h:link styleClass="collection-item" value="မေးခွန်းများ" outcome="/member/messages" />
+					<h:link styleClass="collection-item" value="စကားဝှက်ပြောင်းရန်" outcome="/member/change-pass" />
+				</div>
+				
 				<!-- Rent -->
 				<div class="collection with-header">
 					<div class="collection-header">
@@ -119,6 +143,7 @@
 				<ui:insert name="content"></ui:insert>
 			</div>
 		</div>
+		</ui:insert>
 	</div>
 	
 	<!-- Footer -->

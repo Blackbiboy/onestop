@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:home="http://java.sun.com/jsf/composite/home"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="/WEB-INF/template.xhtml">
+		<ui:define name="title">
+			နှစ်သက်သည့်အိမ်ခြံမြေ
+		</ui:define>
+
+		<ui:define name="content">
+		
+			<!-- Title -->
+			<h4>နှစ်သက်သည့်အိမ်ခြံမြေ</h4>			
+			
+			<!-- Tabs -->
+			<div class="MarTop20 MarBot10">
+				<ul class="tabs tabs-fixed-width green lighten-5">
+					<li class="tab">
+						<a href="#tab1">ကြိုပွီုင့်</a>
+					</li>
+					<li class="tab">
+						<a href="#tab2">ရောင်းရန်</a>
+					</li>
+					<li class="tab">
+						<a href="#tab3">ငှားရန်</a>
+					</li>
+				</ul>
+			</div>
+			
+			<!-- Pre Order -->		
+			<div class="MarTop20" id="tab1">
+				<home:result-item-sell></home:result-item-sell>
+			</div>
+			
+			<!-- For Sell -->		
+			<div class="MarTop20" id="tab2">
+				<home:result-item-sell></home:result-item-sell>
+			</div>
+
+			<!-- For Rent -->		
+			<div class="MarTop20" id="tab3">
+				<home:result-item-sell></home:result-item-sell>
+			</div>
+
+		</ui:define>
+	</ui:composition>
+</html>

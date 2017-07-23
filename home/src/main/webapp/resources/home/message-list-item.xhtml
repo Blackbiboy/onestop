@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+<composite:interface>
+
+</composite:interface>
+<composite:implementation>
+	<!-- Message Details -->
+	<div class="row MarTop20">
+		<div class="col s1 center-align">
+			<i class="fa fa-envelope-o fs30 MarRight10"></i>
+		</div>
+		<div class="col s11 message-item">
+			<div class="message-title">
+				<span>အောက်ပါ တိုက်ခန်းကို လိုက်ကြည့်လို့ရမလား</span>
+				<span class="right grey-text">၂၀၁၇ခု ၇လ ၁၈ရက်</span>
+			</div>
+			<div>
+				<span class="fs12 grey-text">ကိုအောင်နိုင်</span>
+			</div>
+			<div class="MarTop20 hide controls">
+				<span class="chip">ရောက်ရှိ</span>
+				<span class="chip">မက်ဆေချေ့ ၆ ခု</span>
+				<h:link outcome="/member/message-details" value="အသေးစိတ်ကြည့်ရန်" styleClass="chip green accent-3"/>
+				<h:link outcome="/member/message-details" value="ဖျက်ရန်" styleClass="chip red white-text accent-3"/>
+			</div>
+		</div>
+	</div>
+	<div class="divider"></div>
+
+</composite:implementation>
+</body>
+</html>

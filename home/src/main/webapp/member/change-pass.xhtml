@@ -6,32 +6,31 @@
 
 	<ui:composition template="/WEB-INF/template.xhtml">
 		<ui:define name="title">
-			ဝင်ရောက်ရန်
+			စကားဝှက်ပြောင်းရန်
 		</ui:define>
 		
 		<ui:define name="content">
 			
 			<div class="card white hoverable">
 				<div class="card-content green lighten-4">
-					<span class="card-title">ဝင်ရောက်ရန်</span>
+					<span class="card-title">စကားဝှက်ပြောင်းရန်</span>
 				</div>
 				<div class="card-content">
 					<div class="row">
 						<h:form styleClass="col offset-l2 l8 s12">
 							
 							<div class="input-field">
-								<label>အဖွဲ့ဝင်အမှတ်</label>
-								<h:inputText value="" />
+								<label>စကားဝှက်အဟောင်း</label>
+								<h:inputSecret value="" />
 							</div>
 							
 							<div class="input-field">
-								<label>စကာ:ဝှက်</label>
+								<label>စကားဝှက်အသစ်</label>
 								<h:inputSecret value="" />
 							</div>
 							
 							<div>
-								<h:link outcome="/member/profile" styleClass="btn MarRight10 green">ဝင်ရောက်ရန်</h:link>
-								<h:link outcome="/public/signup" styleClass="btn green darken-3">စာရင်:သွင်:ရန်</h:link>
+								<h:link outcome="/member/profile" styleClass="btn MarRight10 green">စကားဝှက်ပြောင်းရန်</h:link>
 							</div>
 						</h:form>
 					</div>
