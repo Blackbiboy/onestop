@@ -29,32 +29,35 @@
 					<i class="fa fa-home hide-on-med-and-down"></i> အိမ်
 				</h:link>
 				<a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li>
-						<h:link value="ရောင်းရန်" outcome="/public/properties-list" />
-					</li>
-					<li>
-						<h:link value="ငှားရန်" outcome="/public/properties-list" />
-					</li>
-					<li>
-						<h:link value="ဝယ်လိုသူ" outcome="/public/desire-list" />
-					</li>
-					<li>
-						<h:link value="ငှားလိုသူ" outcome="/public/desire-list" />
-					</li>
-					<li>
-						<h:link value="အကျိုးဆောင်များ" outcome="/public/company-list" />
-					</li>
-					<li>
-						<h:link value="ဝင်ရောက်ရန်" outcome="/public/login" />
-					</li>
-				</ul>
+				<h:form>
+					<ul class="right hide-on-med-and-down">
+						<li>
+							<h:link value="ရောင်းရန်" outcome="/public/properties-list" />
+						</li>
+						<li>
+							<h:link value="ငှားရန်" outcome="/public/properties-list" />
+						</li>
+						<li>
+							<h:link value="ဝယ်လိုသူ" outcome="/public/desire-list" />
+						</li>
+						<li>
+							<h:link value="ငှားလိုသူ" outcome="/public/desire-list" />
+						</li>
+						<li>
+							<h:link value="အကျိုးဆောင်များ" outcome="/public/company-list" />
+						</li>
+						<li>
+							<h:link rendered="#{empty loginUser}" value="ဝင်ရောက်ရန်" outcome="/public/login" />
+							<h:commandLink rendered="#{not empty loginUser}"  action="#{securityBean.logout()}" value="ထွက်ရန်" />
+						</li>
+					</ul>
+				</h:form>
 
 			
 			</div>
 		</nav>
 	</div>
-
+	<h:form>
 	<ul class="side-nav green lighten-1" id="mobile-menu">
 		<li>
 			<h:link value="ရောင်းရန်" outcome="/public/properties-list" />
@@ -72,9 +75,11 @@
 			<h:link value="အကျိုးဆောင်များ" outcome="/public/company-list" />
 		</li>
 		<li>
-			<h:link value="ဝင်ရောက်ရန်" outcome="/public/login" />
+			<h:link rendered="#{empty loginUser}" value="ဝင်ရောက်ရန်" outcome="/public/login" />
+			<h:commandLink rendered="#{not empty loginUser}"  action="#{securityBean.logout()}" value="ထွက်ရန်" />
 		</li>
 	</ul>		
+	</h:form>
 	
 	<div class="container MarTop20">
 		<ui:insert name="full-width-content">

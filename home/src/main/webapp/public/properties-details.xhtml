@@ -22,7 +22,7 @@
 			<div class="col s12 l6">
 				<h:graphicImage library="img" name="room1.jpeg"
 					styleClass="responsive-img hoverable" />
-				<div class="row MarTop10">
+				<div class="row MarTop10 #{loginUser.role eq 'Member' ? '' : 'hide'}">
 					<div class="col s6">
 						<h:outputLink styleClass="btn btn-block blue darken-2 white-text">
 							<i class="fa fa-smile-o"></i> နှစ်သက်သည်

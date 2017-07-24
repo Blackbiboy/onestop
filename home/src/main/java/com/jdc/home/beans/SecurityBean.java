@@ -94,6 +94,17 @@ public class SecurityBean {
 		return "";
 	}
 	
+	public String logout() {
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+			return "/public/home?faces-redirect=true";
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return "";
+	}
+	
 
 	public String getName() {
 		return name;
