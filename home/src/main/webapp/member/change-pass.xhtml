@@ -21,16 +21,16 @@
 							
 							<div class="input-field">
 								<label>စကားဝှက်အဟောင်း</label>
-								<h:inputSecret value="" />
+								<h:inputSecret value="#{securityBean.oldPassword}" />
 							</div>
 							
 							<div class="input-field">
 								<label>စကားဝှက်အသစ်</label>
-								<h:inputSecret value="" />
+								<h:inputSecret value="#{securityBean.password}" />
 							</div>
 							
 							<div>
-								<h:link outcome="/member/profile" styleClass="btn MarRight10 green">စကားဝှက်ပြောင်းရန်</h:link>
+								<h:commandLink styleClass="btn MarRight10 green" action="#{securityBean.changePass()}" >စကားဝှက်ပြောင်းရန်</h:commandLink>
 							</div>
 						</h:form>
 					</div>

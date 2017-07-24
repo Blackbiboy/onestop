@@ -20,26 +20,32 @@
 							
 							<div class="input-field">
 								<label>အဖွဲ့ဝင်အမည်</label>
-								<h:inputText value="" />
-							</div>
-		
-							<div class="input-field">
-								<label>အီးမေလ်</label>
-								<h:inputText value="" />
+								<h:inputText value="#{securityBean.name}" />
 							</div>
 		
 							<div class="input-field">
 								<label>အဖွဲ့ဝင်အမှတ်</label>
-								<h:inputText value="" />
+								<h:inputText value="#{securityBean.loginId}" />
 							</div>
 							
 							<div class="input-field">
 								<label>စကာ:ဝှက်</label>
-								<h:inputSecret value="" />
+								<h:inputSecret value="#{securityBean.password}" />
 							</div>
+
+							<div class="input-field">
+								<label>ဖုန်းနံပါတ်</label>
+								<h:inputText value="#{securityBean.phone}" />
+							</div>
+		
+							<div class="input-field">
+								<label>အီးမေလ်</label>
+								<h:inputText value="#{securityBean.email}" />
+							</div>
+		
 							
 							<div>
-								<h:link outcome="/admin/home" styleClass="btn MarRight10 green">စာရင်:သွင်:ရန်</h:link>
+								<h:commandLink action="#{securityBean.signUp()}" styleClass="btn MarRight10 green">စာရင်:သွင်:ရန်</h:commandLink>
 								<h:link outcome="/public/login" styleClass="btn green darken-3">ဝင်ရောက်ရန်</h:link>
 							</div>
 						</h:form>

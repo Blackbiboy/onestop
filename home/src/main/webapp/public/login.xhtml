@@ -21,16 +21,16 @@
 							
 							<div class="input-field">
 								<label>အဖွဲ့ဝင်အမှတ်</label>
-								<h:inputText value="" />
+								<h:inputText value="#{securityBean.loginId}" />
 							</div>
 							
 							<div class="input-field">
 								<label>စကာ:ဝှက်</label>
-								<h:inputSecret value="" />
+								<h:inputSecret value="#{securityBean.password}" />
 							</div>
 							
 							<div>
-								<h:link outcome="/member/profile" styleClass="btn MarRight10 green">ဝင်ရောက်ရန်</h:link>
+								<h:commandLink action="#{securityBean.login()}" styleClass="btn MarRight10 green">ဝင်ရောက်ရန်</h:commandLink>
 								<h:link outcome="/public/signup" styleClass="btn green darken-3">စာရင်:သွင်:ရန်</h:link>
 							</div>
 						</h:form>
